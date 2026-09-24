@@ -1,0 +1,3 @@
+# Hébergement Apache à la racine du domaine : une vraie réponse HTTP 404.
+DirectoryIndex index.html
+ErrorDocument 404 /404.html

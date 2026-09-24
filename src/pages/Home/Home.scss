@@ -1,0 +1,7 @@
+.home {
+  padding-block: clamp(3rem, 10vw, 8rem);
+  max-width: 48rem;
+  &__eyebrow { color: var(--color-accent); font-weight: 700; }
+  &__introduction { font-size: 1.4rem; }
+  &__notice { max-width: 38rem; }
+}

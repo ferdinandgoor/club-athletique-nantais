@@ -1,0 +1,53 @@
+# Modifier le site
+
+## Une modification habituelle
+
+1. Récupérer la dernière version avec `git pull` sur `main`, après avoir sauvegardé son travail local.
+2. Créer une branche : `git switch -c modification-accueil`.
+3. Lancer `npm ci`, puis `npm run dev`.
+4. Modifier les fichiers utiles et vérifier le résultat sur un écran étroit et un écran large.
+5. Exécuter `npm run check`, puis `npm run preview` pour relire le site construit.
+6. Enregistrer les changements dans Git, envoyer la branche et ouvrir une pull request sur GitHub.
+7. Après relecture et vérifications réussies, fusionner dans `main`. Si la publication FTP est activée, cette fusion publie le site.
+
+Une « pull request » est une proposition de modification consultable avant son intégration au site.
+
+## Changer les textes et les images
+
+Les textes de l’accueil se trouvent dans `src/data/site.ts`. Modifier uniquement les valeurs entre guillemets, en conservant la structure et les virgules. L’apostrophe d’un texte entouré d’apostrophes doit être échappée (`l\'équipe`) ou remplacée par une apostrophe typographique (`l’équipe`).
+
+Ajouter les images dans `public/images/`, avec des noms simples, par exemple `entrainement-nantes.webp`. Les utiliser dans les composants avec une adresse `/images/entrainement-nantes.webp`. Prévoir un texte alternatif utile (`alt`) et des dimensions `width` et `height`. Vérifier que le club dispose des autorisations nécessaires avant publication.
+
+## Ajouter une page
+
+Exemple : une page « Activités » accessible à `/activites/`.
+
+1. Créer `src/pages/Activities/Activities.tsx` et `Activities.scss` en prenant `Home` comme exemple.
+2. Ajouter une entrée dans `src/data/pages.ts` :
+
+```ts
+{ path: '/activites/', label: 'Activités', title: 'Nos activités — Club Athlétique Nantais', description: 'Les activités proposées par le Club Athlétique Nantais.' },
+```
+
+3. Importer le composant dans `src/App.tsx` et ajouter son cas dans le choix du contenu. Conserver le `PageShell` commun et la page introuvable pour les autres chemins.
+4. Placer les données éditoriales de cette page dans `src/data/`.
+5. Ajouter un test portant sur son contenu ou son comportement dans `tests/`.
+6. Exécuter `npm run check`. Vérifier que `dist/activites/index.html` existe et ouvrir directement `/activites/` avec le serveur de prévisualisation.
+
+L’entrée dans `pages.ts` alimente automatiquement la navigation, le pré-rendu, les métadonnées et le sitemap. Chaque page a un titre et une description uniques ; le build vérifie leur unicité.
+
+## Conventions simples
+
+- Un composant dans son dossier avec son fichier `.scss` associé.
+- Les couleurs et espacements partagés vont dans `src/styles/tokens.scss`.
+- Utiliser des classes BEM, par exemple `.home`, `.home__notice`, `.home--compact` ; limiter l’imbrication SCSS.
+- Garder des titres structurés, des liens compréhensibles et un focus clavier visible.
+- Éviter les animations inutiles et respecter `prefers-reduced-motion`.
+- Conserver le code et les tests lisibles ; commenter surtout les décisions qui ne sont pas évidentes.
+- Mettre à jour la documentation quand une commande, un dossier ou une procédure change.
+
+## Ce que les tests vérifient
+
+Vitest vérifie le rendu des pages déclarées, la navigation active, le lien d’accès au contenu, la page inconnue, la validation du domaine et l’échappement HTML. Il vérifie aussi le refus des configurations FTP incomplètes ou incompatibles, sans connexion au serveur. Le build vérifie les fichiers réellement générés et leurs ressources.
+
+Ces contrôles ne remplacent pas une relecture sur téléphone et ordinateur, ni un essai au clavier. Ils ne testent pas la connexion réelle à l’hébergeur FTP.
