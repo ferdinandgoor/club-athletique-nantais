@@ -1,9 +1,10 @@
 @use './tokens';
 
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; background: var(--color-background); color: var(--color-text); }
-h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); line-height: 1.08; overflow-wrap: break-word; }
-a { color: var(--color-accent); text-underline-offset: 0.2em; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.6; background: var(--color-background); color: var(--color-text); }
+h1 { max-width: 12ch; font-size: clamp(3.2rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.055em; overflow-wrap: break-word; }
+a { color: var(--color-text); text-underline-offset: 0.2em; }
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
 img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {

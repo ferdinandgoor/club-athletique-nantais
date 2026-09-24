@@ -11,7 +11,8 @@ describe('Pages publiques', () => {
     const html = renderToStaticMarkup(<App path={page.path} />);
     expect(html).toContain('<h1');
     expect(html).not.toContain('Page introuvable');
-    expect(html).toContain('aria-current="page"');
+    expect(html).toContain('aria-label="Navigation principale"');
+    expect(html).toContain('href="/#disciplines"');
     expect(html).toContain('href="#contenu"');
     expect(getSeo(page.path).canonical).toBe(site.url + page.path);
   });
@@ -23,6 +24,15 @@ describe('Pages publiques', () => {
   it('normalise les chemins', () => {
     expect(normalizePath('/')).toBe('/');
     expect(normalizePath('/activites')).toBe('/activites/');
+  });
+  it('présente les informations essentielles du club', () => {
+    const html = renderToStaticMarkup(<App path="/" />);
+    expect(html).toContain('Haltérophilie');
+    expect(html).toContain('68 rue de la Durantière');
+    expect(html).toContain('CANNANTES');
+    expect(html).toContain('cannantais@gmail.com');
+    expect(html).toContain('https://www.instagram.com/can_powerlifting/');
+    expect(html).toContain('aria-label="Instagram du Club Athlétique Nantais"');
   });
 });
 

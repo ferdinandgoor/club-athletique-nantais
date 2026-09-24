@@ -41,7 +41,7 @@ FTPS chiffre la connexion. FTP simple ne la chiffre pas. **SFTP est un autre pro
 
 ## Première publication, étape par étape
 
-1. Faire valider le contenu destiné au public : le socle actuel contient une page d’attente.
+1. Faire valider les contenus nouveaux ou modifiés destinés au public.
 2. Sauvegarder le site existant depuis l’hébergement, s’il y en a un.
 3. Confirmer que `FTP_SERVER_DIR` désigne le bon dossier, réservé à ce site. Les paramètres du projet `the-dislockers` n’ont pas été copiés.
 4. Configurer le domaine, les variables et les secrets ci-dessus.

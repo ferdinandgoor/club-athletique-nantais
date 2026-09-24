@@ -4,7 +4,7 @@ Le site internet du club, conçu pour pouvoir être repris facilement par un aut
 
 Le socle reprend l’architecture de `the-dislockers` : **React, TypeScript, Vite et SCSS**, avec des pages HTML générées lors du build et publiées sur un hébergement FTP. Aucun serveur Node.js ni base de données n’est nécessaire chez l’hébergeur.
 
-À ce stade, le site contient une **page d’accueil provisoire** et une page d’erreur 404. Les activités, horaires, contacts, visuels et mentions légales restent à renseigner avec les informations validées du club. La charte graphique est provisoire.
+Le site contient une page d’accueil responsive et une page d’erreur 404. La page présente les disciplines, la salle, les horaires, l’adresse, la séance découverte et la procédure d’inscription MonClub. Les informations validées, celles qui restent à confirmer et l’inventaire des médias sont centralisés dans [`docs/CLUB.md`](docs/CLUB.md).
 
 ## Démarrer en local
 

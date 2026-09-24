@@ -2,7 +2,7 @@ import { site } from './site';
 
 // Source unique des routes publiques, de la navigation et des métadonnées.
 export const pages = [
-  { path: '/', label: 'Accueil', title: `${site.name} — Accueil`, description: site.description },
+  { path: '/', label: 'Accueil', title: `${site.name} — Sports de force et lutte à Nantes`, description: site.description },
 ] as const;
 
 export function normalizePath(path: string): string {
