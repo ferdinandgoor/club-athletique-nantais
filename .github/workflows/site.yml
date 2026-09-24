@@ -20,7 +20,7 @@ jobs:
     # Version figée pour éviter une migration automatique de l'environnement CI.
     runs-on: ubuntu-24.04
     env:
-      VITE_SITE_URL: ${{ secrets.SITE_URL }}
+      VITE_SITE_URL: ${{ vars.SITE_URL }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -52,13 +52,13 @@ jobs:
       - name: Vérifier les paramètres de publication
         run: node scripts/validate-deploy.mjs
         env:
-          SITE_URL: ${{ secrets.SITE_URL }}
+          SITE_URL: ${{ vars.SITE_URL }}
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
-          FTP_PROTOCOL: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
-          FTP_PORT: ${{ secrets.FTP_PORT || '21' }}
+          FTP_SERVER_DIR: ${{ vars.FTP_SERVER_DIR }}
+          FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          FTP_PORT: ${{ vars.FTP_PORT || '21' }}
       - uses: actions/download-artifact@v8
         with:
           name: site-${{ github.sha }}
@@ -69,8 +69,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
-          port: ${{ secrets.FTP_PORT || '21' }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          port: ${{ vars.FTP_PORT || '21' }}
           local-dir: dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
           dangerous-clean-slate: false

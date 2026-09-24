@@ -12,21 +12,28 @@ Chaque exécution conserve le site construit pendant 30 jours sous le nom `site-
 
 Demander à l’hébergeur le nom du serveur FTP, le protocole, le port, l’identifiant, le mot de passe et le dossier correspondant au domaine. Le site doit être servi à la racine du domaine, avec HTTPS configuré par l’hébergeur.
 
-Dans le dépôt GitHub, ouvrir **Settings → Secrets and variables → Actions → Secrets**.
+Dans le dépôt GitHub, ouvrir **Settings → Secrets and variables → Actions**.
 
-### Secrets du dépôt
+### Variables du dépôt
 
-Créer les sept valeurs dans **Repository secrets**. Elles sont toutes lues avec le contexte `secrets` du workflow afin de conserver une configuration unique.
+Dans l’onglet **Variables**, créer les valeurs non sensibles suivantes :
 
-| Secret | Valeur attendue |
+| Variable | Valeur attendue |
 | --- | --- |
 | `SITE_URL` | Véritable URL HTTPS publique, sans chemin, par exemple `https://votre-domaine.fr` |
-| `FTP_SERVER` | Nom d’hôte, sans `ftp://` ni chemin |
-| `FTP_USERNAME` | Identifiant fourni par l’hébergeur |
-| `FTP_PASSWORD` | Mot de passe FTP |
 | `FTP_SERVER_DIR` | Dossier dédié au site, avec `/` final ; souvent `www/` ou `public_html/`, à confirmer auprès de l’hébergeur |
 | `FTP_PROTOCOL` | `ftps` par défaut ; `ftp` ou `ftps-legacy` seulement si requis par l’hébergeur |
 | `FTP_PORT` | `21` par défaut ; adapter à l’hébergement |
+
+### Secrets du dépôt
+
+Dans l’onglet **Secrets**, créer ces **Repository secrets** :
+
+| Secret | Valeur attendue |
+| --- | --- |
+| `FTP_SERVER` | Nom d’hôte, sans `ftp://` ni chemin |
+| `FTP_USERNAME` | Identifiant fourni par l’hébergeur |
+| `FTP_PASSWORD` | Mot de passe FTP |
 
 Le job utilise un environnement GitHub nommé `production`. Cet environnement peut rester sans secret : il sert à identifier la publication et permet d’ajouter plus tard des règles de protection. Selon les possibilités du compte GitHub, le limiter à la branche `main`. Aucune validation manuelle n’est imposée par le workflow.
 

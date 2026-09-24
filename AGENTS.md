@@ -105,19 +105,24 @@ La branche de production est `main`. Un push sur `main` lance le workflow `.gith
 
 Le workflow vérifie toujours le site. Il ne déploie sur FTP que depuis `main`, hors pull request, après la réussite du job de vérification. Si la configuration manque, le job doit échouer avec un message précis avant le transfert, pas être silencieusement ignoré.
 
-Tous les paramètres de publication se trouvent dans GitHub :
+Les paramètres publics de publication se trouvent dans GitHub :
 
-**Dépôt → Settings → Secrets and variables → Actions → Secrets → Repository secrets**
+**Dépôt → Settings → Secrets and variables → Actions → Variables**
 
 - `SITE_URL`
-- `FTP_SERVER`
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
 - `FTP_SERVER_DIR`
 - `FTP_PROTOCOL`
 - `FTP_PORT`
 
-L’environnement GitHub `production` est utilisé pour identifier et éventuellement protéger le job de publication, mais les valeurs sont actuellement des secrets du dépôt. Ne jamais lire, afficher, copier dans un journal, envoyer dans une conversation ou versionner la valeur d’un secret. Les agents documentent uniquement le nom, le rôle et l’emplacement du secret.
+Les paramètres sensibles se trouvent dans GitHub :
+
+**Dépôt → Settings → Secrets and variables → Actions → Secrets → Repository secrets**
+
+- `FTP_SERVER`
+- `FTP_USERNAME`
+- `FTP_PASSWORD`
+
+L’environnement GitHub `production` est utilisé pour identifier et éventuellement protéger le job de publication. Ne jamais lire, afficher, copier dans un journal, envoyer dans une conversation ou versionner la valeur d’un secret. Les agents documentent uniquement le nom, le rôle et l’emplacement du secret.
 
 Les fichiers `.env` et `.env.*` sont ignorés, sauf `.env.example`. `VITE_SITE_URL` est une valeur publique utilisée au build. Toute variable préfixée `VITE_` peut se retrouver dans le navigateur : n’y mettre aucun secret.
 
