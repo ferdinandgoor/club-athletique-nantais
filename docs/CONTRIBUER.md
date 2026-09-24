@@ -67,3 +67,11 @@ Modifier les instructions dans `src/data/registration.ts`, les liens dans `src/d
 ### Favicon
 
 Le favicon reprend la tête d’éléphant du logo, sans texte, sur fond bleu marine. L’adaptation générée à partir du logo officiel est conservée dans `public/images/favicon-source.png`. Les exports sont `public/favicon.ico` (16, 32 et 48 px), `public/favicon-32.png` et `public/apple-touch-icon.png` (180 px). Leurs liens dans `index.html` sont conservés par le pré-rendu sur toutes les pages, y compris la page 404. Pour les remplacer, exporter les mêmes tailles depuis la source choisie, conserver les noms, puis lancer `npm run check`. Vérifier la lisibilité à 16 et 32 px et l’icône mobile ; le navigateur peut garder l’ancien favicon en cache.
+
+### Lecture vidéo sur téléphone
+
+Le héros demande une lecture silencieuse et intégrée (`muted`, `playsInline`) après avoir vérifié la préférence de réduction des animations. Cette préférence désactive le lancement automatique mais autorise une lecture volontaire. Le bouton « Lire la vidéo » reste disponible si le navigateur refuse l’autoplay ; il devient « Pause vidéo » pendant la lecture. Les refus automatiques ne doivent jamais supprimer ce bouton. Un échec après clic affiche un message. Vérifier la progression de la vidéo en vue mobile, la pause/reprise, puis le lancement manuel avec `prefers-reduced-motion` activé. Le fichier MP4 est H.264/yuv420p sans audio, avec ses métadonnées en tête pour le chargement progressif.
+
+Les restrictions du téléphone peuvent encore empêcher le lancement automatique : voir les [règles vidéo de WebKit](https://webkit.org/blog/6784/new-video-policies-for-ios/). Un test dans un navigateur simulé ne remplace pas un essai sur iPhone physique et sur l’hébergement réel.
+
+Le fond vidéo du héros reçoit un flou de `4px` dans `.home__hero-video` (`Home.scss`) pour adoucir sa définition actuelle. Un agrandissement de `1.03` évite les bordures du flou. Le logo, le texte et les commandes restent nets ; aucun voile sombre supplémentaire n’est ajouté. Retirer `filter` et `transform` de cette règle pour revenir au rendu original lors du remplacement de la vidéo.

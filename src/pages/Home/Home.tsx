@@ -7,16 +7,24 @@ export function Home() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const heroVideo = useRef<HTMLVideoElement>(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const photo = site.gallery[currentPhoto];
 
   useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const video = heroVideo.current;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
     const updatePlayback = () => {
       if (reduceMotion.matches) {
-        heroVideo.current?.pause();
+        video.autoplay = false;
+        video.pause();
         setIsAutoPlaying(false);
       } else {
-        void heroVideo.current?.play().catch(() => undefined);
+        video.autoplay = true;
+        void video.play().catch(() => undefined);
       }
     };
     updatePlayback();
@@ -32,13 +40,25 @@ export function Home() {
     return () => window.clearInterval(interval);
   }, [isAutoPlaying]);
 
+  const toggleVideo = () => {
+    const video = heroVideo.current;
+    if (!video) return;
+    setVideoError(false);
+    if (!video.paused) {
+      video.pause();
+    } else {
+      video.muted = true;
+      void video.play().catch(() => setVideoError(true));
+    }
+  };
+
   const showPreviousPhoto = () => setCurrentPhoto((index) => (index - 1 + site.gallery.length) % site.gallery.length);
   const showNextPhoto = () => setCurrentPhoto((index) => (index + 1) % site.gallery.length);
 
   return (
     <div className="home">
       <section className="home__hero" id="accueil" aria-labelledby="home-title">
-        <video ref={heroVideo} className="home__hero-video" autoPlay muted loop playsInline preload="metadata" poster="/images/salle-can-poster.jpg" aria-hidden="true">
+        <video ref={heroVideo} className={`home__hero-video${isVideoPlaying ? " home__hero-video--playing" : ""}`} onPlaying={() => setIsVideoPlaying(true)} onPause={() => setIsVideoPlaying(false)} muted loop playsInline preload="metadata" poster="/images/salle-can-poster.jpg" aria-hidden="true">
           <source src="/images/visite-salle-can.mp4" type="video/mp4" />
         </video>
         <div className="home__hero-overlay" />
@@ -48,6 +68,12 @@ export function Home() {
           <img className="home__hero-logo" src="/images/logo-can-officiel.png" width="1200" height="1200" alt="" />
           <p className="home__introduction">{site.home.introduction}</p>
           <a className="home__button home__button--light" href="#inscription">Rejoindre le club</a>
+        </div>
+        <div className="home__video-controls">
+          <button type="button" onClick={toggleVideo} aria-label={isVideoPlaying ? 'Mettre la vidéo en pause' : 'Lire la vidéo de la salle'}>
+            <span aria-hidden="true">{isVideoPlaying ? 'Ⅱ' : '▶'}</span> {isVideoPlaying ? 'Pause vidéo' : 'Lire la vidéo'}
+          </button>
+          {videoError && <span role="status">Lecture indisponible. Réessaie dans ton navigateur.</span>}
         </div>
         <a className="home__scroll-hint" href="#localisation">Découvrir le club <span aria-hidden="true">↓</span></a>
       </section>

@@ -18,8 +18,12 @@
 
   &__hero-video,
   &__hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
-  &__hero-video { object-fit: cover; object-position: center 58%; }
+  &__hero-video { object-fit: cover; object-position: center 58%; filter: blur(4px); transform: scale(1.03); }
   &__hero-overlay { background: linear-gradient(90deg, rgb(5 8 20 / 48%) 0%, rgb(5 8 20 / 25%) 52%, rgb(5 8 20 / 10%) 100%), linear-gradient(0deg, rgb(5 8 20 / 38%), transparent 55%); }
+  &__video-controls { position: absolute; z-index: 2; left: max(1.5rem, calc((100vw - 76rem) / 2)); bottom: 1.5rem; max-width: calc(100% - 3rem); }
+  &__video-controls button { min-height: 44px; padding: .65rem 1rem; border: 1px solid rgb(255 255 255 / 65%); border-radius: .4rem; background: rgb(5 8 20 / 65%); color: white; font: inherit; font-size: .8rem; cursor: pointer; }
+  &__video-controls button:hover { background: var(--color-primary); }
+  &__video-controls span[role="status"] { display: block; padding: .4rem; background: var(--color-navy); font-size: .8rem; }
   &__hero-copy { position: relative; z-index: 1; width: 100%; text-align: center; }
   &__visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
   &__hero-logo { display: block; width: clamp(17rem, 36vw, 31rem); height: auto; margin: -.5rem auto 1.5rem; filter: drop-shadow(0 1.5rem 2.5rem rgb(0 0 0 / 25%)); }
@@ -112,6 +116,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home__hero-video { display: none; }
+  .home__hero-video:not(.home__hero-video--playing) { visibility: hidden; }
   .home__button { transition: none; }
 }
