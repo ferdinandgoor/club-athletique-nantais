@@ -15,6 +15,7 @@ const navigation = [
 
 export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: string }>) {
   const isHome = path === '/';
+  const isLinks = path === '/links/';
   const mainRef = useRef<HTMLElement>(null);
   useScrollReveal(mainRef);
   const [isCompact, setIsCompact] = useState(false);
@@ -41,7 +42,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
   return (
     <div className="page-shell">
       <a className="page-shell__skip" href="#contenu">Aller au contenu</a>
-      <header className={`page-shell__header${isCompact || !isHome ? ' page-shell__header--compact' : ''}`}>
+      {!isLinks && <header className={`page-shell__header${isCompact || !isHome ? ' page-shell__header--compact' : ''}`}>
         <Container>
           <a className="page-shell__brand" href={isHome ? "#accueil" : "/"} aria-label={`${site.name} — Accueil`} aria-current={isHome && activeSection === 'accueil' ? 'page' : undefined}>
             <img src="/images/logo-can-horizontal-white.png" width="1400" height="521" alt="" />
@@ -66,16 +67,17 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
             </a>
           </nav>
         </Container>
-      </header>
+      </header>}
       <main ref={mainRef} id="contenu" tabIndex={-1}><Container>{children}</Container></main>
-      <footer className="page-shell__footer">
+      {!isLinks && <footer className="page-shell__footer">
         <Container>
           <strong>{site.name}</strong>
           <address>{site.contact.address}</address>
           <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
           <a href={site.contact.instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+          <a href="/links/" aria-current={path === '/links/' ? 'page' : undefined}>Links</a>
         </Container>
-      </footer>
+      </footer>}
     </div>
   );
 }

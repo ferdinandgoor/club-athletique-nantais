@@ -40,7 +40,7 @@ Exemple : une page « Activités » accessible à `/activites/`.
 5. Ajouter un test portant sur son contenu ou son comportement dans `tests/`.
 6. Exécuter `npm run check`. Vérifier que `dist/activites/index.html` existe et ouvrir directement `/activites/` avec le serveur de prévisualisation.
 
-L’entrée dans `pages.ts` alimente automatiquement la navigation, le pré-rendu, les métadonnées et le sitemap. Chaque page a un titre et une description uniques ; le build vérifie leur unicité.
+L’entrée dans `pages.ts` alimente automatiquement le pré-rendu, les métadonnées et le sitemap. Les liens de navigation sont définis séparément dans `PageShell`. Chaque page a un titre et une description uniques ; le build vérifie leur unicité.
 
 ## Conventions simples
 
@@ -89,3 +89,9 @@ Le héros d’accueil utilise une hauteur fixe de `100dvh` (avec repli `100vh`) 
 Les blocs marqués `data-reveal` apparaissent une seule fois à l’entrée dans le viewport, avec un fondu et un déplacement de 18 px pendant 650 ms. Le hook `src/hooks/useScrollReveal.ts`, appelé par `PageShell`, utilise IntersectionObserver et l’API native d’animation : aucune dépendance ni donnée transmise. Éviter d’imbriquer deux blocs animés. Le contenu reste visible sans JavaScript ; une prise de focus clavier arrête les apparitions pour faciliter la navigation.
 
 Les SCSS de Home, RegistrationGuide et PageShell gèrent l’arrivée du logo, les survols des cartes et des écrans du tutoriel, et l’ouverture du menu mobile. Les effets sont désactivés avec `prefers-reduced-motion`, y compris lors d’un changement de préférence en cours de visite. Pour supprimer les apparitions, retirer l’appel à `useScrollReveal` dans PageShell ; les attributs sont alors sans effet. Vérifier le défilement, le clavier et le mode de réduction des animations sur mobile et ordinateur.
+
+### Page de liens
+
+La page `/links/` regroupe les liens publics sous forme de grands boutons. Elle est accessible par « Links » dans le pied de page des autres pages, sans entrée supplémentaire dans le menu principal. La page Links elle-même n’affiche ni en-tête ni pied de page ; cette exception est gérée dans `PageShell`. Le bouton « Le site du club » et le lien discret « Retour à l’accueil » sous les boutons permettent de revenir à l’accueil. Le libellé de ce dernier se modifie dans `backLabel` de `src/data/links.ts`. Modifier les libellés, descriptions et destinations dans `src/data/links.ts` ; le lien Instagram reprend l’adresse de `src/data/site.ts` et le bouton du site revient à `/` sur le domaine courant.
+
+Pour ajouter un lien, faire confirmer sa destination publique, la noter dans `docs/CLUB.md`, puis ajouter une entrée à `items`. Ne pas afficher de bouton en attente. La présentation se trouve dans `src/pages/Links/`. Vérifier chaque destination, le focus clavier et les vues mobile et ordinateur, puis lancer `npm run check` : ce contrôle vérifie aussi `dist/links/index.html`, son URL canonique et le sitemap. Pour retirer un lien, supprimer son entrée de la liste.

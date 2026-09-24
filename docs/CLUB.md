@@ -130,3 +130,7 @@ Le propriétaire a transmis des échanges internes proposant de présenter Muscu
 L’offre et le planning des cours collectifs sont en cours de révision : ne pas annoncer de créneaux ni de suppression définitive sans confirmation. La séparation des groupes de lutte baby et enfant reste à préciser. Le calendrier d’événements est reporté jusqu’à validation des dates et désignation d’une personne chargée de le maintenir.
 
 Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires spécifiques, conditions d’accès, encadrement et modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.
+
+### Page de liens — demande du 24 septembre 2026
+
+Le propriétaire demande une page de type Linktree à `/links/`, avec le site du club et le compte Instagram déjà validé `@can_powerlifting`. Son accès est ajouté uniquement dans le pied de page. Les autres liens sont à fournir par le club ; aucun lien provisoire n’est publié. La liste publique est conservée dans `src/data/links.ts`.

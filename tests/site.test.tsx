@@ -11,8 +11,14 @@ describe('Pages publiques', () => {
     const html = renderToStaticMarkup(<App path={page.path} />);
     expect(html).toContain('<h1');
     expect(html).not.toContain('Page introuvable');
-    expect(html).toContain('aria-label="Navigation principale"');
-    expect(html).toContain(page.path === '/' ? 'href="#inscription"' : 'href="/#inscription"');
+    if (page.path === '/links/') {
+      expect(html).not.toContain('<header');
+      expect(html).not.toContain('<footer');
+    } else {
+      expect(html).toContain('aria-label="Navigation principale"');
+      expect(html).toContain(page.path === '/' ? 'href="#inscription"' : 'href="/#inscription"');
+      expect(html).toContain('<footer');
+    }
     expect(html).toContain('href="#contenu"');
     expect(getSeo(page.path).canonical).toBe(site.url + page.path);
   });
@@ -33,6 +39,17 @@ describe('Pages publiques', () => {
     expect(wrestling).not.toContain(site.hours[0].times);
     expect(powerlifting).toContain(site.registration.trialPrice);
     expect(powerlifting).toContain(site.hours[0].times);
+  });
+  it('regroupe les liens validés et réserve son accès au pied de page', () => {
+    const html = renderToStaticMarkup(<App path="/links/" />);
+    const content = html.split('<main')[1].split('</main>')[0];
+    expect(content).toContain('href="/"');
+    expect(content).toContain(`href="${site.contact.instagramUrl}"`);
+    expect(content.match(/<a /g)).toHaveLength(3);
+    expect(content).toContain('href="/">Retour à l’accueil</a>');
+    const home = renderToStaticMarkup(<App path="/" />);
+    expect(home.split('<footer')[1]).toContain('href="/links/"');
+    expect(home.split('</header>')[0]).not.toContain('href="/links/"');
   });
   it('normalise les chemins', () => {
     expect(normalizePath('/')).toBe('/');
