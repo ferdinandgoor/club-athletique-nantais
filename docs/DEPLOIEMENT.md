@@ -12,30 +12,23 @@ Chaque exécution conserve le site construit pendant 30 jours sous le nom `site-
 
 Demander à l’hébergeur le nom du serveur FTP, le protocole, le port, l’identifiant, le mot de passe et le dossier correspondant au domaine. Le site doit être servi à la racine du domaine, avec HTTPS configuré par l’hébergeur.
 
-Dans le dépôt GitHub, ouvrir **Settings → Secrets and variables → Actions**.
+Dans le dépôt GitHub, ouvrir **Settings → Secrets and variables → Actions → Secrets**.
 
-### Variables du dépôt (onglet Variables)
+### Secrets du dépôt
 
-| Nom | Valeur attendue |
+Créer les sept valeurs dans **Repository secrets**. Elles sont toutes lues avec le contexte `secrets` du workflow afin de conserver une configuration unique.
+
+| Secret | Valeur attendue |
 | --- | --- |
 | `SITE_URL` | Véritable URL HTTPS publique, sans chemin, par exemple `https://votre-domaine.fr` |
+| `FTP_SERVER` | Nom d’hôte, sans `ftp://` ni chemin |
+| `FTP_USERNAME` | Identifiant fourni par l’hébergeur |
+| `FTP_PASSWORD` | Mot de passe FTP |
 | `FTP_SERVER_DIR` | Dossier dédié au site, avec `/` final ; souvent `www/` ou `public_html/`, à confirmer auprès de l’hébergeur |
 | `FTP_PROTOCOL` | `ftps` par défaut ; `ftp` ou `ftps-legacy` seulement si requis par l’hébergeur |
 | `FTP_PORT` | `21` par défaut ; adapter à l’hébergement |
 
-Créer ces variables **au niveau du dépôt** : `SITE_URL` est notamment utilisée par le job de build avant l’entrée dans l’environnement de production. Ne pas créer de variables de même nom avec des valeurs différentes dans l’environnement.
-
-### Environnement et secrets
-
-Dans **Settings → Environments**, créer un environnement nommé `production`. Y ajouter les secrets suivants (les secrets du dépôt sont également acceptés) :
-
-| Secret | Contenu |
-| --- | --- |
-| `FTP_SERVER` | Nom d’hôte, sans `ftp://` ni chemin |
-| `FTP_USERNAME` | Identifiant fourni par l’hébergeur |
-| `FTP_PASSWORD` | Mot de passe FTP |
-
-Selon les possibilités du compte GitHub, limiter l’environnement à la branche `main`. Aucune validation manuelle n’est imposée par le workflow ; l’équipe peut en configurer une dans l’environnement si elle le souhaite.
+Le job utilise un environnement GitHub nommé `production`. Cet environnement peut rester sans secret : il sert à identifier la publication et permet d’ajouter plus tard des règles de protection. Selon les possibilités du compte GitHub, le limiter à la branche `main`. Aucune validation manuelle n’est imposée par le workflow.
 
 FTPS chiffre la connexion. FTP simple ne la chiffre pas. **SFTP est un autre protocole, non pris en charge par cette action** : si l’hébergeur propose uniquement SFTP, il faudra adapter le workflow.
 
