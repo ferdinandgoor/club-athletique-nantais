@@ -20,6 +20,7 @@ Au moment de la passation, compléter ces informations dans l’outil interne du
 - Conserver une sauvegarde du site et des éventuels fichiers hébergés hors dépôt.
 - Examiner les mises à jour et alertes de dépendances ; les appliquer sur une branche et exécuter `npm run check` avant fusion.
 - Vérifier les versions des actions GitHub lors de la maintenance.
+- Tester volontairement une nouvelle version d’Ubuntu avant de modifier la version figée dans `.github/workflows/site.yml`.
 
 `package.json` fixe les versions directes ; `package-lock.json` fixe l’ensemble des dépendances. Utiliser `npm ci` au quotidien. Pour une mise à jour volontaire, utiliser `npm install --save-exact paquet@version` (ajouter `--save-dev` pour un outil de développement), puis enregistrer les deux fichiers. Éviter `npm audit fix --force` sans examen des changements.
 

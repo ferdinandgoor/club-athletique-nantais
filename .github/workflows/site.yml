@@ -17,7 +17,8 @@ concurrency:
 jobs:
   check:
     name: Lint, tests et build
-    runs-on: ubuntu-latest
+    # Version figée pour éviter une migration automatique de l'environnement CI.
+    runs-on: ubuntu-24.04
     env:
       VITE_SITE_URL: ${{ vars.SITE_URL }}
     steps:
@@ -41,7 +42,7 @@ jobs:
     name: Publication FTP
     needs: check
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.FTP_DEPLOY_ENABLED == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment: production
     steps:
       - uses: actions/checkout@v7
