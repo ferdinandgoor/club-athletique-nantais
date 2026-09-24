@@ -19,6 +19,8 @@ src/
     Container/           Largeur et marges du contenu
     PageShell/           En-tête, navigation, contenu principal et pied de page
   pages/Home/            Page d’accueil et son SCSS
+  pages/Discipline/      Modèle commun des pages musculation, force athlétique et lutte
+  data/disciplines.ts    Résumés, chemins et contenus des disciplines
   styles/tokens.scss     Couleurs et espacements partagés
   styles/global.scss     Règles communes et accessibilité
   utils/site-url.ts      Validation de l’URL du site
@@ -74,3 +76,7 @@ Le chargement de la carte peut transmettre à Google l’adresse IP du visiteur,
 Le header et le carrousel utilisent uniquement React et les API du navigateur. Aucun script tiers, aucune bibliothèque de carrousel et aucun outil de mesure d’audience ne sont chargés.
 
 Le tutoriel d’inscription est isolé dans `RegistrationGuide` et ses instructions dans `src/data/registration.ts`. Les écrans illustratifs sont rendus en HTML/SCSS et le logo MonClub est servi localement : aucun appel aux stores avant le clic sur leurs liens. La copie du code utilise le presse-papiers après action explicite, sans transmettre de données.
+
+## Orientation par discipline
+
+L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/` et `/lutte/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la discipline active.

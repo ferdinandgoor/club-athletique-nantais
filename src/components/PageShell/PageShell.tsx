@@ -1,16 +1,19 @@
 import { useEffect, useState, type PropsWithChildren } from 'react';
 import { Container } from '../Container/Container';
+import { disciplines } from '../../data/disciplines';
 import { site } from '../../data/site';
 import './PageShell.scss';
 
 const navigation = [
   { id: 'localisation', label: 'Le club' },
+  { id: 'activites', label: 'Activités' },
   { id: 'inscription', label: 'Inscription' },
   { id: 'infos', label: 'Infos pratiques' },
   { id: 'galerie', label: 'Galerie' },
 ];
 
-export function PageShell({ children }: PropsWithChildren) {
+export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: string }>) {
+  const isHome = path === '/';
   const [isCompact, setIsCompact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('accueil');
@@ -35,9 +38,9 @@ export function PageShell({ children }: PropsWithChildren) {
   return (
     <div className="page-shell">
       <a className="page-shell__skip" href="#contenu">Aller au contenu</a>
-      <header className={`page-shell__header${isCompact ? ' page-shell__header--compact' : ''}`}>
+      <header className={`page-shell__header${isCompact || !isHome ? ' page-shell__header--compact' : ''}`}>
         <Container>
-          <a className="page-shell__brand" href="#accueil" aria-label={`${site.name} — Accueil`} aria-current={activeSection === 'accueil' ? 'page' : undefined}>
+          <a className="page-shell__brand" href={isHome ? "#accueil" : "/"} aria-label={`${site.name} — Accueil`} aria-current={isHome && activeSection === 'accueil' ? 'page' : undefined}>
             <img src="/images/logo-can-horizontal-white.png" width="1400" height="521" alt="" />
           </a>
           <button className="page-shell__menu-button" type="button" aria-expanded={isMenuOpen} aria-controls="navigation-principale" onClick={() => setIsMenuOpen((open) => !open)}>
@@ -45,8 +48,9 @@ export function PageShell({ children }: PropsWithChildren) {
             <span>Menu</span>
           </button>
           <nav id="navigation-principale" aria-label="Navigation principale" data-open={isMenuOpen}>
-            {navigation.map((item) => (
-              <a key={item.id} href={`#${item.id}`} aria-current={activeSection === item.id ? 'location' : undefined} onClick={() => setIsMenuOpen(false)}>
+            {!isHome && disciplines.map((item) => <a key={item.path} href={item.path} aria-current={path === item.path ? 'page' : undefined}>{item.title}</a>)}
+            {(isHome ? navigation : navigation.filter((item) => item.id === 'activites' || item.id === 'inscription')).map((item) => (
+              <a key={item.id} href={`${isHome ? "" : "/"}#${item.id}`} aria-current={isHome && activeSection === item.id ? 'location' : undefined} onClick={() => setIsMenuOpen(false)}>
                 {item.label}
               </a>
             ))}

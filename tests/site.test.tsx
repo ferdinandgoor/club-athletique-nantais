@@ -12,7 +12,7 @@ describe('Pages publiques', () => {
     expect(html).toContain('<h1');
     expect(html).not.toContain('Page introuvable');
     expect(html).toContain('aria-label="Navigation principale"');
-    expect(html).toContain('href="#inscription"');
+    expect(html).toContain(page.path === '/' ? 'href="#inscription"' : 'href="/#inscription"');
     expect(html).toContain('href="#contenu"');
     expect(getSeo(page.path).canonical).toBe(site.url + page.path);
   });
@@ -21,13 +21,26 @@ describe('Pages publiques', () => {
     expect(renderHead('/inconnue/')).toContain('content="noindex"');
     expect(getSeo('/inconnue/').canonical).toBeUndefined();
   });
+  it('oriente vers les disciplines sans attribuer les modalités de force à la lutte', () => {
+    const home = renderToStaticMarkup(<App path="/" />);
+    const wrestling = renderToStaticMarkup(<App path="/lutte/" />);
+    const powerlifting = renderToStaticMarkup(<App path="/force-athletique/" />);
+    expect(home).toContain('href="/lutte/"');
+    expect(home).toContain('href="/force-athletique/"');
+    expect(wrestling).toContain('Lutte baby');
+    expect(wrestling).toContain('href="/#inscription"');
+    expect(wrestling).not.toContain(site.registration.trialPrice);
+    expect(wrestling).not.toContain(site.hours[0].times);
+    expect(powerlifting).toContain(site.registration.trialPrice);
+    expect(powerlifting).toContain(site.hours[0].times);
+  });
   it('normalise les chemins', () => {
     expect(normalizePath('/')).toBe('/');
     expect(normalizePath('/activites')).toBe('/activites/');
   });
   it('présente les informations essentielles du club', () => {
     const html = renderToStaticMarkup(<App path="/" />);
-    expect(html).toContain('club de force athlétique à Nantes');
+    expect(html).toContain('musculation, force athlétique et lutte à Nantes');
     expect(html).toContain('/images/logo-can-officiel.png');
     expect(html).toContain('68 rue de la Durantière');
     expect(html).toContain('À l’ouest de Nantes');

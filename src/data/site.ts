@@ -4,7 +4,7 @@ import { resolveSiteUrl } from '../utils/site-url';
 export const site = {
   name: 'Club Athlétique Nantais',
   url: resolveSiteUrl(import.meta.env.VITE_SITE_URL),
-  description: 'Force athlétique et powerlifting à Nantes. Découvrez le Club Athlétique Nantais, sa salle et ses informations pratiques.',
+  description: 'Musculation, force athlétique et lutte à Nantes : découvre les activités du Club Athlétique Nantais, les informations pratiques et les inscriptions.',
   contact: {
     email: 'cannantais@gmail.com',
     address: '68 rue de la Durantière, 44100 Nantes',
@@ -42,7 +42,7 @@ export const site = {
     { src: '/images/competition-force-athletique-07.jpg', width: 1170, height: 1463, alt: 'Un athlète du CAN réalise un squat encouragé par les assistants de plateau' },
   ],
   home: {
-    eyebrow: 'Powerlifting à Nantes',
-    introduction: 'Découvre la force athlétique dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débutants que les compétiteurs.',
+    eyebrow: 'Musculation · Force athlétique · Lutte',
+    introduction: 'Découvre les activités du Club Athlétique Nantais, un collectif qui accueille aussi bien les débutants que les compétiteurs.',
   },
 };

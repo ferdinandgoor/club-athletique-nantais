@@ -87,8 +87,8 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 
 ## État éditorial du site
 
-- La page d’accueil est orientée vers la force athlétique et présente la salle, l’adresse, l’inscription MonClub, les horaires, la séance découverte et une galerie.
-- Les textes publics se trouvent dans `src/data/site.ts`.
+- La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte. Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
+- Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.
 - Les mentions légales complètes, le téléphone et les informations de gouvernance restent à fournir.
 - L’affirmation selon laquelle le CAN serait le plus vieux club d’haltérophilie au monde et la date de 1896 restent à confirmer avec une source fiable avant publication.
@@ -114,3 +114,19 @@ L’icône officielle MonClub est conservée localement dans `public/images/monc
 Le favicon ajouté le 24 septembre 2026 est une adaptation graphique générée à partir du logo officiel fourni : tête d’éléphant blanche et lavande sur fond bleu marine, sans texte. La source est `public/images/favicon-source.png` ; le logo officiel reste inchangé.
 
 Le sous-titre du héros, reformulé selon le retour du propriétaire le 24 septembre 2026, présente un collectif « qui accueille aussi bien les débutants que les compétiteurs ». Le texte publié est centralisé dans `src/data/site.ts`.
+
+### Accueil multi-activités — retour du 24 septembre 2026
+
+Le propriétaire relaie la demande de Sacha Turpin, présenté comme président du club : intégrer la lutte et faire de l’accueil un point d’orientation vers les disciplines. Ce retour remplace l’orientation exclusivement powerlifting de l’accueil. Le nom du président est documenté ici, sans le déduire comme responsable légal de publication.
+
+Les captures fournies confirment la lutte libre et gréco-romaine, ainsi que les catégories MonClub « Lutte », « Lutte baby » et « Lutte enfant ». Les horaires actuels, tranches d’âge exactes, lieux, encadrants, tarifs, conditions d’essai, contact spécifique et photos de lutte restent à fournir. La page lutte invite à contacter l’adresse publique du club ; elle ne reprend ni les horaires de la salle de force ni son tarif d’essai. La carte de l’accueil reste celle de l’adresse publique confirmée et ne prétend pas localiser toutes les séances.
+
+La musculation dispose désormais de sa propre entrée. Le Pilates et les cours collectifs ne sont plus mis en avant tant que la nouvelle offre n’est pas confirmée. L’haltérophilie reste en retrait conformément à la demande antérieure ; aucune page spécifique n’est créée à ce stade. Le guide commun invite désormais à choisir son activité au lieu d’imposer la force athlétique. Les photos disponibles restent des photos de force athlétique, clairement identifiées comme telles.
+
+### Orientation après les échanges du groupe — 24 septembre 2026
+
+Le propriétaire a transmis des échanges internes proposant de présenter Musculation / Force athlétique / Lutte, avec la musculation en premier. Le site suit cet ordre et ajoute une page musculation. Les débats internes, chiffres d’inscription et considérations financières ne sont pas repris dans le dépôt.
+
+L’offre et le planning des cours collectifs sont en cours de révision : ne pas annoncer de créneaux ni de suppression définitive sans confirmation. La séparation des groupes de lutte baby et enfant reste à préciser. Le calendrier d’événements est reporté jusqu’à validation des dates et désignation d’une personne chargée de le maintenir.
+
+Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires spécifiques, conditions d’accès, encadrement et modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.

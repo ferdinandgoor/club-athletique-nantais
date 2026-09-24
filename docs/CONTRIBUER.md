@@ -75,3 +75,11 @@ Le héros demande une lecture silencieuse et intégrée (`muted`, `playsInline`)
 Les restrictions du téléphone peuvent encore empêcher le lancement automatique : voir les [règles vidéo de WebKit](https://webkit.org/blog/6784/new-video-policies-for-ios/). Un test dans un navigateur simulé ne remplace pas un essai sur iPhone physique et sur l’hébergement réel.
 
 Le fond vidéo du héros reçoit un flou de `4px` dans `.home__hero-video` (`Home.scss`) pour adoucir sa définition actuelle. Un agrandissement de `1.03` évite les bordures du flou. Le logo, le texte et les commandes restent nets ; aucun voile sombre supplémentaire n’est ajouté. Retirer `filter` et `transform` de cette règle pour revenir au rendu original lors du remplacement de la vidéo.
+
+### Accueil et pages de disciplines
+
+Modifier les résumés et les détails de la musculation, de la force athlétique et de la lutte dans `src/data/disciplines.ts`. L’accueil affiche trois grandes entrées dans cet ordre : Musculation, Force athlétique, Lutte ; le modèle `src/pages/Discipline/Discipline.tsx` présente les informations de chaque activité. Les horaires et l’essai à 10 € concernent uniquement la force athlétique. Pour la musculation et la lutte, remplacer le bloc de prise de contact par des informations pratiques seulement après leur confirmation dans `docs/CLUB.md`.
+
+Le tutoriel `src/data/registration.ts` est commun aux disciplines. Ne pas le recentrer exclusivement sur la force athlétique. Vérifier le parcours accueil → discipline → guide d’inscription, les liens du menu mobile, les titres uniques, le pré-rendu et le sitemap avec `npm run check`. Pour ajouter une discipline, compléter ses contenus validés et adapter les informations pratiques du modèle avant de déclarer sa route.
+
+Le héros d’accueil utilise une hauteur fixe de `100dvh` (avec repli `100vh`) pour suivre exactement la hauteur visible, y compris quand les barres du navigateur mobile changent de taille. Le logo se redimensionne dans l’espace disponible ; sur une fenêtre exceptionnellement basse ou avec un texte agrandi, le contenu central reste défilable pour conserver l’accès aux liens. Vérifier aussi une orientation paysage et les écrans mobiles courts.

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { disciplines } from '../../data/disciplines';
 import { site } from '../../data/site';
 import './Home.scss';
 import { RegistrationGuide } from '../../components/RegistrationGuide/RegistrationGuide';
@@ -64,10 +65,10 @@ export function Home() {
         <div className="home__hero-overlay" />
         <div className="home__hero-copy">
           <p className="home__eyebrow">{site.home.eyebrow}</p>
-          <h1 className="home__visually-hidden" id="home-title">{site.name}, club de force athlétique à Nantes</h1>
+          <h1 className="home__visually-hidden" id="home-title">{site.name}, musculation, force athlétique et lutte à Nantes</h1>
           <img className="home__hero-logo" src="/images/logo-can-officiel.png" width="1200" height="1200" alt="" />
           <p className="home__introduction">{site.home.introduction}</p>
-          <a className="home__button home__button--light" href="#inscription">Rejoindre le club</a>
+          <a className="home__button home__button--light" href="#activites">Découvrir les activités</a>
         </div>
         <div className="home__video-controls">
           <button type="button" onClick={toggleVideo} aria-label={isVideoPlaying ? 'Mettre la vidéo en pause' : 'Lire la vidéo de la salle'}>
@@ -91,41 +92,42 @@ export function Home() {
           <p className="home__eyebrow">La salle</p>
           <h2 id="location-title">À l’ouest de Nantes</h2>
           <address>{site.contact.address}</address>
-          <p>À proximité de Saint-Herblain, un espace consacré à la force avec le matériel nécessaire pour apprendre, progresser et préparer ses objectifs.</p>
+          <p>À proximité de Saint-Herblain, retrouve le Club Athlétique Nantais et renseigne-toi auprès du club sur le lieu de pratique de ton activité.</p>
           <a className="home__text-link" href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section className="home__section home__activities" id="activites" aria-labelledby="activities-title">
+        <header className="home__section-heading">
+          <p className="home__eyebrow">Un club, plusieurs pratiques</p>
+          <h2 id="activities-title">Trouve ta discipline</h2>
+        </header>
+        <div className="home__activity-grid">
+          {disciplines.map((discipline, index) => (
+            <a className={`home__activity-card home__activity-card--${discipline.id}`} href={discipline.path} key={discipline.id}>
+              <span className="home__activity-number">0{index + 1}</span>
+              <span className="home__eyebrow">{discipline.subtitle}</span>
+              <h3>{discipline.title}</h3>
+              <p>{discipline.summary}</p>
+              <span className="home__activity-link">Découvrir la {discipline.title.toLowerCase()} <span aria-hidden="true">↗</span></span>
+            </a>
+          ))}
         </div>
       </section>
 
       <RegistrationGuide />
 
-      <section className="home__practical home__full-width" id="infos" aria-labelledby="infos-title">
-        <div className="home__practical-inner">
-          <header className="home__section-heading">
-            <p className="home__eyebrow">Avant de venir</p>
-            <h2 id="infos-title">Informations pratiques</h2>
-          </header>
-          <div className="home__info-grid">
-            <article className="home__info-card">
-              <span className="home__card-number">01</span>
-              <h3>Horaires du club</h3>
-              <dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl>
-              <p className="home__fine-print">Toute l’année, hors vacances scolaires.</p>
-            </article>
-            <article className="home__info-card home__info-card--accent">
-              <span className="home__card-number">02</span>
-              <h3>Teste la salle</h3>
-              <p className="home__price">{site.registration.trialPrice}<small> la séance</small></p>
-              <p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p>
-              <a className="home__button home__button--light" href={`mailto:${site.contact.email}`}>Contacter le club</a>
-            </article>
-          </div>
-        </div>
+      <section className="home__section" id="infos" aria-labelledby="contact-title">
+        <p className="home__eyebrow">Préparer ta venue</p>
+        <h2 id="contact-title">Échange avec le club</h2>
+        <p>Les créneaux et les modalités d’essai dépendent de l’activité. Retrouve les informations sur la page de ta discipline ou contacte-nous avant de venir.</p>
+        <a className="home__button" href={`mailto:${site.contact.email}`}>Contacter le CAN</a>
       </section>
 
       <section className="home__section home__gallery" id="galerie" aria-labelledby="gallery-title">
         <header className="home__section-heading">
-          <p className="home__eyebrow">Dans la salle</p>
-          <h2 id="gallery-title">Le CAN en images</h2>
+          <p className="home__eyebrow">Côté force athlétique</p>
+          <h2 id="gallery-title">La force en images</h2>
         </header>
         <div className="home__carousel" aria-roledescription="carrousel" aria-label="Photos du Club Athlétique Nantais">
           <div className="home__carousel-frame" aria-live={isAutoPlaying ? 'off' : 'polite'}>
