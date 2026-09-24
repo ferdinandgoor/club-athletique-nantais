@@ -20,7 +20,7 @@ export function RegistrationGuide() {
       <ol className="registration-guide__list">
         <li className="registration-guide__download" data-reveal>
           <div className="registration-guide__intro">
-            <span className="registration-guide__number" aria-hidden="true">01</span>
+            <span className="home__eyebrow registration-guide__eyebrow">Inscription</span>
             <h3>Télécharge MonClub</h3>
             <p>Ton inscription commence ici. Installe l’application sur ton téléphone, puis suis le guide.</p>
             <p className="registration-guide__note">Déjà un compte ? Connecte-toi dans l’application avec tes identifiants.</p>
