@@ -1,8 +1,9 @@
-import { useEffect, useState, type PropsWithChildren } from 'react';
+import { useEffect, useRef, useState, type PropsWithChildren } from 'react';
 import { Container } from '../Container/Container';
 import { disciplines } from '../../data/disciplines';
 import { site } from '../../data/site';
 import './PageShell.scss';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 const navigation = [
   { id: 'localisation', label: 'Le club' },
@@ -14,6 +15,8 @@ const navigation = [
 
 export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: string }>) {
   const isHome = path === '/';
+  const mainRef = useRef<HTMLElement>(null);
+  useScrollReveal(mainRef);
   const [isCompact, setIsCompact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('accueil');
@@ -64,7 +67,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
           </nav>
         </Container>
       </header>
-      <main id="contenu" tabIndex={-1}><Container>{children}</Container></main>
+      <main ref={mainRef} id="contenu" tabIndex={-1}><Container>{children}</Container></main>
       <footer className="page-shell__footer">
         <Container>
           <strong>{site.name}</strong>

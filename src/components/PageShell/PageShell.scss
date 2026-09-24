@@ -124,3 +124,11 @@
 @media (prefers-reduced-motion: reduce) {
   .page-shell__header, .page-shell__brand, .page-shell__header nav a::after { transition: none; }
 }
+
+@keyframes page-shell-menu-enter {
+  from { opacity: 0; translate: 0 -8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (max-width: 48rem) and (prefers-reduced-motion: no-preference) {
+  .page-shell__header nav[data-open='true'] { animation: page-shell-menu-enter .2s ease-out; }
+}

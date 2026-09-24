@@ -80,3 +80,5 @@ Le tutoriel d’inscription est isolé dans `RegistrationGuide` et ses instructi
 ## Orientation par discipline
 
 L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/` et `/lutte/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la discipline active.
+
+Les animations au défilement sont une amélioration progressive : `useScrollReveal` observe les blocs `data-reveal` du contenu principal puis joue une animation native ponctuelle, sans masquer les blocs en attente. Il libère l’observateur au démontage, annule les effets au focus clavier et respecte les changements de préférence de réduction des animations. Les survols et animations d’entrée restent dans les SCSS des composants.

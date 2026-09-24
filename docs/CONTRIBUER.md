@@ -83,3 +83,9 @@ Modifier les résumés et les détails de la musculation, de la force athlétiqu
 Le tutoriel `src/data/registration.ts` est commun aux disciplines. Ne pas le recentrer exclusivement sur la force athlétique. Vérifier le parcours accueil → discipline → guide d’inscription, les liens du menu mobile, les titres uniques, le pré-rendu et le sitemap avec `npm run check`. Pour ajouter une discipline, compléter ses contenus validés et adapter les informations pratiques du modèle avant de déclarer sa route.
 
 Le héros d’accueil utilise une hauteur fixe de `100dvh` (avec repli `100vh`) pour suivre exactement la hauteur visible, y compris quand les barres du navigateur mobile changent de taille. Le logo se redimensionne dans l’espace disponible ; sur une fenêtre exceptionnellement basse ou avec un texte agrandi, le contenu central reste défilable pour conserver l’accès aux liens. Vérifier aussi une orientation paysage et les écrans mobiles courts.
+
+### Animations
+
+Les blocs marqués `data-reveal` apparaissent une seule fois à l’entrée dans le viewport, avec un fondu et un déplacement de 18 px pendant 650 ms. Le hook `src/hooks/useScrollReveal.ts`, appelé par `PageShell`, utilise IntersectionObserver et l’API native d’animation : aucune dépendance ni donnée transmise. Éviter d’imbriquer deux blocs animés. Le contenu reste visible sans JavaScript ; une prise de focus clavier arrête les apparitions pour faciliter la navigation.
+
+Les SCSS de Home, RegistrationGuide et PageShell gèrent l’arrivée du logo, les survols des cartes et des écrans du tutoriel, et l’ouverture du menu mobile. Les effets sont désactivés avec `prefers-reduced-motion`, y compris lors d’un changement de préférence en cours de visite. Pour supprimer les apparitions, retirer l’appel à `useScrollReveal` dans PageShell ; les attributs sont alors sans effet. Vérifier le défilement, le clavier et le mode de réduction des animations sur mobile et ordinateur.

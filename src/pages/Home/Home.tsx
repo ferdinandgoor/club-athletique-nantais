@@ -88,7 +88,7 @@ export function Home() {
           referrerPolicy="no-referrer-when-downgrade"
           allowFullScreen
         />
-        <div className="home__location-copy">
+        <div className="home__location-copy" data-reveal>
           <p className="home__eyebrow">La salle</p>
           <h2 id="location-title">À l’ouest de Nantes</h2>
           <address>{site.contact.address}</address>
@@ -98,13 +98,13 @@ export function Home() {
       </section>
 
       <section className="home__section home__activities" id="activites" aria-labelledby="activities-title">
-        <header className="home__section-heading">
+        <header className="home__section-heading" data-reveal>
           <p className="home__eyebrow">Un club, plusieurs pratiques</p>
           <h2 id="activities-title">Trouve ta discipline</h2>
         </header>
         <div className="home__activity-grid">
           {disciplines.map((discipline, index) => (
-            <a className={`home__activity-card home__activity-card--${discipline.id}`} href={discipline.path} key={discipline.id}>
+            <a className={`home__activity-card home__activity-card--${discipline.id}`} href={discipline.path} key={discipline.id} data-reveal>
               <span className="home__activity-number">0{index + 1}</span>
               <span className="home__eyebrow">{discipline.subtitle}</span>
               <h3>{discipline.title}</h3>
@@ -117,7 +117,7 @@ export function Home() {
 
       <RegistrationGuide />
 
-      <section className="home__section" id="infos" aria-labelledby="contact-title">
+      <section className="home__section" data-reveal id="infos" aria-labelledby="contact-title">
         <p className="home__eyebrow">Préparer ta venue</p>
         <h2 id="contact-title">Échange avec le club</h2>
         <p>Les créneaux et les modalités d’essai dépendent de l’activité. Retrouve les informations sur la page de ta discipline ou contacte-nous avant de venir.</p>
@@ -125,7 +125,7 @@ export function Home() {
       </section>
 
       <section className="home__section home__gallery" id="galerie" aria-labelledby="gallery-title">
-        <header className="home__section-heading">
+        <header className="home__section-heading" data-reveal>
           <p className="home__eyebrow">Côté force athlétique</p>
           <h2 id="gallery-title">La force en images</h2>
         </header>

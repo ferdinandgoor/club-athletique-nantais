@@ -18,7 +18,7 @@ export function RegistrationGuide() {
     <section className="registration-guide" id="inscription" aria-labelledby="registration-title">
       <h2 className="registration-guide__hidden" id="registration-title">Inscription au Club Athlétique Nantais</h2>
       <ol className="registration-guide__list">
-        <li className="registration-guide__download">
+        <li className="registration-guide__download" data-reveal>
           <div className="registration-guide__intro">
             <span className="registration-guide__number" aria-hidden="true">01</span>
             <h3>Télécharge MonClub</h3>
@@ -40,7 +40,7 @@ export function RegistrationGuide() {
           </div>
         </li>
         {registrationSteps.map((step, index) => (
-          <li className="registration-guide__step" key={step.title}>
+          <li className="registration-guide__step" data-reveal key={step.title}>
             <div className="registration-guide__screen" aria-hidden="true">
               <span className="registration-guide__speaker" />
               <span className="registration-guide__screen-label">MONCLUB / {String(index + 2).padStart(2, '0')}</span>

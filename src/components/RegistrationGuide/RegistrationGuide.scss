@@ -55,3 +55,10 @@
 @media (prefers-reduced-motion: reduce) {
   .registration-guide__store-links a { transition: none; }
 }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .registration-guide__screen { transition: transform .3s ease; }
+  .registration-guide__step:hover .registration-guide__screen { transform: translateY(-5px) rotate(-1deg); }
+  .registration-guide__store-links a { transition: background .2s ease, transform .2s ease; }
+  .registration-guide__store-links a:hover { transform: translateY(-3px); }
+}

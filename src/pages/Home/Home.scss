@@ -132,3 +132,19 @@
   .home__hero-video:not(.home__hero-video--playing) { visibility: hidden; }
   .home__button { transition: none; }
 }
+
+@keyframes home-arrive {
+  from { opacity: .2; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home__hero-logo { animation: home-arrive .85s cubic-bezier(.22, 1, .36, 1) both; }
+  .home__introduction { animation: home-arrive .7s .12s ease-out both; }
+  .home__activity-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .home__activity-link span { transition: transform .25s ease; }
+  .home__carousel-controls button { transition: background .2s ease, color .2s ease; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home__activity-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgb(11 16 37 / 15%); }
+  .home__activity-card:hover .home__activity-link span { transform: translate(3px, -3px); }
+}
