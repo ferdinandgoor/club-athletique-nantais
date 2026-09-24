@@ -82,6 +82,8 @@ Modifier les résumés et les détails de la musculation, de la force athlétiqu
 
 Le tutoriel `src/data/registration.ts` est commun aux disciplines. Ne pas le recentrer exclusivement sur la force athlétique. Vérifier le parcours accueil → discipline → guide d’inscription, les liens du menu mobile, les titres uniques, le pré-rendu et le sitemap avec `npm run check`. Pour ajouter une discipline, compléter ses contenus validés et adapter les informations pratiques du modèle avant de déclarer sa route.
 
+La section « Choisis la façon de nous rejoindre » de l’accueil présente les parcours d’inscription autonome, de visite de la salle, de découverte de la lutte avec l’entraîneur et d’accueil en musculation par un bénévole. Mettre à jour cette section et `docs/CLUB.md` ensemble si les modalités d’accueil changent. Garder l’e-mail comme solution pour les questions restantes, pas comme étape obligatoire.
+
 Le héros d’accueil utilise une hauteur fixe de `100dvh` (avec repli `100vh`) pour suivre exactement la hauteur visible, y compris quand les barres du navigateur mobile changent de taille. Le logo se redimensionne dans l’espace disponible ; sur une fenêtre exceptionnellement basse ou avec un texte agrandi, le contenu central reste défilable pour conserver l’accès aux liens. Vérifier aussi une orientation paysage et les écrans mobiles courts.
 
 ### Animations

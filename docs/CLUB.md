@@ -134,3 +134,7 @@ Pour la musculation, les photos fournies confirment la présence de machines, ba
 ### Page de liens — demande du 24 septembre 2026
 
 Le propriétaire demande une page de type Linktree à `/links/`, avec le site du club et le compte Instagram déjà validé `@can_powerlifting`. Son accès est ajouté uniquement dans le pied de page. Les autres liens sont à fournir par le club ; aucun lien provisoire n’est publié. La liste publique est conservée dans `src/data/links.ts`.
+
+### Accueil des nouveaux visiteurs — 24 septembre 2026
+
+Le propriétaire souhaite privilégier l’inscription autonome ou la venue directe au club, afin de réserver l’e-mail aux questions restantes. Le site indique désormais : inscription avec MonClub ; visite de la salle pendant les horaires publiés ; présence de l’entraîneur sur tous les créneaux de lutte ; orientation des visiteurs de musculation vers un bénévole par un adhérent. Ces modalités sont publiées selon les indications du propriétaire et restent à revalider si l’organisation du club change.
