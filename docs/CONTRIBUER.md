@@ -8,11 +8,13 @@
 4. Modifier les fichiers utiles et vérifier le résultat sur un écran étroit et un écran large.
 5. Exécuter `npm run check`, puis `npm run preview` pour relire le site construit.
 6. Enregistrer les changements dans Git, envoyer la branche et ouvrir une pull request sur GitHub.
-7. Après relecture et vérifications réussies, fusionner dans `main`. Si la publication FTP est activée, cette fusion publie le site.
+7. Après relecture et vérifications réussies, fusionner dans `main`. Cette fusion publie automatiquement le site si les paramètres FTP sont correctement configurés.
 
 Une « pull request » est une proposition de modification consultable avant son intégration au site.
 
 ## Changer les textes et les images
+
+Les informations connues et manquantes sur le club sont suivies dans `docs/CLUB.md`. Mettre ce document à jour lorsqu’une information est fournie ou validée, puis publier uniquement les informations validées dans `src/data/`.
 
 Les textes de l’accueil se trouvent dans `src/data/site.ts`. Modifier uniquement les valeurs entre guillemets, en conservant la structure et les virgules. L’apostrophe d’un texte entouré d’apostrophes doit être échappée (`l\'équipe`) ou remplacée par une apostrophe typographique (`l’équipe`).
 

@@ -36,6 +36,7 @@ scripts/
 tests/                   Tests automatisés
 .github/workflows/       Vérification et publication GitHub Actions
 docs/                    Guides en français
+  CLUB.md                Informations connues, manquantes et à confirmer sur le club
 ```
 
 `dist/`, `.ssr/` et `node_modules/` sont générés automatiquement et ignorés par Git. Ne jamais modifier `dist/` à la main : le prochain build remplace son contenu.

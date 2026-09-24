@@ -37,9 +37,11 @@ Aucun fichier de configuration n’est nécessaire pour démarrer. Pour prépare
 
 ## Où trouver les informations ?
 
+- [Informations connues et manquantes sur le club](docs/CLUB.md)
 - [Comprendre la structure du site](docs/ARCHITECTURE.md)
 - [Modifier le contenu et ajouter une page](docs/CONTRIBUER.md)
 - [Configurer le déploiement FTP et publier](docs/DEPLOIEMENT.md)
 - [Transmettre le projet, entretenir le site et résoudre les problèmes](docs/MAINTENANCE.md)
+- [Consignes obligatoires pour les agents](AGENTS.md)
 
-Le déploiement est préparé dans GitHub Actions. Il reste **désactivé tant que `FTP_DEPLOY_ENABLED` ne vaut pas `true`**. Le domaine, le dossier de destination et les accès de l’hébergeur doivent d’abord être configurés selon le guide. Aucun accès du projet de référence n’a été repris.
+Après un build réussi sur `main`, GitHub Actions lance automatiquement la publication FTP. Le domaine, le dossier de destination et les accès de l’hébergeur doivent donc être configurés avant le premier push sur `main`, selon le guide. Aucun accès du projet de référence n’a été repris.

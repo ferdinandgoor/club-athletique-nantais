@@ -11,7 +11,7 @@ Transmettre ces éléments par les canaux adaptés ; les mots de passe restent d
 - L’emplacement des sauvegardes et la date de la dernière publication réussie.
 - La personne qui valide les textes, photos et informations du club.
 
-Au moment de la passation, compléter ces informations dans l’outil interne du club : elles ne sont pas encore connues dans ce dépôt. Faire réaliser à la personne une petite modification locale, lancer `npm run check`, puis lui montrer une publication et la procédure de retour arrière. Retirer les accès devenus inutiles et renouveler les secrets si nécessaire.
+Au moment de la passation, mettre à jour `docs/CLUB.md` pour les informations publiques ou non sensibles et compléter les accès dans l’outil interne du club : ils ne sont pas encore connus dans ce dépôt. Faire réaliser à la personne une petite modification locale, lancer `npm run check`, puis lui montrer une publication et la procédure de retour arrière. Retirer les accès devenus inutiles et renouveler les secrets si nécessaire.
 
 ## Entretien régulier
 
@@ -35,7 +35,7 @@ Une évolution de Node.js doit être reportée dans `.nvmrc`, `package.json` et 
 | Le lint échoue | Lire le fichier et la ligne indiqués ; les avertissements bloquent également la vérification |
 | Les tests échouent | Lancer `npm run test:watch` et corriger le comportement concerné |
 | Le build échoue | Lire la première erreur ; vérifier les types, les routes, les titres et descriptions uniques |
-| La publication est « skipped » | Vérifier la branche `main` et la variable de dépôt `FTP_DEPLOY_ENABLED=true` |
+| La publication est « skipped » | Vérifier que l’exécution concerne `main`, qu’il ne s’agit pas d’une pull request et que le job de vérification a réussi |
 | Le workflow attend une validation | Consulter les règles de protection de l’environnement GitHub `production` |
 | Connexion FTP refusée | Vérifier les secrets, le protocole, le port et les restrictions réseau de l’hébergeur |
 | Erreur de certificat FTPS | Faire corriger le certificat ou le nom du serveur ; ne pas désactiver sa vérification |
