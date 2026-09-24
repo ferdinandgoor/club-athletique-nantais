@@ -53,7 +53,7 @@ docs/                    Guides en français
 
 Le contenu initial est lisible sans JavaScript. React prend ensuite le relais dans le navigateur : c’est l’« hydratation ». En développement, React crée directement l’interface puisque le pré-rendu n’a pas encore eu lieu.
 
-Les liens utilisent une navigation HTML normale : chaque adresse publique doit correspondre à un fichier généré. Cette simplicité évite un routeur supplémentaire et les règles serveur de repli vers la page d’accueil.
+Chaque adresse publique correspond à un fichier généré, ce qui permet au site de fonctionner directement sans JavaScript. Après l’hydratation, `src/entry-client.tsx` intercepte les clics internes et utilise `history.pushState` : le contenu de la page change sans recharger le document, donc l’en-tête et le pied de page communs restent en place. Les boutons précédent/suivant du navigateur sont pris en charge par `popstate`. Un clic avec une touche modificatrice, un lien externe ou un lien vers la même page conserve le comportement HTML normal.
 
 ## Choix repris et adaptations
 

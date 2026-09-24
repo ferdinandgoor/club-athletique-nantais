@@ -78,7 +78,7 @@ Le fond vidéo du héros reçoit un flou de `4px` dans `.home__hero-video` (`Hom
 
 ### Accueil et pages de disciplines
 
-Modifier les résumés et les détails de la musculation, de la force athlétique et de la lutte dans `src/data/disciplines.ts`. L’accueil affiche trois grandes entrées dans cet ordre : Musculation, Force athlétique, Lutte ; le modèle `src/pages/Discipline/Discipline.tsx` présente les informations de chaque activité. Les horaires et l’essai à 10 € concernent uniquement la force athlétique. Pour la musculation et la lutte, remplacer le bloc de prise de contact par des informations pratiques seulement après leur confirmation dans `docs/CLUB.md`.
+Modifier les résumés et les détails de la musculation, de la force athlétique et de la lutte dans `src/data/disciplines.ts`. L’accueil affiche trois grandes entrées dans cet ordre : Musculation, Force athlétique, Lutte ; le modèle `src/pages/Discipline/Discipline.tsx` présente les informations de chaque activité. Les horaires de salle concernent la force athlétique et la musculation ; l’essai à 10 € concerne uniquement la force athlétique. Pour la lutte, remplacer le bloc de prise de contact par des informations pratiques seulement après leur confirmation dans `docs/CLUB.md`.
 
 Le tutoriel `src/data/registration.ts` est commun aux disciplines. Ne pas le recentrer exclusivement sur la force athlétique. Vérifier le parcours accueil → discipline → guide d’inscription, les liens du menu mobile, les titres uniques, le pré-rendu et le sitemap avec `npm run check`. Pour ajouter une discipline, compléter ses contenus validés et adapter les informations pratiques du modèle avant de déclarer sa route.
 

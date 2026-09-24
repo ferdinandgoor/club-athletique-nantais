@@ -129,7 +129,7 @@ Le propriétaire a transmis des échanges internes proposant de présenter Muscu
 
 L’offre et le planning des cours collectifs sont en cours de révision : ne pas annoncer de créneaux ni de suppression définitive sans confirmation. La séparation des groupes de lutte baby et enfant reste à préciser. Le calendrier d’événements est reporté jusqu’à validation des dates et désignation d’une personne chargée de le maintenir.
 
-Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires spécifiques, conditions d’accès, encadrement et modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.
+Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires publiés sont ceux de la force athlétique : lundi et vendredi de 17 h à 21 h, samedi de 9 h 30 à 14 h et dimanche de 9 h 30 à 12 h, toute l’année hors vacances scolaires. Les conditions d’accès, l’encadrement et les modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.
 
 ### Page de liens — demande du 24 septembre 2026
 

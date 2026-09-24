@@ -4,6 +4,7 @@ import './Discipline.scss';
 
 export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isForce = discipline.id === 'force-athletique';
+  const hasGymHours = isForce || discipline.id === 'musculation';
   const others = disciplines.filter((item) => item.id !== discipline.id);
   const isWrestling = discipline.id === 'lutte';
   return (
@@ -23,9 +24,9 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
       </section>
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>
-        {isForce ? <div className="discipline__details discipline__details--two">
+        {hasGymHours ? <div className="discipline__details discipline__details--two">
           <div><h3>Horaires de la salle</h3><dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl><p>Toute l’année, hors vacances scolaires.</p><address>{site.contact.address}</address><a href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire ↗</a></div>
-          <div><h3>Teste la salle</h3><p className="discipline__price">{site.registration.trialPrice}<small> la séance</small></p><p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p><a className="discipline__button" href={`mailto:${site.contact.email}`}>Organiser ma séance</a></div>
+          {isForce && <div><h3>Teste la salle</h3><p className="discipline__price">{site.registration.trialPrice}<small> la séance</small></p><p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p><a className="discipline__button" href={`mailto:${site.contact.email}`}>Organiser ma séance</a></div>}
         </div> : <div className="discipline__contact"><h3>Parlons de ta première séance</h3><p>Contacte le club pour connaître le groupe adapté, les horaires, le lieu des séances et les modalités d’essai {isWrestling ? 'en lutte' : 'en musculation'}.</p><a className="discipline__button" href={`mailto:${site.contact.email}?subject=${encodeURIComponent('Renseignements ' + discipline.title)}`}>Me renseigner sur la {discipline.title.toLowerCase()}</a></div>}
       </section>
       <section className="discipline__section discipline__join" data-reveal aria-labelledby="join-title">
