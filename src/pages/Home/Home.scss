@@ -1,109 +1,117 @@
 .home {
-  padding-block: clamp(2rem, 6vw, 5rem);
-
   h1, h2, h3, p { margin-top: 0; }
+  section[id] { scroll-margin-top: 5rem; }
+
+  &__full-width,
+  &__hero { margin-inline: calc(50% - 50vw); }
 
   &__hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(16rem, .85fr);
-    align-items: center;
-    gap: clamp(2rem, 7vw, 6rem);
-    min-height: min(46rem, 78vh);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 100svh;
+    overflow: hidden;
+    padding: clamp(8rem, 18vh, 13rem) max(1.5rem, calc((100vw - 76rem) / 2)) clamp(5rem, 12vh, 8rem);
+    background: var(--color-navy) url('/images/salle-can-poster.jpg') center / cover no-repeat;
+    color: white;
   }
 
-  &__hero-copy { max-width: 43rem; }
-  &__hero-logo { width: 100%; height: auto; filter: drop-shadow(0 1.5rem 2rem rgb(20 29 67 / 15%)); }
-  &__eyebrow { color: var(--color-accent); font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-  &__introduction { max-width: 40rem; color: var(--color-muted); font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.55; }
-  &__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 2rem; }
+  &__hero-video,
+  &__hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+  &__hero-video { object-fit: cover; object-position: center 58%; }
+  &__hero-overlay { background: linear-gradient(90deg, rgb(5 8 20 / 48%) 0%, rgb(5 8 20 / 25%) 52%, rgb(5 8 20 / 10%) 100%), linear-gradient(0deg, rgb(5 8 20 / 38%), transparent 55%); }
+  &__hero-copy { position: relative; z-index: 1; width: 100%; text-align: center; }
+  &__visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  &__hero-logo { display: block; width: clamp(17rem, 36vw, 31rem); height: auto; margin: -.5rem auto 1.5rem; filter: drop-shadow(0 1.5rem 2.5rem rgb(0 0 0 / 25%)); }
+  &__eyebrow { color: var(--color-accent); font-size: .78rem; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
+  &__introduction { max-width: 40rem; margin: 0 auto 2rem; color: rgb(255 255 255 / 82%); font-size: clamp(1.1rem, 2.2vw, 1.5rem); line-height: 1.55; }
+  &__scroll-hint { position: absolute; z-index: 1; right: max(1.5rem, calc((100vw - 76rem) / 2)); bottom: 2.5rem; color: white; font-size: .82rem; font-weight: 750; letter-spacing: .06em; text-decoration: none; }
+  &__scroll-hint span { margin-left: .5rem; color: var(--color-accent); font-size: 1.2rem; }
 
   &__button {
     display: inline-flex;
+    align-items: center;
     justify-content: center;
-    padding: .9rem 1.25rem;
-    border-radius: .35rem;
+    min-height: 48px;
+    padding: .8rem 1.25rem;
+    border: 1px solid transparent;
     background: var(--color-primary);
     color: white;
     font-weight: 800;
     text-decoration: none;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
   }
+  &__button:hover { background: var(--color-primary-strong); transform: translateY(-2px); }
+  &__button--light { border-color: rgb(255 255 255 / 55%); background: rgb(255 255 255 / 10%); backdrop-filter: blur(.6rem); }
+  &__button--light:hover { background: white; color: var(--color-navy); }
+  &__text-link { color: var(--color-primary); font-weight: 800; text-underline-offset: .3em; }
 
-  &__button:hover { background: var(--color-primary-strong); }
-  &__button--light { background: white; color: var(--color-primary); }
-  &__button--light:hover { background: var(--color-surface); }
-  &__text-link { color: var(--color-primary); font-weight: 800; text-underline-offset: .25em; }
-  &__section { padding-block: clamp(4rem, 9vw, 7rem); }
-  &__section-heading { max-width: 43rem; margin-bottom: 2.5rem; }
-  &__section-heading > p:last-child { color: var(--color-muted); font-size: 1.12rem; }
+  &__location { display: grid; grid-template-columns: 1.25fr .75fr; min-height: 38rem; background: white; }
+  &__map { width: 100%; min-height: 38rem; border: 0; }
+  &__location-copy { display: flex; justify-content: center; flex-direction: column; padding: clamp(3rem, 7vw, 6rem); }
+  &__location-copy h2 { margin-bottom: 1.5rem; }
+  &__location-copy address { max-width: 22rem; margin-bottom: 1.5rem; font-size: 1.35rem; font-style: normal; font-weight: 800; line-height: 1.35; }
+  &__location-copy > p:not(.home__eyebrow) { max-width: 28rem; color: var(--color-muted); }
 
-  &__activity-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-border); border-left: 1px solid var(--color-border); }
-  &__activity { min-height: 15rem; padding: 1.5rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-  &__activity > span { color: var(--color-accent); font-weight: 800; }
-  &__activity h3 { margin-top: 3rem; }
-  &__activity p { color: var(--color-muted); line-height: 1.6; }
+  &__section { padding-block: clamp(5rem, 10vw, 9rem); }
+  &__section-heading { max-width: 48rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+  &__section-heading > p:last-child { color: var(--color-muted); font-size: 1.1rem; }
 
-  &__media {
-    display: grid;
-    grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr);
-    gap: clamp(2rem, 7vw, 6rem);
-    align-items: center;
-    margin-inline: calc(50% - 50vw);
-    padding: clamp(2rem, 6vw, 5rem) max(1.25rem, calc((100vw - 76rem) / 2));
-    background: var(--color-primary-strong);
-    color: white;
-  }
-
-  &__photo-wrap img { display: block; width: 100%; height: min(42rem, 70vh); object-fit: cover; object-position: 50% 42%; }
-  &__media-copy { max-width: 42rem; }
-  &__media-copy > p:not(.home__eyebrow) { color: var(--color-on-dark-muted); font-size: 1.12rem; line-height: 1.6; }
-  &__media video { display: block; width: min(100%, 30rem); max-height: 28rem; margin-top: 2rem; background: #080d20; object-fit: cover; }
-
-  &__section--practical { scroll-margin-top: 6rem; }
-  &__info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  &__info-card { min-height: 20rem; padding: clamp(1.4rem, 3vw, 2.25rem); background: var(--color-surface); }
-  &__info-card--accent { background: var(--color-primary); color: white; }
-  &__info-card address { margin-bottom: 1.5rem; font-style: normal; line-height: 1.6; }
+  &__practical { padding: clamp(5rem, 10vw, 9rem) max(1.5rem, calc((100vw - 76rem) / 2)); background: var(--color-navy); color: white; }
+  &__practical-inner { width: 100%; }
+  &__practical .home__section-heading > p:last-child { color: var(--color-on-dark-muted); }
+  &__info-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
+  &__info-card { min-height: 25rem; padding: clamp(1.75rem, 4vw, 3rem); border: 1px solid rgb(255 255 255 / 16%); background: rgb(255 255 255 / 5%); }
+  &__info-card--accent { background: var(--color-primary); }
+  &__card-number { color: var(--color-accent); font-weight: 900; }
+  &__info-card h3 { margin-top: 4rem; font-size: clamp(1.6rem, 3vw, 2.4rem); }
   &__info-card dl { margin: 0; }
-  &__info-card dl div { display: flex; justify-content: space-between; gap: 1rem; padding-block: .7rem; border-bottom: 1px solid var(--color-border); }
+  &__info-card dl div { display: flex; justify-content: space-between; gap: 1.5rem; padding-block: .75rem; border-bottom: 1px solid rgb(255 255 255 / 15%); }
   &__info-card dd { margin: 0; text-align: right; }
-  &__fine-print { margin-top: 1.5rem; color: var(--color-muted); font-size: .88rem; }
-  &__price { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; }
-  &__price span { font-size: 1rem; font-weight: 600; }
+  &__fine-print { margin-top: 1.5rem; color: var(--color-on-dark-muted); font-size: .88rem; }
+  &__price { margin-bottom: .5rem; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; line-height: 1; }
+  &__price small { font-size: 1rem; }
 
-  &__registration {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-    margin-block: clamp(3rem, 8vw, 7rem);
-    padding: clamp(2rem, 5vw, 4rem);
-    border: .35rem solid var(--color-accent-soft);
-  }
-
-  &__registration > div:first-child { max-width: 42rem; }
-  &__club-code { padding: 1.25rem 1.75rem; background: var(--color-primary); color: white; text-align: center; }
-  &__club-code span { display: block; margin-bottom: .35rem; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-  &__club-code strong { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: .06em; }
+  &__gallery { padding-bottom: clamp(5rem, 10vw, 9rem); }
+  &__carousel { position: relative; }
+  &__carousel-frame { position: relative; overflow: hidden; background: var(--color-navy); }
+  &__carousel-frame img { display: block; width: 100%; height: min(76vh, 52rem); object-fit: contain; object-position: center; }
+  &__carousel-frame p { position: absolute; right: 1.5rem; bottom: 1rem; margin: 0; padding: .4rem .7rem; background: rgb(5 8 20 / 75%); color: white; font-size: .8rem; backdrop-filter: blur(.5rem); }
+  &__carousel-frame p span { color: var(--color-accent); font-weight: 900; }
+  &__carousel-controls { display: flex; gap: .5rem; margin-top: 1rem; }
+  &__carousel-controls button { min-width: 52px; height: 52px; padding-inline: .75rem; border: 1px solid var(--color-border); background: transparent; color: var(--color-text); font-size: 1.4rem; cursor: pointer; }
+  &__carousel-controls button:hover { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+  &__carousel-controls &__carousel-toggle { width: auto; font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+  &__carousel-dots { position: absolute; right: 0; bottom: .9rem; display: flex; gap: .45rem; }
+  &__carousel-dots button { width: 2.2rem; height: 4px; padding: 0; border: 0; background: var(--color-border); cursor: pointer; }
+  &__carousel-dots button[aria-current] { background: var(--color-primary); }
+  &__gallery-credit { margin-top: 1.25rem; color: var(--color-muted); font-size: .8rem; text-align: right; }
 }
 
 @media (max-width: 52rem) {
   .home {
-    &__hero { grid-template-columns: 1fr; min-height: auto; }
-    &__hero-logo { grid-row: 1; width: min(72vw, 24rem); margin-inline: auto; }
-    &__activity-grid, &__info-grid { grid-template-columns: repeat(2, 1fr); }
-    &__media { grid-template-columns: 1fr; }
-    &__photo-wrap img { height: min(34rem, 68vh); }
-    &__registration { grid-template-columns: 1fr; }
-    &__club-code { justify-self: start; }
+    &__location { grid-template-columns: 1fr; }
+    &__map { min-height: 28rem; }
+    &__info-grid { grid-template-columns: 1fr; }
+    &__info-card { min-height: auto; }
   }
 }
 
 @media (max-width: 36rem) {
   .home {
-    &__activity-grid, &__info-grid { grid-template-columns: 1fr; }
-    &__activity { min-height: auto; }
-    &__activity h3 { margin-top: 1.5rem; }
-    &__info-card { min-height: auto; }
-    &__media { margin-inline: -1.25rem; padding-inline: 1.25rem; }
+    &__hero { min-height: 100svh; padding-inline: 1.5rem; }
+    &__hero-video { object-position: center; }
+    &__hero-logo { width: min(78vw, 23rem); }
+    &__scroll-hint { display: none; }
+    &__map { min-height: 22rem; }
+    &__location-copy { padding: 3rem 1.5rem; }
+    &__carousel-frame img { height: 65svh; }
+    &__carousel-dots { position: static; margin-top: 1.25rem; }
+    &__carousel-dots button { flex: 1; }
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home__hero-video { display: none; }
+  .home__button { transition: none; }
 }

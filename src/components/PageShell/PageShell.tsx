@@ -1,25 +1,55 @@
-import type { PropsWithChildren } from 'react';
+import { useEffect, useState, type PropsWithChildren } from 'react';
 import { Container } from '../Container/Container';
 import { site } from '../../data/site';
 import './PageShell.scss';
 
 const navigation = [
-  { href: '/#disciplines', label: 'Disciplines' },
-  { href: '/#infos', label: 'Infos pratiques' },
-  { href: '/#inscription', label: 'Inscription' },
+  { id: 'localisation', label: 'Le club' },
+  { id: 'inscription', label: 'Inscription' },
+  { id: 'infos', label: 'Infos pratiques' },
+  { id: 'galerie', label: 'Galerie' },
 ];
 
 export function PageShell({ children }: PropsWithChildren) {
+  const [isCompact, setIsCompact] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('accueil');
+
+  useEffect(() => {
+    const updateNavigation = () => {
+      setIsCompact(window.scrollY > 32);
+      const offset = window.innerHeight * 0.35;
+      const visible = navigation
+        .map(({ id }) => document.getElementById(id))
+        .filter((section): section is HTMLElement => Boolean(section))
+        .filter((section) => section.getBoundingClientRect().top <= offset)
+        .at(-1);
+      setActiveSection(visible?.id ?? 'accueil');
+    };
+
+    updateNavigation();
+    window.addEventListener('scroll', updateNavigation, { passive: true });
+    return () => window.removeEventListener('scroll', updateNavigation);
+  }, []);
+
   return (
     <div className="page-shell">
       <a className="page-shell__skip" href="#contenu">Aller au contenu</a>
-      <header className="page-shell__header">
+      <header className={`page-shell__header${isCompact ? ' page-shell__header--compact' : ''}`}>
         <Container>
-          <a className="page-shell__brand" href="/" aria-label={`${site.name} — Accueil`}>
+          <a className="page-shell__brand" href="#accueil" aria-label={`${site.name} — Accueil`} aria-current={activeSection === 'accueil' ? 'page' : undefined}>
             <img src="/images/logo-can-horizontal-white.png" width="1400" height="521" alt="" />
           </a>
-          <nav aria-label="Navigation principale">
-            {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          <button className="page-shell__menu-button" type="button" aria-expanded={isMenuOpen} aria-controls="navigation-principale" onClick={() => setIsMenuOpen((open) => !open)}>
+            <span className="page-shell__menu-icon" aria-hidden="true" />
+            <span>Menu</span>
+          </button>
+          <nav id="navigation-principale" aria-label="Navigation principale" data-open={isMenuOpen}>
+            {navigation.map((item) => (
+              <a key={item.id} href={`#${item.id}`} aria-current={activeSection === item.id ? 'location' : undefined} onClick={() => setIsMenuOpen(false)}>
+                {item.label}
+              </a>
+            ))}
             <a className="page-shell__instagram" href={site.contact.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram du Club Athlétique Nantais">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" />

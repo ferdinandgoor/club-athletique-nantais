@@ -38,7 +38,7 @@ Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter le
 | Lieux de pratique | À fournir | Non publiés |
 | Jours et horaires | Lundi et vendredi : 17 h–21 h ; samedi : 9 h 30–14 h ; dimanche : 9 h 30–12 h | Visuel fourni le 24 septembre 2026 |
 | Calendrier ou saison concernée | Toute l’année hors vacances scolaires | Visuel fourni le 24 septembre 2026 ; à réviser si le fonctionnement change |
-| Modalités d’inscription | Application MonClub, code club `CANNANTES` | Tutoriel en captures fourni le 24 septembre 2026 |
+| Modalités d’inscription | Application MonClub, code club `CANNANTES` | Tutoriel en captures fourni le 24 septembre 2026. Fiches officielles : [App Store](https://apps.apple.com/fr/app/monclub-app/id1489706209) et [Google Play](https://play.google.com/store/apps/details?hl=fr&id=eu.teamr.custom), vérifiées le 24 septembre 2026 |
 | Tarifs et moyens de paiement | Séance découverte : 10 €. Saison 2025–2026 : compétition 200 €, loisir 170 € | La séance découverte est publiée. Les cotisations 2025–2026 sont archivées et doivent être reconfirmées pour 2026–2027. Les captures montrent CB, SEPA et paiement au club |
 | Équipement nécessaire | À fournir | Non publié |
 | Accessibilité des lieux | À fournir | Non publiée |
@@ -74,22 +74,23 @@ Pour chaque logo, photo, vidéo ou document ajouté au site, conserver au minimu
 | `public/images/equipe-club-athletique-nantais.jpg` | Fourni pour construire le site ; auteur, date et accord des personnes à préciser | Photo de groupe publiée, sans identification nominative |
 | `public/images/visite-salle-can.mp4` | Fourni pour construire le site ; auteur et date à préciser | Visite de la salle publiée, version web sans piste audio |
 | `public/images/salle-can-poster.jpg` | Image extraite de la vidéo précédente | Affiche de chargement de la vidéo |
+| `public/images/competition-force-athletique-01.jpg` à `07.jpg` | Crédit visible : White Lights Media ; fichiers fournis par le propriétaire du dépôt le 24 septembre 2026 | Photos du Grand Prix des Pays de la Loire utilisées dans le carrousel ; portée de l’autorisation à conserver avec les archives du club |
 | Partenaires et règles d’affichage | À fournir | Aucun partenaire publié pour le moment |
 
 ## Mentions légales et données personnelles
 
 Les informations suivantes restent à fournir avant de publier des mentions légales complètes : identité de l’éditeur, adresse, responsable de publication, hébergeur et coordonnées associées.
 
-Le socle actuel ne contient ni formulaire, ni compte adhérent, ni paiement, ni outil de mesure d’audience. Avant d’ajouter un service qui collecte ou transmet des données, documenter les données concernées, la finalité, le destinataire, la durée de conservation et les informations à fournir aux visiteurs.
+Le site ne contient ni formulaire, ni compte adhérent, ni paiement, ni outil de mesure d’audience. La carte intégrée contacte toutefois Google lors de son chargement et peut lui transmettre l’adresse IP, des informations sur le navigateur et la page d’origine. Cette intégration et sa méthode de retrait sont détaillées dans `docs/ARCHITECTURE.md`. Avant d’ajouter un autre service qui collecte ou transmet des données, documenter les données concernées, la finalité, le destinataire, la durée de conservation et les informations à fournir aux visiteurs.
 
 Ne jamais versionner de listes d’adhérents, de données médicales, de documents d’identité ou de coordonnées privées dans ce dépôt.
 
 ## État éditorial du site
 
-- La page d’accueil présente les disciplines, la salle, les horaires, l’adresse, la séance découverte et l’inscription MonClub.
+- La page d’accueil est orientée vers la force athlétique et présente la salle, l’adresse, l’inscription MonClub, les horaires, la séance découverte et une galerie.
 - Les textes publics se trouvent dans `src/data/site.ts`.
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.
-- Les mentions légales complètes, le téléphone, les réseaux sociaux et les informations de gouvernance restent à fournir.
+- Les mentions légales complètes, le téléphone et les informations de gouvernance restent à fournir.
 - L’affirmation selon laquelle le CAN serait le plus vieux club d’haltérophilie au monde et la date de 1896 restent à confirmer avec une source fiable avant publication.
 - Les tarifs de licence 2025–2026 et les textiles à 20 € sont conservés comme références historiques et ne sont pas affichés comme offres actuelles.
 
@@ -102,3 +103,10 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-09-24 | Nom du projet et objectif de site officiel du club | Demande initiale du propriétaire du dépôt |
 | 2026-09-24 | Adresse, e-mail, disciplines, horaires, inscription, séance découverte, anciens tarifs et médias | Adresse, fichiers et captures fournis par le propriétaire du dépôt |
 | 2026-09-24 | Compte Instagram `@can_powerlifting` | Lien fourni par le propriétaire du dépôt |
+| 2026-09-24 | Situation du club à l’ouest de Nantes, à proximité de Saint-Herblain | Précision fournie par le propriétaire du dépôt |
+
+### Tutoriel MonClub — précisions du 24 septembre 2026
+
+Parcours confirmé par les captures fournies par le propriétaire : télécharger MonClub ; choisir « J’ai un code club » et saisir `CANNANTES` ; créer son profil (ou se connecter avec un compte existant) ; ouvrir le Club Athlétique Nantais et « Nos formules » ; choisir Force athlétique et sa formule ; ajouter la photo et les documents demandés, puis choisir le paiement. Les captures indiquent le paiement au club pour les espèces, la Carte blanche et le Pass’Sport. Les montants historiques ne sont pas repris comme tarifs actuels.
+
+L’icône officielle MonClub est conservée localement dans `public/images/monclub-app.png` (512 × 512), récupérée le 24 septembre 2026 depuis les métadonnées de la [fiche Google Play fournie par le propriétaire](https://play.google.com/store/apps/details?id=eu.teamr.custom&hl=fr&pli=1). Elle appartient à MonClub / SportinTech et sert à identifier son téléchargement. Les illustrations sont des schémas simplifiés sans données personnelles des captures. Aucun lien profond vers une formule n’étant confirmé, seuls les liens officiels vers les stores sont proposés.

@@ -20,6 +20,10 @@ Les textes de l’accueil se trouvent dans `src/data/site.ts`. Modifier uniqueme
 
 Ajouter les images dans `public/images/`, avec des noms simples, par exemple `entrainement-nantes.webp`. Les utiliser dans les composants avec une adresse `/images/entrainement-nantes.webp`. Prévoir un texte alternatif utile (`alt`) et des dimensions `width` et `height`. Vérifier que le club dispose des autorisations nécessaires avant publication.
 
+Le héros utilise `public/images/visite-salle-can.mp4` avec `public/images/salle-can-poster.jpg` comme image de remplacement. Le carrousel lit la liste `gallery` dans `src/data/site.ts` : ajouter une entrée avec le chemin, les dimensions réelles et un texte alternatif, puis vérifier les boutons au clavier et sur mobile. Il avance automatiquement toutes les cinq secondes et propose une commande pause/reprise. Le défilement automatique est désactivé si le visiteur demande une réduction des animations.
+
+Les liens officiels de téléchargement de MonClub et le code du club se trouvent dans `registration` dans `src/data/site.ts`. Vérifier les fiches officielles avant de remplacer ces URL. L’intégration de la carte Google Maps et ses conséquences pour les visiteurs sont décrites dans `docs/ARCHITECTURE.md`.
+
 ## Ajouter une page
 
 Exemple : une page « Activités » accessible à `/activites/`.
@@ -53,3 +57,9 @@ L’entrée dans `pages.ts` alimente automatiquement la navigation, le pré-rend
 Vitest vérifie le rendu des pages déclarées, la navigation active, le lien d’accès au contenu, la page inconnue, la validation du domaine et l’échappement HTML. Il vérifie aussi le refus des configurations FTP incomplètes ou incompatibles, sans connexion au serveur. Le build vérifie les fichiers réellement générés et leurs ressources.
 
 Ces contrôles ne remplacent pas une relecture sur téléphone et ordinateur, ni un essai au clavier. Ils ne testent pas la connexion réelle à l’hébergeur FTP.
+
+### Tutoriel visuel d’inscription
+
+`RegistrationGuide` commence directement par le téléchargement : logo MonClub, puis liens App Store et Google Play. Les cinq étapes suivantes utilisent des illustrations HTML/CSS simplifiées et des instructions lisibles. Ces aperçus ne sont pas des formulaires : aucune information d’adhérent n’est saisie sur le site. Le bouton « Copier CANNANTES » copie le code public et annonce le résultat ; si le presse-papiers est indisponible, le code reste sélectionnable.
+
+Modifier les instructions dans `src/data/registration.ts`, les liens dans `src/data/site.ts`, et la présentation dans `src/components/RegistrationGuide/`. Vérifier les six étapes sur mobile et ordinateur, les deux liens de téléchargement et la copie du code. Les aperçus décoratifs sont masqués aux lecteurs d’écran, qui disposent de la liste ordonnée et des instructions complètes.

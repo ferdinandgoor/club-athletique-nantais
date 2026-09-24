@@ -12,7 +12,7 @@ describe('Pages publiques', () => {
     expect(html).toContain('<h1');
     expect(html).not.toContain('Page introuvable');
     expect(html).toContain('aria-label="Navigation principale"');
-    expect(html).toContain('href="/#disciplines"');
+    expect(html).toContain('href="#inscription"');
     expect(html).toContain('href="#contenu"');
     expect(getSeo(page.path).canonical).toBe(site.url + page.path);
   });
@@ -27,9 +27,17 @@ describe('Pages publiques', () => {
   });
   it('présente les informations essentielles du club', () => {
     const html = renderToStaticMarkup(<App path="/" />);
-    expect(html).toContain('Haltérophilie');
+    expect(html).toContain('club de force athlétique à Nantes');
+    expect(html).toContain('/images/logo-can-officiel.png');
     expect(html).toContain('68 rue de la Durantière');
+    expect(html).toContain('À l’ouest de Nantes');
     expect(html).toContain('CANNANTES');
+    expect(html).toContain('id1489706209');
+    expect(html).toContain('id=eu.teamr.custom');
+    expect(html).toContain('Télécharger MonClub dans l’App Store');
+    expect(html).toContain('Télécharger MonClub sur Google Play');
+    expect(html).toContain('title="Localisation du Club Athlétique Nantais sur Google Maps"');
+    expect(html).toContain('Mettre le carrousel en pause');
     expect(html).toContain('cannantais@gmail.com');
     expect(html).toContain('https://www.instagram.com/can_powerlifting/');
     expect(html).toContain('aria-label="Instagram du Club Athlétique Nantais"');

@@ -64,3 +64,13 @@ L’hébergement prévu sert le site **à la racine d’un domaine**, pas dans u
 `VITE_SITE_URL` fournit le domaine aux URL canoniques et au sitemap. En local, elle est facultative (valeur par défaut : `http://localhost:5173`). Pour une publication, la variable GitHub `SITE_URL` fournit cette valeur au build.
 
 Toute variable préfixée `VITE_` peut se retrouver dans les fichiers publics. Ne jamais y placer de mot de passe ou de clé privée. Le domaine est fixé pendant le build : le changer exige de reconstruire et republier.
+
+## Services externes présents sur l’accueil
+
+La page d’accueil charge une carte intégrée depuis `google.com` et propose des liens vers l’App Store, Google Play, Instagram et Google Maps. Les liens simples ne contactent ces services qu’après un clic. La carte intégrée, elle, contacte Google au chargement de la section, même si elle utilise `loading="lazy"` pour différer la requête.
+
+Le chargement de la carte peut transmettre à Google l’adresse IP du visiteur, des informations sur son navigateur et la page d’origine selon les règles du navigateur et de Google. Il peut aussi permettre à Google de déposer ou lire des traceurs selon le contexte du visiteur. Ce point doit apparaître dans la future politique de confidentialité et doit être revu avant l’ajout d’un outil de consentement. Pour supprimer cette transmission, retirer l’`iframe` dans `src/pages/Home/Home.tsx` et conserver uniquement le lien d’itinéraire.
+
+Le header et le carrousel utilisent uniquement React et les API du navigateur. Aucun script tiers, aucune bibliothèque de carrousel et aucun outil de mesure d’audience ne sont chargés.
+
+Le tutoriel d’inscription est isolé dans `RegistrationGuide` et ses instructions dans `src/data/registration.ts`. Les écrans illustratifs sont rendus en HTML/SCSS et le logo MonClub est servi localement : aucun appel aux stores avant le clic sur leurs liens. La copie du code utilise le presse-papiers après action explicite, sans transmettre de données.
