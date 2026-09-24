@@ -103,13 +103,14 @@ export function Home() {
           <h2 id="activities-title">Trouve ta discipline</h2>
         </header>
         <div className="home__activity-grid">
-          {disciplines.map((discipline, index) => (
+          {disciplines.map((discipline) => (
             <a className={`home__activity-card home__activity-card--${discipline.id}`} href={discipline.path} key={discipline.id} data-reveal>
-              <span className="home__activity-number">0{index + 1}</span>
-              <span className="home__eyebrow">{discipline.subtitle}</span>
-              <h3>{discipline.title}</h3>
-              <p>{discipline.summary}</p>
-              <span className="home__activity-link">Découvrir la {discipline.title.toLowerCase()} <span aria-hidden="true">↗</span></span>
+              <div className="home__activity-content">
+                <span className="home__eyebrow">{discipline.subtitle}</span>
+                <h3>{discipline.title}</h3>
+                <p>{discipline.summary}</p>
+                <span className="home__activity-link">Découvrir la {discipline.title.toLowerCase()} <span aria-hidden="true">↗</span></span>
+              </div>
             </a>
           ))}
         </div>

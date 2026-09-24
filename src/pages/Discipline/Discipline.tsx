@@ -2,6 +2,16 @@ import { disciplines, type DisciplineData } from '../../data/disciplines';
 import { site } from '../../data/site';
 import './Discipline.scss';
 
+const wrestlingSchedule = [
+  { day: 'Lundi', entries: [['17:00–21:00', 'Salle de musculation'], ['19:00–19:30', 'Wrestling training / PPG'], ['19:30–21:00', 'Lutte libre — ados et adultes']] },
+  { day: 'Mardi', entries: [['17:00–21:00', 'Salle de musculation'], ['17:30–19:00', 'Lutte libre et gréco — ados et adultes'], ['19:00–20:30', 'Tapis A : lutte libre et gréco — ados et adultes'], ['19:00–20:30', 'Tapis B : lutte féminine'], ['20:30–21:00', 'PPG — ados et adultes']] },
+  { day: 'Mercredi', entries: [['17:00–21:00', 'Salle de musculation'], ['17:00–18:00', 'Lutte enfants — 4 à 13 ans'], ['18:00–19:00', 'Tapis A : lutte gréco-romaine — ados et adultes'], ['18:00–19:00', 'Tapis B : lutte féminine'], ['19:00–19:30', 'Wrestling training / PPG'], ['19:30–21:00', 'Lutte libre — ados et adultes']] },
+  { day: 'Jeudi', entries: [['17:00–21:00', 'Salle de musculation'], ['17:00–18:00', 'Lutte enfants — 4 à 13 ans'], ['20:00–21:00', 'Matchs arbitrés — tous niveaux, ados et adultes']] },
+  { day: 'Vendredi', entries: [['17:00–21:00', 'Salle de musculation'], ['17:30–18:30', 'Lutte enfants — 4 à 13 ans'], ['18:30–19:40', 'Lutte gréco-romaine — ados et adultes'], ['19:40–21:00', 'PPG — ados et adultes'], ['20:00–21:00', 'Lutte féminine']] },
+  { day: 'Samedi', entries: [['10:00–14:00', 'Salle de musculation']] },
+  { day: 'Dimanche', entries: [['10:00–12:00', 'Salle de musculation'], ['Toute la semaine', 'Open mat : MMA, grappling et fight']] },
+] as const;
+
 export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isForce = discipline.id === 'force-athletique';
   const hasGymHours = isForce || discipline.id === 'musculation';
@@ -21,6 +31,21 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
         <div className="discipline__details">
           {discipline.details.map((detail, index) => <div key={detail.title} data-reveal><span className="discipline__eyebrow">0{index + 1}</span><h3>{detail.title}</h3><p>{detail.text}</p></div>)}
         </div>
+        <div className="discipline__prices" data-reveal>
+          <p className="discipline__eyebrow">Saison 2026–2027</p>
+          <h3>Tarifs</h3>
+          <ul>{discipline.prices.map((price) => <li key={price.label}><span>{price.label}{price.note && <small>{price.note}</small>}</span><strong>{price.amount}</strong></li>)}</ul>
+        </div>
+        {isWrestling && <div className="discipline__schedule" data-reveal>
+          <p className="discipline__eyebrow">Saison 2026–2027</p>
+          <h3>Planning des entraînements</h3>
+          <div className="discipline__schedule-grid">
+            {wrestlingSchedule.map(({ day, entries }) => <section key={day} aria-labelledby={`schedule-${day}`}>
+              <h4 id={`schedule-${day}`}>{day}</h4>
+              <ul>{entries.map(([time, title]) => <li key={`${time}-${title}`}><time>{time}</time><span>{title}</span></li>)}</ul>
+            </section>)}
+          </div>
+        </div>}
       </section>
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>

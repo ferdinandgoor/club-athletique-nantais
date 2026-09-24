@@ -39,7 +39,7 @@ Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter le
 | Jours et horaires | Lundi et vendredi : 17 h–21 h ; samedi : 9 h 30–14 h ; dimanche : 9 h 30–12 h | Visuel fourni le 24 septembre 2026 |
 | Calendrier ou saison concernée | Toute l’année hors vacances scolaires | Visuel fourni le 24 septembre 2026 ; à réviser si le fonctionnement change |
 | Modalités d’inscription | Application MonClub, code club `CANNANTES` | Tutoriel en captures fourni le 24 septembre 2026. Fiches officielles : [App Store](https://apps.apple.com/fr/app/monclub-app/id1489706209) et [Google Play](https://play.google.com/store/apps/details?hl=fr&id=eu.teamr.custom), vérifiées le 24 septembre 2026 |
-| Tarifs et moyens de paiement | Séance découverte : 10 €. Saison 2025–2026 : compétition 200 €, loisir 170 € | La séance découverte est publiée. Les cotisations 2025–2026 sont archivées et doivent être reconfirmées pour 2026–2027. Les captures montrent CB, SEPA et paiement au club |
+| Tarifs et moyens de paiement | Saison 2026–2027 : lutte baby 200 €, lutte enfant 200 €, lutte adulte 250 € avec accès muscu inclus, lutte féminine 170 € avec accès muscu inclus ; force athlétique compétition 200 €, haltérophilie compétition 200 €, loisir 170 €, cours communs 170 € | Tarifs fournis par le propriétaire du dépôt le 24 septembre 2026. Séance découverte : 10 €. Les captures indiquent CB, SEPA et paiement au club |
 | Équipement nécessaire | À fournir | Non publié |
 | Accessibilité des lieux | À fournir | Non publiée |
 | Contact pour une séance d’essai | `cannantais@gmail.com` ; prévenir le club à l’avance | Visuels fournis le 24 septembre 2026 |
@@ -75,6 +75,9 @@ Pour chaque logo, photo, vidéo ou document ajouté au site, conserver au minimu
 | `public/images/visite-salle-can.mp4` | Fourni pour construire le site ; auteur et date à préciser | Visite de la salle publiée, version web sans piste audio |
 | `public/images/salle-can-poster.jpg` | Image extraite de la vidéo précédente | Affiche de chargement de la vidéo |
 | `public/images/competition-force-athletique-01.jpg` à `07.jpg` | Crédit visible : White Lights Media ; fichiers fournis par le propriétaire du dépôt le 24 septembre 2026 | Photos du Grand Prix des Pays de la Loire utilisées dans le carrousel ; portée de l’autorisation à conserver avec les archives du club |
+| `public/images/discipline-cards.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel partagé des cartes Musculation, Force athlétique et Lutte ; texte alternatif décoratif |
+| `public/images/discipline-lutte.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel de la carte Lutte ; texte alternatif décoratif |
+| `public/images/discipline-force-athletique.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit White Lights Media visible ; portée de l’autorisation à conserver avec les archives du club | Fond visuel de la carte Force athlétique ; texte alternatif décoratif |
 | Partenaires et règles d’affichage | À fournir | Aucun partenaire publié pour le moment |
 
 ## Mentions légales et données personnelles
@@ -92,7 +95,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.
 - Les mentions légales complètes, le téléphone et les informations de gouvernance restent à fournir.
 - L’affirmation selon laquelle le CAN serait le plus vieux club d’haltérophilie au monde et la date de 1896 restent à confirmer avec une source fiable avant publication.
-- Les tarifs de licence 2025–2026 et les textiles à 20 € sont conservés comme références historiques et ne sont pas affichés comme offres actuelles.
+- Les tarifs 2026–2027 sont publiés dans les pages des disciplines et doivent être revus au changement de saison.
 
 ## Historique de vérification
 
@@ -104,6 +107,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-09-24 | Adresse, e-mail, disciplines, horaires, inscription, séance découverte, anciens tarifs et médias | Adresse, fichiers et captures fournis par le propriétaire du dépôt |
 | 2026-09-24 | Compte Instagram `@can_powerlifting` | Lien fourni par le propriétaire du dépôt |
 | 2026-09-24 | Situation du club à l’ouest de Nantes, à proximité de Saint-Herblain | Précision fournie par le propriétaire du dépôt |
+| 2026-09-24 | Tarifs 2026–2027 par activité et catégorie | Tarifs fournis par le propriétaire du dépôt |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
 

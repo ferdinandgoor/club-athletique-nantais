@@ -18,6 +18,8 @@ Les informations connues et manquantes sur le club sont suivies dans `docs/CLUB.
 
 Les textes de l’accueil se trouvent dans `src/data/site.ts`. Modifier uniquement les valeurs entre guillemets, en conservant la structure et les virgules. L’apostrophe d’un texte entouré d’apostrophes doit être échappée (`l\'équipe`) ou remplacée par une apostrophe typographique (`l’équipe`).
 
+Les cartes des disciplines utilisent `public/images/discipline-cards.png` comme fond partagé. Remplacer cette image seulement avec une autorisation confirmée et mettre à jour `docs/CLUB.md` avec son crédit, sa portée et sa date.
+
 Ajouter les images dans `public/images/`, avec des noms simples, par exemple `entrainement-nantes.webp`. Les utiliser dans les composants avec une adresse `/images/entrainement-nantes.webp`. Prévoir un texte alternatif utile (`alt`) et des dimensions `width` et `height`. Vérifier que le club dispose des autorisations nécessaires avant publication.
 
 Le héros utilise `public/images/visite-salle-can.mp4` avec `public/images/salle-can-poster.jpg` comme image de remplacement. Le carrousel lit la liste `gallery` dans `src/data/site.ts` : ajouter une entrée avec le chemin, les dimensions réelles et un texte alternatif, puis vérifier les boutons au clavier et sur mobile. Il avance automatiquement toutes les cinq secondes et propose une commande pause/reprise. Le défilement automatique est désactivé si le visiteur demande une réduction des animations.
@@ -78,7 +80,7 @@ Le fond vidéo du héros reçoit un flou de `4px` dans `.home__hero-video` (`Hom
 
 ### Accueil et pages de disciplines
 
-Modifier les résumés et les détails de la musculation, de la force athlétique et de la lutte dans `src/data/disciplines.ts`. L’accueil affiche trois grandes entrées dans cet ordre : Musculation, Force athlétique, Lutte ; le modèle `src/pages/Discipline/Discipline.tsx` présente les informations de chaque activité. Les horaires de salle concernent la force athlétique et la musculation ; l’essai à 10 € concerne uniquement la force athlétique. Pour la lutte, remplacer le bloc de prise de contact par des informations pratiques seulement après leur confirmation dans `docs/CLUB.md`.
+Modifier les résumés, détails et tarifs de la musculation, de la force athlétique et de la lutte dans `src/data/disciplines.ts`. L’accueil affiche trois grandes entrées dans cet ordre : Musculation, Force athlétique, Lutte ; le modèle `src/pages/Discipline/Discipline.tsx` présente les informations de chaque activité. Les tarifs portent la saison indiquée dans le modèle et doivent être mis à jour avec `docs/CLUB.md`. Les horaires de salle concernent la force athlétique et la musculation ; l’essai à 10 € concerne uniquement la force athlétique. Pour la lutte, remplacer le bloc de prise de contact par des informations pratiques seulement après leur confirmation dans `docs/CLUB.md`.
 
 Le tutoriel `src/data/registration.ts` est commun aux disciplines. Ne pas le recentrer exclusivement sur la force athlétique. Vérifier le parcours accueil → discipline → guide d’inscription, les liens du menu mobile, les titres uniques, le pré-rendu et le sitemap avec `npm run check`. Pour ajouter une discipline, compléter ses contenus validés et adapter les informations pratiques du modèle avant de déclarer sa route.
 
