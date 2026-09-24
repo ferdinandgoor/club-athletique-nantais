@@ -112,3 +112,5 @@ Parcours confirmé par les captures fournies par le propriétaire : télécharge
 L’icône officielle MonClub est conservée localement dans `public/images/monclub-app.png` (512 × 512), récupérée le 24 septembre 2026 depuis les métadonnées de la [fiche Google Play fournie par le propriétaire](https://play.google.com/store/apps/details?id=eu.teamr.custom&hl=fr&pli=1). Elle appartient à MonClub / SportinTech et sert à identifier son téléchargement. Les illustrations sont des schémas simplifiés sans données personnelles des captures. Aucun lien profond vers une formule n’étant confirmé, seuls les liens officiels vers les stores sont proposés.
 
 Le favicon ajouté le 24 septembre 2026 est une adaptation graphique générée à partir du logo officiel fourni : tête d’éléphant blanche et lavande sur fond bleu marine, sans texte. La source est `public/images/favicon-source.png` ; le logo officiel reste inchangé.
+
+Le sous-titre du héros, reformulé selon le retour du propriétaire le 24 septembre 2026, présente un collectif « qui accueille aussi bien les débutants que les compétiteurs ». Le texte publié est centralisé dans `src/data/site.ts`.

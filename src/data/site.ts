@@ -43,6 +43,6 @@ export const site = {
   ],
   home: {
     eyebrow: 'Powerlifting à Nantes',
-    introduction: 'Découvre la force athlétique dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débuts que la compétition.',
+    introduction: 'Découvre la force athlétique dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débutants que les compétiteurs.',
   },
 };
