@@ -25,7 +25,8 @@ Les données marquées `À fournir` ou `À confirmer` ne doivent pas être publi
 | Adresse e-mail publique | `cannantais@gmail.com` | Visible dans la fiche MonClub fournie le 24 septembre 2026 |
 | Téléphone public | À fournir | Non publié |
 | Site public et domaine définitif | À fournir | `SITE_URL` reste à configurer dans GitHub |
-| Réseaux sociaux officiels | Instagram : [`@can_powerlifting`](https://www.instagram.com/can_powerlifting/) | Fourni par le propriétaire du dépôt le 24 septembre 2026 |
+| Réseaux sociaux officiels | Instagram force athlétique : [`@can_powerlifting`](https://www.instagram.com/can_powerlifting/) ; lutte : [`@can_lutte_nantes`](https://www.instagram.com/can_lutte_nantes/) | Liens fournis par le propriétaire du dépôt les 24 et 26 septembre 2026 |
+| Communauté WhatsApp | [Rejoindre la communauté](https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv) | Lien fourni par le propriétaire du dépôt le 26 septembre 2026 |
 | Responsable de publication | À fournir | Nécessaire aux mentions légales |
 
 Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter leur emplacement dans le gestionnaire interne du club et donner les droits directement aux personnes autorisées.
@@ -135,9 +136,9 @@ L’offre et le planning des cours collectifs sont en cours de révision : ne pa
 
 Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires publiés sont ceux de la force athlétique : lundi et vendredi de 17 h à 21 h, samedi de 9 h 30 à 14 h et dimanche de 9 h 30 à 12 h, toute l’année hors vacances scolaires. Les conditions d’accès, l’encadrement et les modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.
 
-### Page de liens — demande du 24 septembre 2026
+### Page de liens — demandes des 24 et 26 septembre 2026
 
-Le propriétaire demande une page de type Linktree à `/links/`, avec le site du club et le compte Instagram déjà validé `@can_powerlifting`. Son accès est ajouté uniquement dans le pied de page. Les autres liens sont à fournir par le club ; aucun lien provisoire n’est publié. La liste publique est conservée dans `src/data/links.ts`.
+Le propriétaire demande une page de type Linktree à `/links/`. Elle propose le site, l’inscription, les comptes Instagram `@can_powerlifting` et `@can_lutte_nantes`, ainsi que la communauté WhatsApp. Son accès est ajouté uniquement dans le pied de page. La liste publique est conservée dans `src/data/links.ts`.
 
 ### Accueil des nouveaux visiteurs — 24 septembre 2026
 

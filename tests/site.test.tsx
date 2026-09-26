@@ -44,8 +44,11 @@ describe('Pages publiques', () => {
     const html = renderToStaticMarkup(<App path="/links/" />);
     const content = html.split('<main')[1].split('</main>')[0];
     expect(content).toContain('href="/"');
+    expect(content).toContain('href="/#inscription"');
     expect(content).toContain(`href="${site.contact.instagramUrl}"`);
-    expect(content.match(/<a /g)).toHaveLength(3);
+    expect(content).toContain('href="https://www.instagram.com/can_lutte_nantes/"');
+    expect(content).toContain('href="https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv"');
+    expect(content.match(/<a /g)).toHaveLength(6);
     expect(content).toContain('href="/">Retour à l’accueil</a>');
     const home = renderToStaticMarkup(<App path="/" />);
     expect(home.split('<footer')[1]).toContain('href="/links/"');
