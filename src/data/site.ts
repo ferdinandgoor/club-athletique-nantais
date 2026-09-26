@@ -10,7 +10,7 @@ export const site = {
     address: '68 rue de la Durantière, 44100 Nantes',
     mapUrl: 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x4805ed4273092a11:0x5761dfc27104bf6f?sa=X&ved=1t:8290&ictx=111',
     mapEmbedUrl: 'https://www.google.com/maps?q=68%20rue%20de%20la%20Duranti%C3%A8re%2C%2044100%20Nantes&output=embed',
-    instagramUrl: 'https://www.instagram.com/can_powerlifting/',
+    instagramUrl: 'https://www.instagram.com/club_athletique_nantais',
   },
   activities: [
     { title: 'Haltérophilie', text: 'Apprendre et perfectionner les mouvements olympiques dans un espace équipé.' },

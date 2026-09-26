@@ -25,7 +25,7 @@ Les données marquées `À fournir` ou `À confirmer` ne doivent pas être publi
 | Adresse e-mail publique | `cannantais@gmail.com` | Visible dans la fiche MonClub fournie le 24 septembre 2026 |
 | Téléphone public | À fournir | Non publié |
 | Site public et domaine définitif | À fournir | `SITE_URL` reste à configurer dans GitHub |
-| Réseaux sociaux officiels | Instagram force athlétique : [`@can_powerlifting`](https://www.instagram.com/can_powerlifting/) ; lutte : [`@can_lutte_nantes`](https://www.instagram.com/can_lutte_nantes/) | Liens fournis par le propriétaire du dépôt les 24 et 26 septembre 2026 |
+| Réseaux sociaux officiels | Instagram commun aux deux clubs : [`@club_athletique_nantais`](https://www.instagram.com/club_athletique_nantais) ; anciens comptes de discipline à confirmer | Compte commun fourni par le propriétaire du dépôt le 26 septembre 2026 |
 | Communauté WhatsApp | [Rejoindre la communauté](https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv) | Lien fourni par le propriétaire du dépôt le 26 septembre 2026 |
 | Responsable de publication | À fournir | Nécessaire aux mentions légales |
 

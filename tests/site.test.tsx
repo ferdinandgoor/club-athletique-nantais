@@ -45,7 +45,7 @@ describe('Pages publiques', () => {
     const content = html.split('<main')[1].split('</main>')[0];
     expect(content).toContain(`href="mailto:${site.contact.email}"`);
     expect(content).toContain('href="/#inscription"');
-    expect(content).toContain(`href="${site.contact.instagramUrl}"`);
+    expect(content).toContain('href="https://www.instagram.com/can_powerlifting/"');
     expect(content).toContain('href="https://www.instagram.com/can_lutte_nantes/"');
     expect(content).toContain('href="https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv"');
     expect(content.match(/<a /g)).toHaveLength(6);
@@ -72,7 +72,7 @@ describe('Pages publiques', () => {
     expect(html).toContain('title="Localisation du Club Athlétique Nantais sur Google Maps"');
     expect(html).toContain('Mettre le carrousel en pause');
     expect(html).toContain('cannantais@gmail.com');
-    expect(html).toContain('https://www.instagram.com/can_powerlifting/');
+    expect(html).toContain('https://www.instagram.com/club_athletique_nantais');
     expect(html).toContain('aria-label="Instagram du Club Athlétique Nantais"');
   });
 });

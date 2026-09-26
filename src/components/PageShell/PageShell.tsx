@@ -71,11 +71,22 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
       <main ref={mainRef} id="contenu" tabIndex={-1}><Container>{children}</Container></main>
       {!isLinks && <footer className="page-shell__footer">
         <Container>
-          <strong>{site.name}</strong>
-          <address>{site.contact.address}</address>
-          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-          <a href={site.contact.instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
-          <a href="/links/" aria-current={path === '/links/' ? 'page' : undefined}>Links</a>
+          <div className="page-shell__footer-column page-shell__footer-brand">
+            <strong>{site.name}</strong>
+            <p>Musculation · Force athlétique · Lutte</p>
+          </div>
+          <div className="page-shell__footer-column">
+            <h2>Contact</h2>
+            <address>{site.contact.address}</address>
+            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+          </div>
+          <div className="page-shell__footer-column">
+            <h2>Nous suivre</h2>
+            <a href={site.contact.instagramUrl} target="_blank" rel="noreferrer">Instagram du club</a>
+            <a href="https://www.instagram.com/can_powerlifting/" target="_blank" rel="noreferrer">Instagram force athlétique</a>
+            <a href="https://www.instagram.com/can_lutte_nantes/" target="_blank" rel="noreferrer">Instagram lutte</a>
+            <a href="/links/" aria-current={path === '/links/' ? 'page' : undefined}>Tous les liens</a>
+          </div>
         </Container>
       </footer>}
     </div>
