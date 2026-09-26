@@ -138,7 +138,7 @@ Pour la musculation, les photos fournies confirment la présence de machines, ba
 
 ### Page de liens — demandes des 24 et 26 septembre 2026
 
-Le propriétaire demande une page de type Linktree à `/links/`. Elle propose le site, l’inscription, les comptes Instagram `@can_powerlifting` et `@can_lutte_nantes`, ainsi que la communauté WhatsApp. Son accès est ajouté uniquement dans le pied de page. La liste publique est conservée dans `src/data/links.ts`.
+Le propriétaire demande une page de type Linktree à `/links/`. Elle propose un contact e-mail, l’inscription, les comptes Instagram `@can_powerlifting` et `@can_lutte_nantes`, ainsi que la communauté WhatsApp. Son accès est ajouté uniquement dans le pied de page. La liste publique est conservée dans `src/data/links.ts`.
 
 ### Accueil des nouveaux visiteurs — 24 septembre 2026
 

@@ -12,11 +12,11 @@
   &__list { display: grid; gap: var(--space-sm); margin: var(--space-md) 0 0; padding: 0; list-style: none; }
   &__card { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); min-height: 4.5rem; padding: var(--space-sm); border: 1px solid transparent; border-radius: 1rem; background: var(--color-navy); color: white; text-decoration: none; transition: background .2s ease, transform .2s ease; }
   &__card:hover { transform: translateY(-2px); }
-  &__card--site { background: #173d70; }
+  &__card--contact { background: #173d70; }
   &__card--registration { background: #a83232; }
   &__card--instagram { background: linear-gradient(110deg, #5b2c83, #d62976 55%, #f9a03f); }
   &__card--whatsapp { background: #168c55; }
-  &__card--site:hover { background: #21569a; }
+  &__card--contact:hover { background: #21569a; }
   &__card--registration:hover { background: #c23d3d; }
   &__card--instagram:hover { background: linear-gradient(110deg, #7138a0, #ed3d88 55%, #ffb34c); }
   &__card--whatsapp:hover { background: #1eaa69; }
