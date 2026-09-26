@@ -48,7 +48,10 @@ describe('Pages publiques', () => {
     expect(content).toContain('href="https://www.instagram.com/can_powerlifting/"');
     expect(content).toContain('href="https://www.instagram.com/can_lutte_nantes/"');
     expect(content).toContain('href="https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv"');
-    expect(content.match(/<a /g)).toHaveLength(6);
+    expect(content).toContain('links__card--official');
+    expect(content).toContain('Site officiel du club');
+    expect(content).toContain('src="/images/favicon-source.png"');
+    expect(content.match(/<a /g)).toHaveLength(7);
     expect(content).toContain('href="/">Retour à l’accueil du site</a>');
     const home = renderToStaticMarkup(<App path="/" />);
     expect(home.split('<footer')[1]).toContain('href="/links/"');
