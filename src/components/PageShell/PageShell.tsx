@@ -74,6 +74,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
           <div className="page-shell__footer-column page-shell__footer-brand">
             <strong>{site.name}</strong>
             <p>Musculation · Force athlétique · Lutte</p>
+            <a href="https://ferd.fr/developpeur-freelance" target="_blank" rel="noreferrer">Site développé par Ferd</a>
           </div>
           <div className="page-shell__footer-column">
             <h2>Contact</h2>
