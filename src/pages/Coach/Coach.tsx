@@ -11,7 +11,7 @@ export function Coach({ coach }: { coach: CoachData }) {
         <p className="coach__introduction">{coach.introduction}</p>
         <div className="coach__actions">
           <a className="coach__button" href="/#inscription">S’inscrire avec MonClub</a>
-          {coach.instagram && <a className="coach__instagram" href={`https://www.instagram.com/${coach.instagram}/`} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>Suis-le sur Instagram ↗</a>}
+          {coach.instagram && <a className="coach__instagram" href={`https://www.instagram.com/${coach.instagram}/`} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>{coach.instagramLabel}</a>}
         </div>
       </header>
       <section className="coach__section" aria-labelledby="role-title">

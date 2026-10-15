@@ -65,7 +65,10 @@ describe('Pages publiques', () => {
       expect(html).toContain(`href="${coach.discipline.path}"`);
       expect(html).toContain(`src="${coach.photo.src}"`);
       expect(html).toContain('href="/#inscription"');
-      if (coach.instagram) expect(html).toContain(`https://www.instagram.com/${coach.instagram}/`);
+      if (coach.instagram) {
+        expect(html).toContain(`https://www.instagram.com/${coach.instagram}/`);
+        expect(html).toContain(coach.instagramLabel);
+      }
     }
     const force = renderToStaticMarkup(<App path="/force-athletique/" />);
     expect(force).toContain('Trouver un coach');
