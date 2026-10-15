@@ -1,5 +1,9 @@
 # Reprendre et entretenir le site
 
+## Contact développeur et code source
+
+Le site a été développé par Ferdinand Goor, joignable à `ferdinand.goor@gmail.com` (lien « Proposer une modification du site » dans le pied de page de chaque page). Le code source est public : [github.com/ferdinandgoor/club-athletique-nantais](https://github.com/ferdinandgoor/club-athletique-nantais). Pour récupérer le projet : cloner le dépôt, puis suivre le chapitre Installation du `README.md`. Ces informations se modifient dans `developer` dans `src/data/site.ts` et sont documentées dans `docs/CLUB.md`.
+
 ## Passation à une nouvelle personne
 
 Transmettre ces éléments par les canaux adaptés ; les mots de passe restent dans un gestionnaire de mots de passe, jamais dans Git :

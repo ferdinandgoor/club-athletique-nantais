@@ -54,7 +54,7 @@ Toute information saisonnière doit porter une période claire, par exemple « s
 | Rôle | Personne ou moyen de contact | Statut |
 | --- | --- | --- |
 | Personne qui valide les contenus publics | À fournir | À conserver dans l’outil interne si le contact n’est pas public |
-| Responsable technique du site | À fournir | À conserver dans l’outil interne si le contact n’est pas public |
+| Responsable technique du site | Ferdinand Goor — `ferdinand.goor@gmail.com` ; dépôt public : [github.com/ferdinandgoor/club-athletique-nantais](https://github.com/ferdinandgoor/club-athletique-nantais) | Fourni par le propriétaire du dépôt (qui est ce développeur) le 15 octobre 2026 ; publié dans le pied de page du site |
 | Responsable du domaine et de l’hébergement | À fournir | À conserver dans l’outil interne |
 | Échéance de renouvellement du domaine | À fournir | À conserver dans l’outil interne |
 | Échéance de renouvellement de l’hébergement | À fournir | À conserver dans l’outil interne |
@@ -180,6 +180,10 @@ Sacha Turpin, président du club, a transmis par WhatsApp une liste de modificat
    - Manquent avant publication : le ou les jours de ces créneaux, le tarif éventuel (ou renvoi vers MonClub), la photo, et l’accord de Véronique L’hotellier pour publier son nom et son image. Ne pas annoncer ces créneaux sans le jour.
 3. **Haltérophilie — contenu à fournir.** Case cochée dans la liste du président. L’haltérophilie était volontairement en retrait ; les tarifs compétition (200 €) et loisir (170 €) sont connus. Descriptions, horaires, encadrant et public restent `À fournir` avant de créer une page ou une section. À clarifier avec le président : page dédiée ou simple mention ?
 4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.
+
+### Contact développeur et dépôt public — 15 octobre 2026
+
+Le propriétaire du dépôt, Ferdinand Goor, développeur du site, demande la publication de son contact pour les modifications ou la reprise du projet : adresse `ferdinand.goor@gmail.com`, dépôt public `github.com/ferdinandgoor/club-athletique-nantais`. Publié le même jour dans le pied de page de toutes les pages (« Proposer une modification du site », « Code source sur GitHub »), avec un lien vers son profil `ferd.fr/developpeur-freelance`. Les données se modifient dans `developer` dans `src/data/site.ts`. Attention : publier une adresse e-mail dans une page publique l’expose au spam ; ce choix est celui du propriétaire et peut être retiré à tout moment en supprimant les liens du pied de page.
 
 ### Référencement local — demande du propriétaire du 15 octobre 2026
 

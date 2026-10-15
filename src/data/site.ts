@@ -55,4 +55,11 @@ export const site = {
     eyebrow: 'Musculation · Force athlétique · Lutte',
     introduction: 'Découvre les activités du Club Athlétique Nantais, un collectif qui accueille aussi bien les débutants que les compétiteurs.',
   },
+  // Développeur du site, contact public pour les modifications ou la reprise du projet.
+  developer: {
+    name: 'Ferdinand Goor',
+    email: 'ferdinand.goor@gmail.com',
+    websiteUrl: 'https://ferd.fr/developpeur-freelance',
+    githubUrl: 'https://github.com/ferdinandgoor/club-athletique-nantais',
+  },
 };

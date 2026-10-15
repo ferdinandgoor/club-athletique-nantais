@@ -135,6 +135,15 @@ describe('Pages publiques', () => {
     expect(html).toContain('https://www.instagram.com/club_athletique_nantais');
     expect(html).toContain('aria-label="Instagram du Club Athlétique Nantais"');
   });
+  it('publie le contact du développeur et le code source dans le pied de page', () => {
+    const html = renderToStaticMarkup(<App path="/" />);
+    const footer = html.split('<footer')[1];
+    expect(footer).toContain('Ferdinand Goor');
+    expect(footer).toContain(`href="mailto:${site.developer.email}?subject=`);
+    expect(footer).toContain('Proposer une modification du site');
+    expect(footer).toContain(`href="${site.developer.githubUrl}"`);
+    expect(footer).toContain('Code source sur GitHub');
+  });
 });
 
 describe('Configuration du domaine', () => {
