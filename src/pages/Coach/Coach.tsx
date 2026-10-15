@@ -23,7 +23,7 @@ export function Coach({ coach }: { coach: CoachData }) {
           <h2 id="role-title">Son rôle au Club Athlétique Nantais</h2>
           <ul className="coach__roles">
             <li><strong>{coach.clubRole}</strong><span>Élu lors de l’Assemblée Générale du 1er octobre 2026.</span></li>
-            <li><strong>{coach.coachRole}</strong><span>Il encadre les entraînements de {coach.discipline.title.toLowerCase()} du club.</span></li>
+            <li><strong>{coach.coachRole}</strong><span>{coach.roleDescription}</span></li>
           </ul>
           <a className="coach__button" href={coach.discipline.path}>Découvrir la {coach.discipline.title.toLowerCase()}</a>
         </div>
