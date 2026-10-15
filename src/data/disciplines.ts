@@ -74,20 +74,6 @@ export const disciplines = [
     ],
   },
   {
-    id: 'pilates', path: '/pilates/', title: 'Pilates', subtitle: 'Renforcement et mobilité', noun: 'le Pilates',
-    metaTitle: 'Pilates à Nantes',
-    summary: 'Renforcement, mobilité et maîtrise du mouvement : le Pilates fait partie des activités du Club Athlétique Nantais.',
-    introduction: 'Le Pilates fait partie des activités du Club Athlétique Nantais. Contacte le club pour préparer ta venue et connaître les modalités.',
-    heading: 'Renforcement, mobilité, maîtrise',
-    joinSelection: '« Pilates »',
-    details: [
-      { title: 'Renforcement', text: 'Des exercices pour renforcer le corps.' },
-      { title: 'Mobilité', text: 'Des exercices pour travailler la mobilité.' },
-      { title: 'Maîtrise du mouvement', text: 'Apprendre à contrôler ses mouvements.' },
-    ],
-    prices: [],
-  },
-  {
     id: 'cours-communs', path: '/cours-communs/', title: 'Cours communs', subtitle: 'Temps collectifs', noun: 'les cours communs',
     metaTitle: 'Cours communs à Nantes',
     summary: 'Chaque jeudi soir, gym renforcement musculaire puis stretching : les cours communs du Club Athlétique Nantais pour progresser ensemble.',

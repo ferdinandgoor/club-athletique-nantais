@@ -39,11 +39,11 @@ describe('Pages publiques', () => {
     expect(home.indexOf('href="/lutte/"')).toBeLessThan(home.indexOf('href="/musculation/"'));
     expect(home).toContain('Powerlifting · Lutte · Musculation');
     expect(home).toContain('<h3>Haltérophilie</h3>');
-    expect(home).toContain('<h3>Pilates</h3>');
+    expect(home).not.toContain('Pilates');
     expect(home).toContain('<h3>Cours communs</h3>');
     expect(home).toContain('Mouvements olympiques');
     expect(home).toContain('href="/halterophilie/"');
-    expect(home).toContain('href="/pilates/"');
+    expect(home).not.toContain('href="/pilates/"');
     expect(home).toContain('href="/cours-communs/"');
     const halterophilie = renderToStaticMarkup(<App path="/halterophilie/" />);
     expect(halterophilie).toContain('Arraché');
@@ -51,9 +51,7 @@ describe('Pages publiques', () => {
     expect(halterophilie).toContain('licence compétition');
     expect(halterophilie).toContain('Horaires de la salle');
     const pilates = renderToStaticMarkup(<App path="/pilates/" />);
-    expect(pilates).toContain('Contacte le club pour organiser ta venue');
-    expect(pilates).not.toContain(site.hours[0].times);
-    expect(pilates).not.toContain('Saison 2026–2027');
+    expect(pilates).toContain('Page introuvable');
     const coursCommuns = renderToStaticMarkup(<App path="/cours-communs/" />);
     expect(coursCommuns).toContain('Cours communs');
     expect(coursCommuns).toContain('170 €');
@@ -61,6 +59,9 @@ describe('Pages publiques', () => {
     expect(coursCommuns).toContain('18 h 30–19 h 15');
     expect(coursCommuns).toContain('19 h 15–20 h 00');
     expect(coursCommuns).toContain('accès salle de muscu inclus');
+    expect(coursCommuns).toContain('Horaires de la salle');
+    expect(coursCommuns).toContain(site.hours[0].times);
+    expect(coursCommuns).toContain('Accès libre à la salle de musculation sur ces créneaux d’ouverture');
     expect(coursCommuns).not.toContain('L’hotellier');
     expect(wrestling).toContain('Lutte baby');
     expect(wrestling).toContain('href="/#inscription"');
@@ -90,6 +91,12 @@ describe('Pages publiques', () => {
       expect(html).toContain(member.role);
       expect(html).toContain(member.name);
     }
+    const order = ['Sacha Turpin', 'Adrien Bolle', 'Maryne Melart', 'Tengiz Dalakishvili', 'Emma Houédé', 'Marie Boennec'];
+    const positions = order.map((name) => html.indexOf(name));
+    for (let index = 1; index < positions.length; index += 1) {
+      expect(positions[index]).toBeGreaterThan(positions[index - 1]);
+    }
+    expect(html).toContain('Depuis l’AG du 31 octobre 2025');
     expect(html).toContain('href="/#inscription"');
     expect(html).toContain('aria-current="page">Qui sommes-nous ?</a>');
     const home = renderToStaticMarkup(<App path="/" />);

@@ -15,7 +15,7 @@ const wrestlingSchedule = [
 
 export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isForce = discipline.id === 'force-athletique';
-  const hasGymHours = isForce || discipline.id === 'musculation' || discipline.id === 'halterophilie';
+  const hasGymHours = isForce || discipline.id === 'musculation' || discipline.id === 'halterophilie' || discipline.id === 'cours-communs';
   const others = disciplines.filter((item) => item.id !== discipline.id);
   const isWrestling = discipline.id === 'lutte';
   const coach = coaches.find((item) => item.discipline.id === discipline.id);
@@ -54,7 +54,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>
         {hasGymHours ? <div className="discipline__details discipline__details--two">
-          <div><h3>Horaires de la salle</h3><dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl><p>Toute l’année, hors vacances scolaires.</p><address>{site.contact.address}</address><a href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire ↗</a></div>
+          <div><h3>Horaires de la salle</h3><dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl><p>Toute l’année, hors vacances scolaires.</p>{discipline.id === 'cours-communs' && <p>Accès libre à la salle de musculation sur ces créneaux d’ouverture.</p>}<address>{site.contact.address}</address><a href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire ↗</a></div>
           {isForce && <div><h3>Teste la salle</h3><p className="discipline__price">{site.registration.trialPrice}<small> la séance</small></p><p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p><a className="discipline__button" href={`mailto:${site.contact.email}`}>Organiser ma séance</a></div>}
         </div> : <div className="discipline__contact"><h3>Comment découvrir {discipline.noun} ?</h3>{isWrestling ? <p>L’entraîneur est présent sur tous les créneaux. Viens voir un cours et pose-lui directement tes questions.</p> : <p>Contacte le club pour organiser ta venue : un bénévole pourra t’accueillir et répondre à tes questions.</p>}<p>Tu peux aussi t’inscrire directement avec MonClub grâce au guide ci-dessous.</p><a className="discipline__button" href="/#inscription">Voir le guide d’inscription</a><a className="discipline__other" href={`mailto:${site.contact.email}?subject=${encodeURIComponent('Renseignements ' + discipline.title)}`}>Écrire au club si besoin</a></div>}
       </section>

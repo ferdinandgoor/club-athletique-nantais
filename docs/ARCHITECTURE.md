@@ -21,7 +21,7 @@ src/
     Container/           Largeur et marges du contenu
     PageShell/           En-tête, navigation, contenu principal et pied de page
   pages/Home/            Page d’accueil et son SCSS
-  pages/Discipline/      Modèle commun des pages musculation, force athlétique, lutte, haltérophilie, Pilates et cours communs
+  pages/Discipline/      Modèle commun des pages musculation, force athlétique, lutte, haltérophilie et cours communs
   pages/About/           Page « Qui sommes-nous ? » et son SCSS
   pages/Coach/           Modèle commun des pages de coachs et son SCSS
   data/disciplines.ts    Résumés, chemins et contenus des disciplines
@@ -91,7 +91,7 @@ Ne pas ajouter de coordonnées géographiques ni d’horaires au JSON-LD sans in
 
 ## Orientation par discipline
 
-L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/`, `/lutte/`, `/halterophilie/`, `/pilates/` et `/cours-communs/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. La navigation principale est identique sur toutes les pages : les ancres vers les sections de l’accueil, « Qui sommes-nous ? » et le compte Instagram du club ; les disciplines sont accessibles par les cartes de l’accueil et les liens « Découvrir aussi » entre pages. Le champ `noun` porte l’article grammatical utilisé dans les phrases publiques. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la page active. Le bloc tarifs ne s’affiche que si la discipline a des tarifs confirmés.
+L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/`, `/lutte/`, `/halterophilie/` et `/cours-communs/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. La navigation principale est identique sur toutes les pages : les ancres vers les sections de l’accueil, « Qui sommes-nous ? » et le compte Instagram du club ; les disciplines sont accessibles par les cartes de l’accueil et les liens « Découvrir aussi » entre pages. Le champ `noun` porte l’article grammatical utilisé dans les phrases publiques. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la page active. Le bloc tarifs ne s’affiche que si la discipline a des tarifs confirmés.
 
 Les animations au défilement sont une amélioration progressive : `useScrollReveal` observe les blocs `data-reveal` du contenu principal puis joue une animation native ponctuelle, sans masquer les blocs en attente. Il libère l’observateur au démontage, annule les effets au focus clavier et respecte les changements de préférence de réduction des animations. Les survols et animations d’entrée restent dans les SCSS des composants.
 

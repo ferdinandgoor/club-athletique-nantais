@@ -28,6 +28,7 @@ export function About() {
                 <img className="about__member-photo" src={member.photo.src} width={member.photo.width} height={member.photo.height} alt={member.photo.alt} />
                 <p className="about__eyebrow about__eyebrow--dark">{member.role}</p>
                 <h3>{member.name}</h3>
+                {'since' in member && <p className="about__member-since">{member.since}</p>}
                 {coachPath && <a className="about__member-link" href={coachPath}>Coach — découvrir son profil →</a>}
               </li>
             );
