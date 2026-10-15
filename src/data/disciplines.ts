@@ -1,9 +1,8 @@
 // Informations issues des contenus MonClub et des visuels fournis par le club.
-// `main` désigne les disciplines mises en avant dans la navigation.
 // `noun` donne le titre avec son article pour les phrases publiques (« la force athlétique »).
 export const disciplines = [
   {
-    id: 'musculation', path: '/musculation/', title: 'Musculation', subtitle: 'La salle près de chez toi', main: true, noun: 'la musculation',
+    id: 'musculation', path: '/musculation/', title: 'Musculation', subtitle: 'La salle près de chez toi', noun: 'la musculation',
     metaTitle: 'Salle de musculation à Nantes',
     summary: 'Salle de musculation à Nantes : découvre celle du Club Athlétique Nantais, à proximité de Saint-Herblain, et rejoins le club pour tes entraînements.',
     introduction: 'Envie de pratiquer la musculation à Nantes ? Découvre la salle du Club Athlétique Nantais, à l’ouest de la ville, et prépare ta première venue avec nous.',
@@ -20,7 +19,7 @@ export const disciplines = [
     ],
   },
   {
-    id: 'force-athletique', path: '/force-athletique/', title: 'Force athlétique', subtitle: 'Powerlifting', main: true, noun: 'la force athlétique',
+    id: 'force-athletique', path: '/force-athletique/', title: 'Force athlétique', subtitle: 'Powerlifting', noun: 'la force athlétique',
     metaTitle: 'Force athlétique & Powerlifting à Nantes',
     summary: 'Powerlifting à Nantes : squat, développé couché, soulevé de terre. Découvre la force athlétique au CAN, du premier entraînement à la compétition.',
     introduction: 'Développe ta force en powerlifting à Nantes, dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débutants que les compétiteurs.',
@@ -39,7 +38,7 @@ export const disciplines = [
     ],
   },
   {
-    id: 'lutte', path: '/lutte/', title: 'Lutte', subtitle: 'Libre & gréco-romaine', main: true, noun: 'la lutte',
+    id: 'lutte', path: '/lutte/', title: 'Lutte', subtitle: 'Libre & gréco-romaine', noun: 'la lutte',
     metaTitle: 'Lutte libre et gréco-romaine à Nantes',
     summary: 'Club de lutte à Nantes : lutte libre et gréco-romaine au CAN, avec les catégories lutte, lutte baby et lutte enfant dans MonClub.',
     introduction: 'Le CAN, club de lutte à Nantes, propose la lutte libre et la lutte gréco-romaine. Retrouve la section lutte et prépare ta première venue avec le club.',
@@ -58,7 +57,7 @@ export const disciplines = [
     ],
   },
   {
-    id: 'halterophilie', path: '/halterophilie/', title: 'Haltérophilie', subtitle: 'Mouvements olympiques', main: false, noun: 'l’haltérophilie',
+    id: 'halterophilie', path: '/halterophilie/', title: 'Haltérophilie', subtitle: 'Mouvements olympiques', noun: 'l’haltérophilie',
     metaTitle: 'Haltérophilie à Nantes',
     summary: 'Apprendre et perfectionner les mouvements olympiques dans un espace équipé : découvre l’haltérophilie au Club Athlétique Nantais.',
     introduction: 'Découvre l’haltérophilie au Club Athlétique Nantais et prépare ta première venue en contactant le club.',
@@ -75,7 +74,7 @@ export const disciplines = [
     ],
   },
   {
-    id: 'pilates', path: '/pilates/', title: 'Pilates', subtitle: 'Renforcement et mobilité', main: false, noun: 'le Pilates',
+    id: 'pilates', path: '/pilates/', title: 'Pilates', subtitle: 'Renforcement et mobilité', noun: 'le Pilates',
     metaTitle: 'Pilates à Nantes',
     summary: 'Renforcement, mobilité et maîtrise du mouvement : le Pilates fait partie des activités du Club Athlétique Nantais.',
     introduction: 'Le Pilates fait partie des activités du Club Athlétique Nantais. Contacte le club pour préparer ta venue et connaître les modalités.',
@@ -89,7 +88,7 @@ export const disciplines = [
     prices: [],
   },
   {
-    id: 'cours-communs', path: '/cours-communs/', title: 'Cours communs', subtitle: 'Temps collectifs', main: false, noun: 'les cours communs',
+    id: 'cours-communs', path: '/cours-communs/', title: 'Cours communs', subtitle: 'Temps collectifs', noun: 'les cours communs',
     metaTitle: 'Cours communs à Nantes',
     summary: 'Des temps collectifs pour progresser ensemble au sein du club : les cours communs du Club Athlétique Nantais.',
     introduction: 'Les cours communs réunissent les adhérents du Club Athlétique Nantais autour de temps collectifs. Contacte le club pour en savoir plus.',

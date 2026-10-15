@@ -60,6 +60,15 @@ describe('Pages publiques', () => {
     expect(powerlifting).toContain(site.registration.trialPrice);
     expect(powerlifting).toContain(site.hours[0].times);
     expect(powerlifting).toContain('discipline__hero--force-athletique');
+    const disciplineHeader = powerlifting.split('</header>')[0];
+    const homeHeader = home.split('</header>')[0];
+    for (const id of ['localisation', 'activites', 'inscription', 'infos', 'galerie']) {
+      expect(disciplineHeader).toContain(`href="/#${id}"`);
+    }
+    const disciplineNav = disciplineHeader.split('<nav')[1].split('</nav>')[0];
+    const homeNav = homeHeader.split('<nav')[1].split('</nav>')[0];
+    expect(disciplineNav.replaceAll('/#', '#')).toEqual(homeNav.replaceAll('/#', '#'));
+    expect(disciplineHeader).not.toContain('href="/lutte/"');
   });
   it('présente le bureau élu lors de l’AG 2026 avec un portrait par membre', () => {
     const html = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
