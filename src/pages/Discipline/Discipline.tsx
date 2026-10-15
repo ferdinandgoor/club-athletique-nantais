@@ -22,7 +22,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const instagramUrl = isForce ? 'https://www.instagram.com/can_powerlifting/' : isWrestling ? 'https://www.instagram.com/can_lutte_nantes/' : site.contact.instagramUrl;
   return (
     <article className="discipline">
-      <header className="discipline__hero">
+      <header className={`discipline__hero${isForce ? ' discipline__hero--force-athletique' : ''}`}>
         <nav aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true"> / </span><span aria-current="page">{discipline.title}</span></nav>
         <p className="discipline__eyebrow">{discipline.subtitle}</p>
         <h1>{discipline.title}</h1>

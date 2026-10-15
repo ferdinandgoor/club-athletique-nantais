@@ -1,5 +1,6 @@
 .discipline {
   &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(1.5rem, calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
+  &__hero--force-athletique { background-image: linear-gradient(90deg, rgb(11 16 37 / 94%) 0%, rgb(11 16 37 / 70%) 45%, rgb(11 16 37 / 38%) 100%), url('/images/force-athletique-banniere.jpg'); background-size: cover; background-position: center; }
   &__hero nav { margin-bottom: 3rem; font-size: .85rem; }
   &__hero nav a { color: white; }
   &__hero h1 { max-width: 15ch; margin-block: 1rem 2rem; }
@@ -55,5 +56,6 @@
   .discipline__instagram { margin: .75rem 0 0; }
   .discipline__details { grid-template-columns: 1fr; }
   .discipline__hero { padding-top: 8rem; }
+  .discipline__hero--force-athletique { background-image: linear-gradient(rgb(11 16 37 / 90%), rgb(11 16 37 / 78%)), url('/images/force-athletique-banniere.jpg'); }
   .discipline__schedule { margin-inline: -1rem; padding: 1rem; }
 }

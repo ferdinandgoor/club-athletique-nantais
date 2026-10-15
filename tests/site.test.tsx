@@ -58,6 +58,7 @@ describe('Pages publiques', () => {
     expect(wrestling).not.toContain(site.hours[0].times);
     expect(powerlifting).toContain(site.registration.trialPrice);
     expect(powerlifting).toContain(site.hours[0].times);
+    expect(powerlifting).toContain('discipline__hero--force-athletique');
   });
   it('présente le bureau élu lors de l’AG 2026 avec un portrait par membre', () => {
     const html = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
