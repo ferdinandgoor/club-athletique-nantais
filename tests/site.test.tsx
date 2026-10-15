@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { App } from '../src/App';
 import { pages, normalizePath } from '../src/data/pages';
 import { site } from '../src/data/site';
+import { bureau } from '../src/data/bureau';
 import { getSeo, renderHead } from '../src/seo';
 import { resolveSiteUrl } from '../src/utils/site-url';
 
@@ -39,6 +40,21 @@ describe('Pages publiques', () => {
     expect(wrestling).not.toContain(site.hours[0].times);
     expect(powerlifting).toContain(site.registration.trialPrice);
     expect(powerlifting).toContain(site.hours[0].times);
+  });
+  it('présente le bureau élu lors de l’AG 2026 avec un portrait par membre', () => {
+    const html = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
+    expect(html).toContain('Le bureau directeur');
+    expect(html).toContain('élu à l’unanimité');
+    for (const member of bureau.members) {
+      expect(html).toContain(`alt="${member.photo.alt}"`);
+      expect(html).toContain(`src="${member.photo.src}"`);
+      expect(html).toContain(member.role);
+      expect(html).toContain(member.name);
+    }
+    expect(html).toContain('href="/#inscription"');
+    expect(html).toContain('aria-current="page">Qui sommes-nous ?</a>');
+    const home = renderToStaticMarkup(<App path="/" />);
+    expect(home.split('</header>')[0]).toContain('href="/qui-sommes-nous/"');
   });
   it('regroupe les liens validés et réserve son accès au pied de page', () => {
     const html = renderToStaticMarkup(<App path="/links/" />);

@@ -1,0 +1,27 @@
+.about {
+  &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(1.5rem, calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
+  &__hero nav { margin-bottom: 3rem; font-size: .85rem; }
+  &__hero nav a { color: white; }
+  &__hero h1 { max-width: 15ch; margin-block: 1rem 2rem; }
+  &__eyebrow { color: var(--color-accent); font-size: .8rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+  &__eyebrow--dark { color: var(--color-primary); }
+  &__introduction { max-width: 42rem; font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--color-on-dark-muted); }
+  &__button { display: inline-flex; align-items: center; min-height: 48px; padding: .75rem 1.2rem; background: var(--color-primary); color: white; font-weight: 750; text-decoration: none; border: 1px solid var(--color-accent); }
+  &__button:hover { background: var(--color-navy); }
+  &__section { padding-block: clamp(3rem, 6vw, 5rem); scroll-margin-top: 6rem; }
+  &__section h2 { max-width: 20ch; margin-top: 0; font-size: clamp(2rem, 4vw, 3.5rem); }
+  &__lead { max-width: 48rem; color: var(--color-muted); }
+  &__board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 3rem 0 0; padding: 0; list-style: none; }
+  &__member { padding: 2rem; background: var(--color-surface); border-top: 3px solid var(--color-primary); }
+  &__member-photo { display: block; width: 100%; aspect-ratio: 908 / 1210; object-fit: cover; margin-bottom: 1.25rem; }
+  &__member h3 { margin: .25rem 0 0; font-size: 1.5rem; }
+  &__join { border-top: 1px solid var(--color-border); }
+  &__join p { max-width: 44rem; color: var(--color-muted); }
+  &__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+  &__other { display: flex; align-items: center; min-height: 44px; font-weight: 650; color: var(--color-primary); }
+  &__other:hover { color: var(--color-navy); }
+}
+@media (max-width: 48rem) {
+  .about__board { grid-template-columns: 1fr; }
+  .about__hero { padding-top: 8rem; }
+}

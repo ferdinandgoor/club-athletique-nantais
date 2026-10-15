@@ -15,11 +15,13 @@
 src/
   data/site.ts           Nom, domaine et textes du club
   data/pages.ts          Liste des pages, titres, descriptions et navigation
+  data/bureau.ts         Composition du bureau directeur (AG 2026)
   components/            Éléments réutilisables, chacun avec son fichier SCSS
     Container/           Largeur et marges du contenu
     PageShell/           En-tête, navigation, contenu principal et pied de page
   pages/Home/            Page d’accueil et son SCSS
   pages/Discipline/      Modèle commun des pages musculation, force athlétique et lutte
+  pages/About/           Page « Qui sommes-nous ? » et son SCSS
   data/disciplines.ts    Résumés, chemins et contenus des disciplines
   styles/tokens.scss     Couleurs et espacements partagés
   styles/global.scss     Règles communes et accessibilité
@@ -86,3 +88,7 @@ Les animations au défilement sont une amélioration progressive : `useScrollRev
 ## Page de liens du club
 
 `/links/` utilise le composant `src/pages/Links/Links.tsx` et la liste éditoriale `src/data/links.ts`. La route est déclarée dans `src/data/pages.ts` et associée dans `App.tsx`. Elle conserve `PageShell`, son `Container` et le lien d’évitement, mais `PageShell` omet l’en-tête et le pied de page sur cette route. Son accès reste présent dans le pied de page des autres pages. Le pré-rendu génère `dist/links/index.html` et les métadonnées habituelles. Les boutons sont de simples liens dans le même onglet : aucun service externe n’est contacté par cette page avant un clic vers Instagram, et aucune dépendance n’est ajoutée.
+
+## Page « Qui sommes-nous ? »
+
+`/qui-sommes-nous/` utilise le composant `src/pages/About/About.tsx`. Les informations du bureau directeur (rôles, noms, portraits) sont des données éditoriales centralisées dans `src/data/bureau.ts`, sourcées depuis le document officiel de l’AG du 1er octobre 2026 décrit dans `docs/CLUB.md`. La route est déclarée dans `src/data/pages.ts`, associée dans `App.tsx`, et accessible depuis la navigation principale de `PageShell` sur toutes les pages. Le pré-rendu génère `dist/qui-sommes-nous/index.html`, son URL canonique et son entrée de sitemap, contrôlés par `npm run check`. Aucune donnée personnelle au-delà des noms, rôles et portraits officiels du bureau n’est publiée ; la photo de groupe de l’AG sera ajoutée à cette page une fois fournie et documentée dans `docs/CLUB.md`.

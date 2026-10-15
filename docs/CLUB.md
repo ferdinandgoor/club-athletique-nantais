@@ -42,6 +42,7 @@ Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter le
 | Modalités d’inscription | Application MonClub, code club `CANNANTES` | Tutoriel en captures fourni le 24 septembre 2026. Fiches officielles : [App Store](https://apps.apple.com/fr/app/monclub-app/id1489706209) et [Google Play](https://play.google.com/store/apps/details?hl=fr&id=eu.teamr.custom), vérifiées le 24 septembre 2026 |
 | Tarifs et moyens de paiement | Saison 2026–2027 : lutte baby 200 €, lutte enfant 200 €, lutte adulte 250 € avec accès muscu inclus, lutte féminine 170 € avec accès muscu inclus ; force athlétique compétition 200 €, haltérophilie compétition 200 €, loisir 170 €, cours communs 170 € | Tarifs fournis par le propriétaire du dépôt le 24 septembre 2026. Séance découverte : 10 €. Les captures indiquent CB, SEPA et paiement au club |
 | Équipement nécessaire | À fournir | Non publié |
+| Cours collectifs | Gym renforcement musculaire (18 h 30–19 h 15) puis stretching (19 h 15–20 h 00), animés par Véronique L’hotellier ; descriptions fournies par le président le 15 octobre 2026 | **Jour(s) à fournir avant toute publication.** Tarif dédié et photo de l’animatrice à fournir ; accord de Véronique L’hotellier pour nom et photo à confirmer |
 | Accessibilité des lieux | À fournir | Non publiée |
 | Contact pour une séance d’essai | `cannantais@gmail.com` ; prévenir le club à l’avance | Visuels fournis le 24 septembre 2026 |
 
@@ -57,6 +58,21 @@ Toute information saisonnière doit porter une période claire, par exemple « s
 | Échéance de renouvellement du domaine | À fournir | À conserver dans l’outil interne |
 | Échéance de renouvellement de l’hébergement | À fournir | À conserver dans l’outil interne |
 | Emplacement des sauvegardes | À fournir | Ne pas y inscrire de secret |
+
+### Bureau directeur — élu lors de l’AG du 1er octobre 2026
+
+Source : document officiel « AG 2026 (nouveau conseil) » fourni par Sacha Turpin, président, le 15 octobre 2026. Le document précise que le conseil d’administration a été élu à l’unanimité à l’issue de l’Assemblée Générale du 1er octobre 2026.
+
+| Rôle | Personne | Publication sur le site |
+| --- | --- | --- |
+| Président | Sacha Turpin | Page « Qui sommes-nous ? » avec portrait |
+| Vice-président | Tengiz Dalakishvili | Page « Qui sommes-nous ? » avec portrait |
+| Trésorier | Adrien Bolle | Page « Qui sommes-nous ? » avec portrait |
+| Trésorière adjointe | Emma Houédé | Page « Qui sommes-nous ? » avec portrait |
+| Secrétaire générale | Maryne Melart | Page « Qui sommes-nous ? » avec portrait |
+| Secrétaire adjointe | Marie Boennec | Page « Qui sommes-nous ? » avec portrait |
+
+Ces noms et portraits sont publiés à la demande du président, qui a fourni le visuel destiné à la communication du club. Le président n’est pas déduit comme responsable légal de publication. Conserver le document source dans les archives du club.
 
 ## Médias, droits et partenaires
 
@@ -79,6 +95,7 @@ Pour chaque logo, photo, vidéo ou document ajouté au site, conserver au minimu
 | `public/images/discipline-cards.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel partagé des cartes Musculation, Force athlétique et Lutte ; texte alternatif décoratif |
 | `public/images/discipline-lutte.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel de la carte Lutte ; texte alternatif décoratif |
 | `public/images/discipline-force-athletique.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit White Lights Media visible ; portée de l’autorisation à conserver avec les archives du club | Fond visuel de la carte Force athlétique ; texte alternatif décoratif |
+| `public/images/bureau-sacha-turpin.jpg`, `bureau-tengiz-dalakishvili.jpg`, `bureau-adrien-bolle.jpg`, `bureau-emma-houede.jpg`, `bureau-maryne-melart.jpg`, `bureau-marie-boennec.jpg` | Portraits extraits du document officiel de l’AG 2026 fourni par le président le 15 octobre 2026 ; auteur et crédit à préciser | Portraits du bureau publiés sur la page « Qui sommes-nous ? », chaque photo identifiée par le nom et le rôle du membre ; saison 2026–2027 |
 | Partenaires et règles d’affichage | À fournir | Aucun partenaire publié pour le moment |
 
 ## Mentions légales et données personnelles
@@ -92,6 +109,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 ## État éditorial du site
 
 - La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte. Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
+- La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.
 - Les mentions légales complètes, le téléphone et les informations de gouvernance restent à fournir.
@@ -109,6 +127,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-09-24 | Compte Instagram `@can_powerlifting` | Lien fourni par le propriétaire du dépôt |
 | 2026-09-24 | Situation du club à l’ouest de Nantes, à proximité de Saint-Herblain | Précision fournie par le propriétaire du dépôt |
 | 2026-09-24 | Tarifs 2026–2027 par activité et catégorie | Tarifs fournis par le propriétaire du dépôt |
+| 2026-10-15 | Composition du bureau directeur et AG du 1er octobre 2026 | Document officiel fourni par Sacha Turpin, président, via le propriétaire du dépôt |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
 
@@ -143,3 +162,16 @@ Le propriétaire demande une page de type Linktree à `/links/`. Elle propose un
 ### Accueil des nouveaux visiteurs — 24 septembre 2026
 
 Le propriétaire souhaite privilégier l’inscription autonome ou la venue directe au club, afin de réserver l’e-mail aux questions restantes. Le site indique désormais : inscription avec MonClub ; visite de la salle pendant les horaires publiés ; présence de l’entraîneur sur tous les créneaux de lutte ; orientation des visiteurs de musculation vers un bénévole par un adhérent. Ces modalités sont publiées selon les indications du propriétaire et restent à revalider si l’organisation du club change.
+
+### Demandes du président du 15 octobre 2026
+
+Sacha Turpin, président du club, a transmis par WhatsApp une liste de modifications souhaitées pour le site, relayée par le propriétaire du dépôt. Chaque élément est suivie ici jusqu’à sa réalisation ou son abandon.
+
+1. **Page « Qui sommes-nous ? » — faite.** Organigramme du bureau et photo de groupe lors de l’AG. La page est publiée avec l’organigramme complet et les six portraits officiels. La photo de groupe de l’AG n’était pas incluse dans le document fourni : elle reste `À fournir` avant d’être ajoutée à la page.
+2. **Cours collectifs — en attente d’informations.** Le président demande une photo de Véronique L’hotellier et l’explication de ses cours. Descriptions fournies, à publier une fois les informations complètes :
+   - *Gym renforcement musculaire (18 h 30–19 h 15)* : « Le renforcement musculaire est une activité physique qui permet de travailler les muscles du corps en améliorant l’équilibre, la posture et la force. Il peut se pratiquer avec le poids du corps ou du petit matériel. »
+   - *Stretching (19 h 15–20 h 00)* : « Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur. »
+   - « Deux activités différentes mais complémentaires pour garder un corps fort, souple et en bonne santé. »
+   - Manquent avant publication : le ou les jours de ces créneaux, le tarif éventuel (ou renvoi vers MonClub), la photo, et l’accord de Véronique L’hotellier pour publier son nom et son image. Ne pas annoncer ces créneaux sans le jour.
+3. **Haltérophilie — contenu à fournir.** Case cochée dans la liste du président. L’haltérophilie était volontairement en retrait ; les tarifs compétition (200 €) et loisir (170 €) sont connus. Descriptions, horaires, encadrant et public restent `À fournir` avant de créer une page ou une section. À clarifier avec le président : page dédiée ou simple mention ?
+4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.

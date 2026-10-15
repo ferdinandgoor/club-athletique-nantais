@@ -26,6 +26,8 @@ Si un nouveau document est créé, l’ajouter à la liste « Où trouver les in
 
 `docs/CLUB.md` est l’inventaire de référence des informations connues, manquantes et à confirmer. Le tenir à jour dès que le propriétaire du projet fournit une information sur le club, même si cette information n’apparaît pas encore sur le site.
 
+Traiter `docs/CLUB.md` comme la mémoire du projet (« second brain ») : toute information sur le club, quelle que soit son origine (message, conversation, visuel, capture, document, rencontre), y est documentée dès sa réception, avec sa source et sa date, avant toute autre action. Rien ne se perd dans une conversation : une information non écrite dans ce document est considérée comme inconnue des agents suivants.
+
 - Indiquer la source et la date de vérification quand elles sont connues.
 - Distinguer clairement les données publiques, internes et sensibles.
 - Ne jamais inventer un horaire, une adresse, une discipline, un tarif, un contact, un statut juridique, un partenaire ou une mention légale.

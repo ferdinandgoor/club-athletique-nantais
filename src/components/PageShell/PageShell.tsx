@@ -58,6 +58,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
                 {item.label}
               </a>
             ))}
+            <a href="/qui-sommes-nous/" aria-current={path === '/qui-sommes-nous/' ? 'page' : undefined}>Qui sommes-nous ?</a>
             <a className="page-shell__instagram" href={site.contact.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram du Club Athlétique Nantais">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
