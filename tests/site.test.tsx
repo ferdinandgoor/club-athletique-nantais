@@ -35,6 +35,9 @@ describe('Pages publiques', () => {
     const powerlifting = renderToStaticMarkup(<App path="/force-athletique/" />);
     expect(home).toContain('href="/lutte/"');
     expect(home).toContain('href="/force-athletique/"');
+    expect(home.indexOf('href="/force-athletique/"')).toBeLessThan(home.indexOf('href="/lutte/"'));
+    expect(home.indexOf('href="/lutte/"')).toBeLessThan(home.indexOf('href="/musculation/"'));
+    expect(home).toContain('Powerlifting · Lutte · Musculation');
     expect(home).toContain('<h3>Haltérophilie</h3>');
     expect(home).toContain('<h3>Pilates</h3>');
     expect(home).toContain('<h3>Cours communs</h3>');
@@ -52,6 +55,11 @@ describe('Pages publiques', () => {
     const coursCommuns = renderToStaticMarkup(<App path="/cours-communs/" />);
     expect(coursCommuns).toContain('Cours communs');
     expect(coursCommuns).toContain('170 €');
+    expect(coursCommuns).toContain('Jeudi');
+    expect(coursCommuns).toContain('18 h 30–19 h 15');
+    expect(coursCommuns).toContain('19 h 15–20 h 00');
+    expect(coursCommuns).toContain('accès salle de muscu inclus');
+    expect(coursCommuns).not.toContain('L’hotellier');
     expect(wrestling).toContain('Lutte baby');
     expect(wrestling).toContain('href="/#inscription"');
     expect(wrestling).toContain('discipline__hero--lutte');

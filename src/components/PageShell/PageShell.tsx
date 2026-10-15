@@ -72,7 +72,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
         <Container>
           <div className="page-shell__footer-column page-shell__footer-brand">
             <strong>{site.name}</strong>
-            <p>Musculation · Force athlétique · Lutte</p>
+            <p>Powerlifting · Lutte · Musculation</p>
             <p>Site développé par <a href={site.developer.websiteUrl} target="_blank" rel="noreferrer">{site.developer.name}</a></p>
             <a href={`mailto:${site.developer.email}?subject=${encodeURIComponent('Modification du site du Club Athlétique Nantais')}`}>Proposer une modification du site</a>
             <a href={site.developer.githubUrl} target="_blank" rel="noreferrer">Code source sur GitHub ↗</a>

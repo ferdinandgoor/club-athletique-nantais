@@ -52,7 +52,7 @@ export const site = {
     { src: '/images/competition-force-athletique-07.jpg', width: 1170, height: 1463, alt: 'Un athlète du CAN réalise un squat encouragé par les assistants de plateau' },
   ],
   home: {
-    eyebrow: 'Musculation · Force athlétique · Lutte',
+    eyebrow: 'Powerlifting · Lutte · Musculation',
     introduction: 'Découvre les activités du Club Athlétique Nantais, un collectif qui accueille aussi bien les débutants que les compétiteurs.',
   },
   // Développeur du site, contact public pour les modifications ou la reprise du projet.

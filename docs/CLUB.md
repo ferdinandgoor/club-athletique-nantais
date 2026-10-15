@@ -42,7 +42,7 @@ Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter le
 | Modalités d’inscription | Application MonClub, code club `CANNANTES` | Tutoriel en captures fourni le 24 septembre 2026. Fiches officielles : [App Store](https://apps.apple.com/fr/app/monclub-app/id1489706209) et [Google Play](https://play.google.com/store/apps/details?hl=fr&id=eu.teamr.custom), vérifiées le 24 septembre 2026 |
 | Tarifs et moyens de paiement | Saison 2026–2027 : lutte baby 200 €, lutte enfant 200 €, lutte adulte 250 € avec accès muscu inclus, lutte féminine 170 € avec accès muscu inclus ; force athlétique compétition 200 €, haltérophilie compétition 200 €, loisir 170 €, cours communs 170 € | Tarifs fournis par le propriétaire du dépôt le 24 septembre 2026. Séance découverte : 10 €. Les captures indiquent CB, SEPA et paiement au club |
 | Équipement nécessaire | À fournir | Non publié |
-| Cours collectifs | Gym renforcement musculaire (18 h 30–19 h 15) puis stretching (19 h 15–20 h 00), animés par Véronique L’hotellier ; descriptions fournies par le président le 15 octobre 2026 | **Jour(s) à fournir avant toute publication.** Tarif dédié et photo de l’animatrice à fournir ; accord de Véronique L’hotellier pour nom et photo à confirmer |
+| Cours collectifs | Gym renforcement musculaire puis stretching, le **jeudi** de 18 h 30 à 19 h 15 et de 19 h 15 à 20 h 00, animés par Véronique L’hotellier ; descriptions fournies par le président le 15 octobre 2026. Tarif : **170 €**, même tarif que la musculation, avec accès à la salle de musculation inclus | Jour et tarif confirmés par Sacha Turpin le 15 octobre 2026 (WhatsApp relayé par le propriétaire du dépôt) ; publiés sur la page « Cours communs ». Photo de l’animatrice et accord de Véronique L’hotellier pour publier son nom et son image à confirmer |
 | Encadrement et coachs | Sacha Turpin encadre la force athlétique ; Tengiz Dalakishvili encadre la lutte | Confirmé par le propriétaire du dépôt le 15 octobre 2026. Instagram personnels fournis le même jour et publiés sur leurs pages : [`@sacha_powerlift`](https://www.instagram.com/sacha_powerlift/) (Sacha, contact pour du coaching) et [`@tengiz_dalakishvili`](https://www.instagram.com/tengiz_dalakishvili/) (Tengiz) |
 | Accessibilité des lieux | À fournir | Non publiée |
 | Contact pour une séance d’essai | `cannantais@gmail.com` ; prévenir le club à l’avance | Visuels fournis le 24 septembre 2026 |
@@ -111,7 +111,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 
 ## État éditorial du site
 
-- La page d’accueil présente le club et oriente vers six pages : musculation, force athlétique et lutte (grandes cartes), haltérophilie, Pilates et cours communs (cartes plus basses). Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
+- La page d’accueil présente le club et oriente vers six pages : force athlétique, lutte puis musculation (grandes cartes), haltérophilie, Pilates et cours communs (cartes plus basses). Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
 - La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale et depuis la section « Choisis la façon de nous rejoindre » de l’accueil. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
 - Chaque coach du club dispose d’une page dédiée : `/coach-sacha-turpin/` (force athlétique) et `/coach-tengiz-dalakishvili/` (lutte). Les pages force athlétique et lutte proposent une section « Trouver un coach » vers ces profils ; la musculation n’en propose pas. Les profils relient vers les Instagram personnels des coachs : `@sacha_powerlift` (Sacha, contact pour du coaching) et `@tengiz_dalakishvili` (Tengiz).
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
@@ -135,6 +135,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-10-15 | Association des six portraits aux membres du bureau | Correction d’une inversion par paires confirmée par le propriétaire du dépôt |
 | 2026-10-15 | Rôle de coach de Sacha Turpin (force athlétique) et Tengiz Dalakishvili (lutte) | Confirmé par le propriétaire du dépôt ; pages dédiées créées |
 | 2026-10-15 | Instagram personnels des coachs : `@sacha_powerlift` et `@tengiz_dalakishvili` | Fournis par le propriétaire du dépôt ; publiés sur les pages des coachs |
+| 2026-10-15 | Jour des cours collectifs (jeudi) et tarif (170 €, accès salle de muscu inclus) | Réponses de Sacha Turpin par WhatsApp, relayées par le propriétaire du dépôt ; publiées sur la page « Cours communs » |
 | 2026-10-15 | Hébergement du site chez OVH en FTP ; accès OVH détenus par Sacha Turpin | Propriétaire du dépôt ; accès à demander au président |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
@@ -159,7 +160,7 @@ La musculation dispose désormais de sa propre entrée. Le Pilates et les cours 
 
 Le propriétaire a transmis des échanges internes proposant de présenter Musculation / Force athlétique / Lutte, avec la musculation en premier. Le site suit cet ordre et ajoute une page musculation. Les débats internes, chiffres d’inscription et considérations financières ne sont pas repris dans le dépôt.
 
-L’offre et le planning des cours collectifs sont en cours de révision : ne pas annoncer de créneaux ni de suppression définitive sans confirmation. La séparation des groupes de lutte baby et enfant reste à préciser. Le calendrier d’événements est reporté jusqu’à validation des dates et désignation d’une personne chargée de le maintenir.
+L’offre et le planning des cours collectifs étaient en cours de révision à cette date ; le créneau du jeudi a depuis été confirmé par le président et publié le 15 octobre 2026. La séparation des groupes de lutte baby et enfant reste à préciser. Le calendrier d’événements est reporté jusqu’à validation des dates et désignation d’une personne chargée de le maintenir.
 
 Pour la musculation, les photos fournies confirment la présence de machines, bancs et barres. Les horaires publiés sont ceux de la force athlétique : lundi et vendredi de 17 h à 21 h, samedi de 9 h 30 à 14 h et dimanche de 9 h 30 à 12 h, toute l’année hors vacances scolaires. Les conditions d’accès, l’encadrement et les modalités d’essai restent à confirmer ; ne pas lui appliquer automatiquement le tarif de séance de force athlétique. Les tarifs des formules sont à consulter dans MonClub.
 
@@ -176,11 +177,11 @@ Le propriétaire souhaite privilégier l’inscription autonome ou la venue dire
 Sacha Turpin, président du club, a transmis par WhatsApp une liste de modifications souhaitées pour le site, relayée par le propriétaire du dépôt. Chaque élément est suivie ici jusqu’à sa réalisation ou son abandon.
 
 1. **Page « Qui sommes-nous ? » — faite.** Organigramme du bureau et photo de groupe lors de l’AG. La page est publiée avec l’organigramme complet et les six portraits officiels. La photo de groupe de l’AG n’était pas incluse dans le document fourni : elle reste `À fournir` avant d’être ajoutée à la page.
-2. **Cours collectifs — en attente d’informations.** Le président demande une photo de Véronique L’hotellier et l’explication de ses cours. Descriptions fournies, à publier une fois les informations complètes :
-   - *Gym renforcement musculaire (18 h 30–19 h 15)* : « Le renforcement musculaire est une activité physique qui permet de travailler les muscles du corps en améliorant l’équilibre, la posture et la force. Il peut se pratiquer avec le poids du corps ou du petit matériel. »
-   - *Stretching (19 h 15–20 h 00)* : « Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur. »
+2. **Cours collectifs — créneaux et tarif publiés, photo et accord en attente.** Le président demande une photo de Véronique L’hotellier et l’explication de ses cours. Le jour (jeudi) et le tarif (170 €, accès à la salle de musculation inclus) ont été confirmés par Sacha Turpin le 15 octobre 2026 par WhatsApp. Les créneaux, descriptions et tarif sont publiés sur la page « Cours communs » :
+   - *Gym renforcement musculaire (jeudi 18 h 30–19 h 15)* : « Le renforcement musculaire est une activité physique qui permet de travailler les muscles du corps en améliorant l’équilibre, la posture et la force. Il peut se pratiquer avec le poids du corps ou du petit matériel. »
+   - *Stretching (jeudi 19 h 15–20 h 00)* : « Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur. »
    - « Deux activités différentes mais complémentaires pour garder un corps fort, souple et en bonne santé. »
-   - Manquent avant publication : le ou les jours de ces créneaux, le tarif éventuel (ou renvoi vers MonClub), la photo, et l’accord de Véronique L’hotellier pour publier son nom et son image. Ne pas annoncer ces créneaux sans le jour.
+   - Restent à fournir : la photo de Véronique L’hotellier et son accord pour publier son nom et son image. Son nom n’est pas publié sur le site tant que cet accord n’est pas confirmé.
 3. **Haltérophilie — page créée, contenu à enrichir.** Case cochée dans la liste du président. Une page `/halterophilie/` existe depuis le 15 octobre 2026 avec les mouvements olympiques et les tarifs connus (compétition 200 €, loisir 170 €). Horaires, encadrant et public restent `À fournir` pour l’enrichir. À clarifier avec le président si nécessaire.
 4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.
 
@@ -204,7 +205,11 @@ Le site est publié automatiquement par le workflow GitHub après un push sur `m
 
 Le propriétaire demande des sous-pages pour les autres activités, accessibles depuis l’accueil, avec des cartes de hauteur réduite. Réalisé : `/halterophilie/`, `/pilates/` et `/cours-communs/` suivent le modèle commun des disciplines ; sur l’accueil, leurs cartes sont cliquables et plus basses que celles des trois disciplines principales. La navigation principale garde les trois disciplines marquées `main` dans `src/data/disciplines.ts`.
 
-Contenu respecté : l’haltérophilie publie les deux mouvements olympiques (description générale de la discipline) et les tarifs confirmés (compétition 200 €, loisir 170 €) ; le Pilates n’annonce ni créneau ni tarif, faute d’information validée, et invite à contacter le club ; les cours communs affichent la formule à 170 € sans annoncer de créneaux, conformément à la révision en cours de l’offre. Dès que les créneaux des cours collectifs de Véronique L’hotellier sont confirmés, la page « Cours communs » pourra les reprendre. Les pages Haltérophilie et Pilates pourront être enrichies quand le président fournira le contenu prévu dans sa liste.
+Contenu respecté : l’haltérophilie publie les deux mouvements olympiques (description générale de la discipline) et les tarifs confirmés (compétition 200 €, loisir 170 €) ; le Pilates n’annonce ni créneau ni tarif, faute d’information validée, et invite à contacter le club ; les cours communs affichent la formule à 170 € avec accès à la salle de musculation inclus ; les créneaux du jeudi (gym renforcement musculaire puis stretching), confirmés le 15 octobre 2026, sont publiés sur cette page. Les pages Haltérophilie et Pilates pourront être enrichies quand le président fournira le contenu prévu dans sa liste.
+
+### Mise en avant du powerlifting et de la lutte — 15 octobre 2026
+
+Le propriétaire demande que le powerlifting et la lutte soient légèrement mis en avant. Réalisé : l’accueil affiche désormais les cartes Force athlétique puis Lutte avant Musculation (ordre du tableau `disciplines` dans `src/data/disciplines.ts`), et le libellé du héros ainsi que la ligne du pied de page deviennent « Powerlifting · Lutte · Musculation ». Ce choix remplace l’ordre « musculation en premier » suivi depuis le 24 septembre 2026. Les pages force athlétique et lutte disposent déjà d’une bannière et d’un coach référencé, ce qui renforce cette hiérarchie.
 
 ### Référencement local — demande du propriétaire du 15 octobre 2026
 

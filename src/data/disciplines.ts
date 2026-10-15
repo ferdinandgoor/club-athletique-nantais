@@ -2,23 +2,6 @@
 // `noun` donne le titre avec son article pour les phrases publiques (« la force athlétique »).
 export const disciplines = [
   {
-    id: 'musculation', path: '/musculation/', title: 'Musculation', subtitle: 'La salle près de chez toi', noun: 'la musculation',
-    metaTitle: 'Salle de musculation à Nantes',
-    summary: 'Salle de musculation à Nantes : découvre celle du Club Athlétique Nantais, à proximité de Saint-Herblain, et rejoins le club pour tes entraînements.',
-    introduction: 'Envie de pratiquer la musculation à Nantes ? Découvre la salle du Club Athlétique Nantais, à l’ouest de la ville, et prépare ta première venue avec nous.',
-    heading: 'Découvre la salle',
-    joinSelection: '« Musculation »',
-    details: [
-      { title: 'Ton entraînement', text: 'La musculation est une activité à part entière au CAN. Tu peux la choisir directement dans MonClub.' },
-      { title: 'Le matériel', text: 'La salle dispose de machines de musculation, de bancs et de barres. Contacte-nous pour vérifier la disponibilité du matériel qui correspond à ta pratique.' },
-      { title: 'Ton adhésion', text: 'Retrouve les formules et leurs tarifs dans MonClub, en sélectionnant « Musculation ».' },
-    ],
-    prices: [
-      { label: 'Musculation / force athlétique loisir / haltérophilie loisir', amount: '170 €', note: '' },
-      { label: 'Cours communs', amount: '170 €', note: '' },
-    ],
-  },
-  {
     id: 'force-athletique', path: '/force-athletique/', title: 'Force athlétique', subtitle: 'Powerlifting', noun: 'la force athlétique',
     metaTitle: 'Force athlétique & Powerlifting à Nantes',
     summary: 'Powerlifting à Nantes : squat, développé couché, soulevé de terre. Découvre la force athlétique au CAN, du premier entraînement à la compétition.',
@@ -34,7 +17,7 @@ export const disciplines = [
       { label: 'Force athlétique compétition', amount: '200 €', note: '' },
       { label: 'Haltérophilie compétition', amount: '200 €', note: '' },
       { label: 'Musculation / force athlétique loisir / haltérophilie loisir', amount: '170 €', note: '' },
-      { label: 'Cours communs', amount: '170 €', note: '' },
+      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
   {
@@ -54,6 +37,23 @@ export const disciplines = [
       { label: 'Lutte enfant (7 à 13 ans)', amount: '200 €', note: '' },
       { label: 'Lutte adulte (à partir de 14 ans)', amount: '250 €', note: 'accès muscu inclus' },
       { label: 'Lutte féminine (à partir de 14 ans)', amount: '170 €', note: 'accès muscu inclus' },
+    ],
+  },
+  {
+    id: 'musculation', path: '/musculation/', title: 'Musculation', subtitle: 'La salle près de chez toi', noun: 'la musculation',
+    metaTitle: 'Salle de musculation à Nantes',
+    summary: 'Salle de musculation à Nantes : découvre celle du Club Athlétique Nantais, à proximité de Saint-Herblain, et rejoins le club pour tes entraînements.',
+    introduction: 'Envie de pratiquer la musculation à Nantes ? Découvre la salle du Club Athlétique Nantais, à l’ouest de la ville, et prépare ta première venue avec nous.',
+    heading: 'Découvre la salle',
+    joinSelection: '« Musculation »',
+    details: [
+      { title: 'Ton entraînement', text: 'La musculation est une activité à part entière au CAN. Tu peux la choisir directement dans MonClub.' },
+      { title: 'Le matériel', text: 'La salle dispose de machines de musculation, de bancs et de barres. Contacte-nous pour vérifier la disponibilité du matériel qui correspond à ta pratique.' },
+      { title: 'Ton adhésion', text: 'Retrouve les formules et leurs tarifs dans MonClub, en sélectionnant « Musculation ».' },
+    ],
+    prices: [
+      { label: 'Musculation / force athlétique loisir / haltérophilie loisir', amount: '170 €', note: '' },
+      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
   {
@@ -90,17 +90,17 @@ export const disciplines = [
   {
     id: 'cours-communs', path: '/cours-communs/', title: 'Cours communs', subtitle: 'Temps collectifs', noun: 'les cours communs',
     metaTitle: 'Cours communs à Nantes',
-    summary: 'Des temps collectifs pour progresser ensemble au sein du club : les cours communs du Club Athlétique Nantais.',
-    introduction: 'Les cours communs réunissent les adhérents du Club Athlétique Nantais autour de temps collectifs. Contacte le club pour en savoir plus.',
-    heading: 'Progresser ensemble',
+    summary: 'Chaque jeudi soir, gym renforcement musculaire puis stretching : les cours communs du Club Athlétique Nantais pour progresser ensemble.',
+    introduction: 'Les cours communs réunissent les adhérents du Club Athlétique Nantais chaque jeudi soir autour de deux temps collectifs.',
+    heading: 'Deux cours, le jeudi soir',
     joinSelection: '« Cours communs »',
     details: [
-      { title: 'Temps collectifs', text: 'Des temps de pratique proposés collectivement aux adhérents du club.' },
-      { title: 'Progresser ensemble', text: 'Un cadre pour progresser aux côtés des autres adhérents.' },
-      { title: 'Ton adhésion', text: 'Retrouve la formule « Cours communs » dans MonClub.' },
+      { title: 'Gym renforcement musculaire', text: 'Jeudi, 18 h 30–19 h 15. Le renforcement musculaire est une activité physique qui permet de travailler les muscles du corps en améliorant l’équilibre, la posture et la force. Il peut se pratiquer avec le poids du corps ou du petit matériel.' },
+      { title: 'Stretching', text: 'Jeudi, 19 h 15–20 h 00. Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur.' },
+      { title: 'Deux activités complémentaires', text: 'Deux activités différentes mais complémentaires pour garder un corps fort, souple et en bonne santé.' },
     ],
     prices: [
-      { label: 'Cours communs', amount: '170 €', note: '' },
+      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
 ] as const;
