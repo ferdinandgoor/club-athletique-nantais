@@ -43,6 +43,7 @@ Ne pas inscrire ici les identifiants ou mots de passe des comptes. Documenter le
 | Tarifs et moyens de paiement | Saison 2026–2027 : lutte baby 200 €, lutte enfant 200 €, lutte adulte 250 € avec accès muscu inclus, lutte féminine 170 € avec accès muscu inclus ; force athlétique compétition 200 €, haltérophilie compétition 200 €, loisir 170 €, cours communs 170 € | Tarifs fournis par le propriétaire du dépôt le 24 septembre 2026. Séance découverte : 10 €. Les captures indiquent CB, SEPA et paiement au club |
 | Équipement nécessaire | À fournir | Non publié |
 | Cours collectifs | Gym renforcement musculaire (18 h 30–19 h 15) puis stretching (19 h 15–20 h 00), animés par Véronique L’hotellier ; descriptions fournies par le président le 15 octobre 2026 | **Jour(s) à fournir avant toute publication.** Tarif dédié et photo de l’animatrice à fournir ; accord de Véronique L’hotellier pour nom et photo à confirmer |
+| Encadrement et coachs | Sacha Turpin encadre la force athlétique ; Tengiz Dalakishvili encadre la lutte | Confirmé par le propriétaire du dépôt le 15 octobre 2026. Les identifiants Instagram personnels des deux coachs restent `À fournir` ; le lien Instagram de leur page n’apparaît qu’une fois renseigné |
 | Accessibilité des lieux | À fournir | Non publiée |
 | Contact pour une séance d’essai | `cannantais@gmail.com` ; prévenir le club à l’avance | Visuels fournis le 24 septembre 2026 |
 
@@ -110,6 +111,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 
 - La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte. Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
 - La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
+- Chaque coach du club dispose d’une page dédiée : `/coach-sacha-turpin/` (force athlétique) et `/coach-tengiz-dalakishvili/` (lutte). Les pages force athlétique et lutte proposent une section « Trouver un coach » vers ces profils ; la musculation n’en propose pas. Les liens Instagram personnels apparaîtront sur les profils dès que les identifiants seront fournis.
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.
 - Les mentions légales complètes, le téléphone et les informations de gouvernance restent à fournir.
@@ -129,6 +131,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-09-24 | Tarifs 2026–2027 par activité et catégorie | Tarifs fournis par le propriétaire du dépôt |
 | 2026-10-15 | Composition du bureau directeur et AG du 1er octobre 2026 | Document officiel fourni par Sacha Turpin, président, via le propriétaire du dépôt |
 | 2026-10-15 | Association des six portraits aux membres du bureau | Correction d’une inversion par paires confirmée par le propriétaire du dépôt |
+| 2026-10-15 | Rôle de coach de Sacha Turpin (force athlétique) et Tengiz Dalakishvili (lutte) | Confirmé par le propriétaire du dépôt ; pages dédiées créées |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
 
@@ -176,3 +179,9 @@ Sacha Turpin, président du club, a transmis par WhatsApp une liste de modificat
    - Manquent avant publication : le ou les jours de ces créneaux, le tarif éventuel (ou renvoi vers MonClub), la photo, et l’accord de Véronique L’hotellier pour publier son nom et son image. Ne pas annoncer ces créneaux sans le jour.
 3. **Haltérophilie — contenu à fournir.** Case cochée dans la liste du président. L’haltérophilie était volontairement en retrait ; les tarifs compétition (200 €) et loisir (170 €) sont connus. Descriptions, horaires, encadrant et public restent `À fournir` avant de créer une page ou une section. À clarifier avec le président : page dédiée ou simple mention ?
 4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.
+
+### Pages des coachs — demande du propriétaire du 15 octobre 2026
+
+Le propriétaire du dépôt demande des pages dédiées à Sacha Turpin et Tengiz Dalakishvili parce qu’ils sont coachs, avec leurs Instagram, et une section « Trouver un coach » sur les pages force athlétique (Sacha) et lutte (Tengiz). Réalisé le 15 octobre 2026 : pages `/coach-sacha-turpin/` et `/coach-tengiz-dalakishvili/`, sections « Trouver un coach » sur les deux disciplines, liens depuis la page « Qui sommes-nous ? ».
+
+Restent `À fournir` : les identifiants Instagram personnels des deux coachs (le lien Instagram de chaque page n’apparaît qu’une fois la valeur renseignée dans `src/data/coaches.ts`), et l’accord des deux coachs pour publier leur page de profil avec leur portrait. Ne publier ni palmarès, ni expérience, ni coordination privée sans information confirmée.

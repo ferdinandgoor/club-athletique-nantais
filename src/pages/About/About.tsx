@@ -1,8 +1,10 @@
 import { bureau } from '../../data/bureau';
+import { coaches } from '../../data/coaches';
 import { disciplines } from '../../data/disciplines';
 import './About.scss';
 
 export function About() {
+  const coachByMember = new Map<string, string>(coaches.map((coach) => [coach.name, coach.path] as const));
   return (
     <article className="about">
       <header className="about__hero">
@@ -19,13 +21,17 @@ export function About() {
           <p className="about__lead">{bureau.assembly.introduction} {bureau.assembly.note}</p>
         </header>
         <ul className="about__board">
-          {bureau.members.map((member) => (
-            <li className="about__member" key={member.name} data-reveal>
-              <img className="about__member-photo" src={member.photo.src} width={member.photo.width} height={member.photo.height} alt={member.photo.alt} />
-              <p className="about__eyebrow about__eyebrow--dark">{member.role}</p>
-              <h3>{member.name}</h3>
-            </li>
-          ))}
+          {bureau.members.map((member) => {
+            const coachPath = coachByMember.get(member.name);
+            return (
+              <li className="about__member" key={member.name} data-reveal>
+                <img className="about__member-photo" src={member.photo.src} width={member.photo.width} height={member.photo.height} alt={member.photo.alt} />
+                <p className="about__eyebrow about__eyebrow--dark">{member.role}</p>
+                <h3>{member.name}</h3>
+                {coachPath && <a className="about__member-link" href={coachPath}>Coach — découvrir son profil →</a>}
+              </li>
+            );
+          })}
         </ul>
       </section>
       <section className="about__section about__join" data-reveal aria-labelledby="join-title">

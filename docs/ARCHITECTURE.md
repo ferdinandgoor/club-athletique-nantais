@@ -16,12 +16,14 @@ src/
   data/site.ts           Nom, domaine et textes du club
   data/pages.ts          Liste des pages, titres, descriptions et navigation
   data/bureau.ts         Composition du bureau directeur (AG 2026)
+  data/coaches.ts        Coachs du club, leurs disciplines et leurs profils
   components/            Éléments réutilisables, chacun avec son fichier SCSS
     Container/           Largeur et marges du contenu
     PageShell/           En-tête, navigation, contenu principal et pied de page
   pages/Home/            Page d’accueil et son SCSS
   pages/Discipline/      Modèle commun des pages musculation, force athlétique et lutte
   pages/About/           Page « Qui sommes-nous ? » et son SCSS
+  pages/Coach/           Modèle commun des pages de coachs et son SCSS
   data/disciplines.ts    Résumés, chemins et contenus des disciplines
   styles/tokens.scss     Couleurs et espacements partagés
   styles/global.scss     Règles communes et accessibilité
@@ -92,3 +94,7 @@ Les animations au défilement sont une amélioration progressive : `useScrollRev
 ## Page « Qui sommes-nous ? »
 
 `/qui-sommes-nous/` utilise le composant `src/pages/About/About.tsx`. Les informations du bureau directeur (rôles, noms, portraits) sont des données éditoriales centralisées dans `src/data/bureau.ts`, sourcées depuis le document officiel de l’AG du 1er octobre 2026 décrit dans `docs/CLUB.md`. La route est déclarée dans `src/data/pages.ts`, associée dans `App.tsx`, et accessible depuis la navigation principale de `PageShell` sur toutes les pages. Le pré-rendu génère `dist/qui-sommes-nous/index.html`, son URL canonique et son entrée de sitemap, contrôlés par `npm run check`. Aucune donnée personnelle au-delà des noms, rôles et portraits officiels du bureau n’est publiée ; la photo de groupe de l’AG sera ajoutée à cette page une fois fournie et documentée dans `docs/CLUB.md`.
+
+## Pages des coachs
+
+`/coach-sacha-turpin/` et `/coach-tengiz-dalakishvili/` utilisent le modèle commun `src/pages/Coach/Coach.tsx`. Les coachs, leurs disciplines et leurs portraits sont des données éditoriales dans `src/data/coaches.ts`. Les routes sont dérivées dans `src/data/pages.ts` et associées dans `App.tsx` ; le pré-rendu génère leurs `index.html`, URLs canoniques et entrées de sitemap. Les pages force athlétique et lutte affichent une section « Trouver un coach » vers le profil correspondant (la musculation n’a pas de coach déclaré) ; la page « Qui sommes-nous ? » relie aussi les membres du bureau qui sont coachs. Le lien Instagram personnel d’un coach n’est rendu que si son identifiant est renseigné : la page reste valide sans lui.

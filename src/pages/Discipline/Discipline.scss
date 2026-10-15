@@ -39,6 +39,14 @@
   &__schedule-grid time { color: var(--color-accent); font-weight: 800; white-space: nowrap; }
   &__price small { font-size: 1rem; }
   &__contact { max-width: 46rem; padding: 2rem; background: var(--color-accent-soft); }
+  &__coach { border-top: 1px solid var(--color-border); }
+  &__coach-card { display: flex; align-items: center; gap: 2rem; max-width: 46rem; min-height: 96px; padding: 1.5rem; background: var(--color-surface); border-top: 3px solid var(--color-primary); text-decoration: none; color: inherit; }
+  &__coach-card img { width: 5.5rem; aspect-ratio: 908 / 1210; object-fit: cover; }
+  &__coach-copy { display: grid; gap: .35rem; }
+  &__coach-copy strong { font-size: 1.25rem; }
+  &__coach-copy > span:not(.discipline__coach-link) { color: var(--color-muted); }
+  &__coach-link { margin-top: .5rem; color: var(--color-primary); font-weight: 750; }
+  &__coach-card:hover .discipline__coach-link { color: var(--color-navy); }
   &__join { border-top: 1px solid var(--color-border); }
   &__join p { max-width: 44rem; }
   &__other { display: flex; align-items: center; min-height: 44px; width: fit-content; margin-top: 2rem; }

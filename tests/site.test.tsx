@@ -4,6 +4,7 @@ import { App } from '../src/App';
 import { pages, normalizePath } from '../src/data/pages';
 import { site } from '../src/data/site';
 import { bureau } from '../src/data/bureau';
+import { coaches } from '../src/data/coaches';
 import { getSeo, renderHead } from '../src/seo';
 import { resolveSiteUrl } from '../src/utils/site-url';
 
@@ -55,6 +56,28 @@ describe('Pages publiques', () => {
     expect(html).toContain('aria-current="page">Qui sommes-nous ?</a>');
     const home = renderToStaticMarkup(<App path="/" />);
     expect(home.split('</header>')[0]).toContain('href="/qui-sommes-nous/"');
+  });
+  it('présente chaque coach avec sa discipline et relie les pages concernées', () => {
+    for (const coach of coaches) {
+      const html = renderToStaticMarkup(<App path={coach.path} />);
+      expect(html).toContain(`<h1>${coach.name}</h1>`);
+      expect(html).toContain(coach.coachRole);
+      expect(html).toContain(`href="${coach.discipline.path}"`);
+      expect(html).toContain(`src="${coach.photo.src}"`);
+      expect(html).toContain('href="/#inscription"');
+      if (coach.instagram) expect(html).toContain(`https://www.instagram.com/${coach.instagram}/`);
+    }
+    const force = renderToStaticMarkup(<App path="/force-athletique/" />);
+    expect(force).toContain('Trouver un coach');
+    expect(force).toContain('href="/coach-sacha-turpin/"');
+    const wrestling = renderToStaticMarkup(<App path="/lutte/" />);
+    expect(wrestling).toContain('Trouver un coach');
+    expect(wrestling).toContain('href="/coach-tengiz-dalakishvili/"');
+    const musculation = renderToStaticMarkup(<App path="/musculation/" />);
+    expect(musculation).not.toContain('Trouver un coach');
+    const about = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
+    expect(about).toContain('href="/coach-sacha-turpin/"');
+    expect(about).toContain('href="/coach-tengiz-dalakishvili/"');
   });
   it('regroupe les liens validés et réserve son accès au pied de page', () => {
     const html = renderToStaticMarkup(<App path="/links/" />);
