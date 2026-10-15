@@ -95,7 +95,7 @@ Pour chaque logo, photo, vidéo ou document ajouté au site, conserver au minimu
 | `public/images/discipline-cards.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel partagé des cartes Musculation, Force athlétique et Lutte ; texte alternatif décoratif |
 | `public/images/discipline-lutte.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit et portée de l’autorisation à préciser | Fond visuel de la carte Lutte ; texte alternatif décoratif |
 | `public/images/discipline-force-athletique.png` | Image fournie par le propriétaire le 24 septembre 2026 ; crédit White Lights Media visible ; portée de l’autorisation à conserver avec les archives du club | Fond visuel de la carte Force athlétique ; texte alternatif décoratif |
-| `public/images/bureau-sacha-turpin.jpg`, `bureau-tengiz-dalakishvili.jpg`, `bureau-adrien-bolle.jpg`, `bureau-emma-houede.jpg`, `bureau-maryne-melart.jpg`, `bureau-marie-boennec.jpg` | Portraits extraits du document officiel de l’AG 2026 fourni par le président le 15 octobre 2026 ; auteur et crédit à préciser | Portraits du bureau publiés sur la page « Qui sommes-nous ? », chaque photo identifiée par le nom et le rôle du membre ; saison 2026–2027 |
+| `public/images/bureau-sacha-turpin.jpg`, `bureau-tengiz-dalakishvili.jpg`, `bureau-adrien-bolle.jpg`, `bureau-emma-houede.jpg`, `bureau-maryne-melart.jpg`, `bureau-marie-boennec.jpg` | Portraits extraits du document officiel de l’AG 2026 fourni par le président le 15 octobre 2026 ; auteur et crédit à préciser | Portraits du bureau publiés sur la page « Qui sommes-nous ? », chaque photo identifiée par le nom et le rôle du membre ; saison 2026–2027. L’association portrait-personne déduite de la mise en page du PDF avait été inversée par paires : corrigée par le propriétaire du dépôt le 15 octobre 2026. Toujours faire vérifier l’association par une personne du club avant publication |
 | Partenaires et règles d’affichage | À fournir | Aucun partenaire publié pour le moment |
 
 ## Mentions légales et données personnelles
@@ -128,6 +128,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-09-24 | Situation du club à l’ouest de Nantes, à proximité de Saint-Herblain | Précision fournie par le propriétaire du dépôt |
 | 2026-09-24 | Tarifs 2026–2027 par activité et catégorie | Tarifs fournis par le propriétaire du dépôt |
 | 2026-10-15 | Composition du bureau directeur et AG du 1er octobre 2026 | Document officiel fourni par Sacha Turpin, président, via le propriétaire du dépôt |
+| 2026-10-15 | Association des six portraits aux membres du bureau | Correction d’une inversion par paires confirmée par le propriétaire du dépôt |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
 
