@@ -114,6 +114,14 @@ export function Home() {
             </a>
           ))}
         </div>
+        <div className="home__other-activities" data-reveal>
+          <p className="home__eyebrow">Et aussi au club</p>
+          <ul>
+            {site.activities.filter((activity) => !disciplines.some((discipline) => discipline.title === activity.title)).map((activity) => (
+              <li key={activity.title}><strong>{activity.title}</strong><span>{activity.text}</span></li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <RegistrationGuide />

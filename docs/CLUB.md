@@ -109,7 +109,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 
 ## État éditorial du site
 
-- La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte. Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
+- La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte, complétées d’un bloc « Et aussi au club » pour les activités sans page dédiée (haltérophilie, Pilates, cours communs). Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
 - La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale et depuis la section « Choisis la façon de nous rejoindre » de l’accueil. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
 - Chaque coach du club dispose d’une page dédiée : `/coach-sacha-turpin/` (force athlétique) et `/coach-tengiz-dalakishvili/` (lutte). Les pages force athlétique et lutte proposent une section « Trouver un coach » vers ces profils ; la musculation n’en propose pas. Les profils relient vers les Instagram personnels des coachs : `@sacha_powerlift` (Sacha, contact pour du coaching) et `@tengiz_dalakishvili` (Tengiz).
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
@@ -197,6 +197,10 @@ Le propriétaire du dépôt indique que le site est déployé sur FTP chez OVH e
 - la date de renouvellement du domaine et de l’hébergement.
 
 Le site est publié automatiquement par le workflow GitHub après un push sur `main` ; la procédure et les emplacements des secrets sont décrits dans `docs/DEPLOIEMENT.md`.
+
+### Activités sans page dédiée sur l’accueil — 15 octobre 2026
+
+Le propriétaire demande d’ajouter les activités dans la section « Trouve ta discipline » de l’accueil. Réalisé : un bloc « Et aussi au club » liste haltérophilie, Pilates et cours communs avec leur description courte, sans lien ni horaire. Cette liste reprend les textes validés de `activities` dans `src/data/site.ts` (source : contenus MonClub du 24 septembre 2026) ; elle s’affiche automatiquement pour toute activité sans page dédiée. Elle ne remplace pas la demande du président de contenu haltérophilie et streetlifting : dès qu’une page ou des informations validées existent, l’activité concernée quitte ce bloc.
 
 ### Référencement local — demande du propriétaire du 15 octobre 2026
 
