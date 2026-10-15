@@ -76,9 +76,6 @@
   &__activity-card p { color: var(--color-on-dark-muted); }
   &__activity-link { display: flex; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: 2rem; font-weight: 750; }
   &__other-activities { margin-block: 2rem 0; max-width: 48rem; color: var(--color-muted); }
-  &__other-activities ul { display: grid; gap: 1rem; margin: 1rem 0 0; padding: 0; list-style: none; }
-  &__other-activities li { display: grid; gap: .25rem; }
-  &__other-activities strong { color: var(--color-text); }
   &__section-heading { max-width: 48rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
   &__section-heading > p:last-child { color: var(--color-muted); font-size: 1.1rem; }
 

@@ -113,14 +113,15 @@ export function Home() {
               </div>
             </a>
           ))}
-        </div>
-        <div className="home__other-activities" data-reveal>
-          <p className="home__eyebrow">Et aussi au club</p>
-          <ul>
-            {site.activities.filter((activity) => !disciplines.some((discipline) => discipline.title === activity.title)).map((activity) => (
-              <li key={activity.title}><strong>{activity.title}</strong><span>{activity.text}</span></li>
-            ))}
-          </ul>
+          {site.activities.filter((activity) => !disciplines.some((discipline) => discipline.title === activity.title)).map((activity) => (
+            <div className="home__activity-card" key={activity.title} data-reveal>
+              <div className="home__activity-content">
+                <span className="home__eyebrow">{activity.eyebrow}</span>
+                <h3>{activity.title}</h3>
+                <p>{activity.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

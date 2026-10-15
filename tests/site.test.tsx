@@ -35,10 +35,10 @@ describe('Pages publiques', () => {
     const powerlifting = renderToStaticMarkup(<App path="/force-athletique/" />);
     expect(home).toContain('href="/lutte/"');
     expect(home).toContain('href="/force-athletique/"');
-    expect(home).toContain('Et aussi au club');
-    expect(home).toContain('Haltérophilie');
-    expect(home).toContain('Pilates');
-    expect(home).toContain('Cours communs');
+    expect(home).toContain('<h3>Haltérophilie</h3>');
+    expect(home).toContain('<h3>Pilates</h3>');
+    expect(home).toContain('<h3>Cours communs</h3>');
+    expect(home).toContain('Mouvements olympiques');
     expect(wrestling).toContain('Lutte baby');
     expect(wrestling).toContain('href="/#inscription"');
     expect(wrestling).not.toContain(site.registration.trialPrice);
