@@ -110,7 +110,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 ## État éditorial du site
 
 - La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte. Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
-- La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
+- La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale et depuis la section « Choisis la façon de nous rejoindre » de l’accueil. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
 - Chaque coach du club dispose d’une page dédiée : `/coach-sacha-turpin/` (force athlétique) et `/coach-tengiz-dalakishvili/` (lutte). Les pages force athlétique et lutte proposent une section « Trouver un coach » vers ces profils ; la musculation n’en propose pas. Les profils relient vers les Instagram personnels des coachs : `@sacha_powerlift` (Sacha, contact pour du coaching) et `@tengiz_dalakishvili` (Tengiz).
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
 - Les routes et métadonnées se trouvent dans `src/data/pages.ts`.

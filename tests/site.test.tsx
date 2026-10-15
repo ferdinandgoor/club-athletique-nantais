@@ -56,6 +56,7 @@ describe('Pages publiques', () => {
     expect(html).toContain('aria-current="page">Qui sommes-nous ?</a>');
     const home = renderToStaticMarkup(<App path="/" />);
     expect(home.split('</header>')[0]).toContain('href="/qui-sommes-nous/"');
+    expect(home).toContain('<li><a href="/qui-sommes-nous/">Découvre aussi l’équipe qui fait vivre le club.</a></li>');
   });
   it('présente chaque coach avec sa discipline et relie les pages concernées', () => {
     for (const coach of coaches) {

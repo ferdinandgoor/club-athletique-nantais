@@ -127,6 +127,7 @@ export function Home() {
           <li>Tu veux voir la salle avant ? Viens directement pendant les horaires indiqués sur la page de ta discipline.</li>
           <li>Pour la lutte, l’entraîneur est présent sur tous les créneaux : viens voir un cours ou lui poser tes questions.</li>
           <li>Pour la musculation, demande à un adhérent de t’orienter vers un bénévole. Il pourra t’accueillir et répondre à tes questions.</li>
+          <li><a href="/qui-sommes-nous/">Découvre aussi l’équipe qui fait vivre le club.</a></li>
         </ul>
         <p>Une question reste sans réponse ? Écris-nous à <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
       </section>
