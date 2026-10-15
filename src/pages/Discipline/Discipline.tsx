@@ -15,7 +15,7 @@ const wrestlingSchedule = [
 
 export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isForce = discipline.id === 'force-athletique';
-  const hasGymHours = isForce || discipline.id === 'musculation';
+  const hasGymHours = isForce || discipline.id === 'musculation' || discipline.id === 'halterophilie';
   const others = disciplines.filter((item) => item.id !== discipline.id);
   const isWrestling = discipline.id === 'lutte';
   const coach = coaches.find((item) => item.discipline.id === discipline.id);

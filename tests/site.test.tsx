@@ -48,6 +48,8 @@ describe('Pages publiques', () => {
     const halterophilie = renderToStaticMarkup(<App path="/halterophilie/" />);
     expect(halterophilie).toContain('Arraché');
     expect(halterophilie).toContain('Haltérophilie compétition');
+    expect(halterophilie).toContain('licence compétition');
+    expect(halterophilie).toContain('Horaires de la salle');
     const pilates = renderToStaticMarkup(<App path="/pilates/" />);
     expect(pilates).toContain('Contacte le club pour organiser ta venue');
     expect(pilates).not.toContain(site.hours[0].times);

@@ -66,7 +66,7 @@ export const disciplines = [
     details: [
       { title: 'Arraché', text: 'Le mouvement qui consiste à soulever la barre du sol au-dessus de la tête en un seul geste.' },
       { title: 'Épaulé-jeté', text: 'Le mouvement en deux temps : amener la barre aux épaules, puis la pousser au-dessus de la tête.' },
-      { title: 'Ton entraînement', text: 'Apprendre et perfectionner les mouvements olympiques dans un espace équipé.' },
+      { title: 'Ton adhésion', text: 'L’adhésion permet d’avoir sa licence compétition.' },
     ],
     prices: [
       { label: 'Haltérophilie compétition', amount: '200 €', note: '' },
