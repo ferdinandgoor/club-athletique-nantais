@@ -24,7 +24,7 @@ Les données marquées `À fournir` ou `À confirmer` ne doivent pas être publi
 | Adresse postale ou lieu principal | 68 rue de la Durantière, 44100 Nantes | Fournie par le propriétaire du dépôt le 24 septembre 2026 |
 | Adresse e-mail publique | `cannantais@gmail.com` | Visible dans la fiche MonClub fournie le 24 septembre 2026 |
 | Téléphone public | À fournir | Non publié |
-| Site public et domaine définitif | À fournir | `SITE_URL` reste à configurer dans GitHub |
+| Site public et domaine définitif | `À fournir` — hébergement confirmé chez OVH en FTP, site déployé par le workflow GitHub | Propriétaire du dépôt le 15 octobre 2026 ; URL publique et variable `SITE_URL` encore à configurer |
 | Réseaux sociaux officiels | Instagram commun aux deux clubs : [`@club_athletique_nantais`](https://www.instagram.com/club_athletique_nantais) ; anciens comptes de discipline à confirmer | Compte commun fourni par le propriétaire du dépôt le 26 septembre 2026 |
 | Communauté WhatsApp | [Rejoindre la communauté](https://chat.whatsapp.com/EeUBC9JdJKG1Mya8ZvV2Pv) | Lien fourni par le propriétaire du dépôt le 26 septembre 2026 |
 | Responsable de publication | À fournir | Nécessaire aux mentions légales |
@@ -55,7 +55,7 @@ Toute information saisonnière doit porter une période claire, par exemple « s
 | --- | --- | --- |
 | Personne qui valide les contenus publics | À fournir | À conserver dans l’outil interne si le contact n’est pas public |
 | Responsable technique du site | Ferdinand Goor — `ferdinand.goor@gmail.com` ; dépôt public : [github.com/ferdinandgoor/club-athletique-nantais](https://github.com/ferdinandgoor/club-athletique-nantais) | Fourni par le propriétaire du dépôt (qui est ce développeur) le 15 octobre 2026 ; publié dans le pied de page du site |
-| Responsable du domaine et de l’hébergement | À fournir | À conserver dans l’outil interne |
+| Responsable du domaine et de l’hébergement | Sacha Turpin détient les accès au compte OVH (domaine et FTP) | Fourni par le propriétaire du dépôt le 15 octobre 2026 ; lui demander les accès, jamais les versionner |
 | Échéance de renouvellement du domaine | À fournir | À conserver dans l’outil interne |
 | Échéance de renouvellement de l’hébergement | À fournir | À conserver dans l’outil interne |
 | Emplacement des sauvegardes | À fournir | Ne pas y inscrire de secret |
@@ -101,7 +101,7 @@ Pour chaque logo, photo, vidéo ou document ajouté au site, conserver au minimu
 
 ## Mentions légales et données personnelles
 
-Les informations suivantes restent à fournir avant de publier des mentions légales complètes : identité de l’éditeur, adresse, responsable de publication, hébergeur et coordonnées associées.
+Les informations suivantes restent à fournir avant de publier des mentions légales complètes : identité de l’éditeur, adresse, responsable de publication et coordonnées associées. L’hébergeur est connu : OVH, en FTP (source : propriétaire du dépôt, 15 octobre 2026) ; conserver les coordonnées OVH exactes à mentionner (raison sociale et adresse) avec les accès.
 
 Le site ne contient ni formulaire, ni compte adhérent, ni paiement, ni outil de mesure d’audience. La carte intégrée contacte toutefois Google lors de son chargement et peut lui transmettre l’adresse IP, des informations sur le navigateur et la page d’origine. Cette intégration et sa méthode de retrait sont détaillées dans `docs/ARCHITECTURE.md`. Avant d’ajouter un autre service qui collecte ou transmet des données, documenter les données concernées, la finalité, le destinataire, la durée de conservation et les informations à fournir aux visiteurs.
 
@@ -133,6 +133,7 @@ Ajouter une ligne lorsqu’un ensemble d’informations est confirmé ou modifi�
 | 2026-10-15 | Association des six portraits aux membres du bureau | Correction d’une inversion par paires confirmée par le propriétaire du dépôt |
 | 2026-10-15 | Rôle de coach de Sacha Turpin (force athlétique) et Tengiz Dalakishvili (lutte) | Confirmé par le propriétaire du dépôt ; pages dédiées créées |
 | 2026-10-15 | Instagram personnels des coachs : `@sacha_powerlift` et `@tengiz_dalakishvili` | Fournis par le propriétaire du dépôt ; publiés sur les pages des coachs |
+| 2026-10-15 | Hébergement du site chez OVH en FTP ; accès OVH détenus par Sacha Turpin | Propriétaire du dépôt ; accès à demander au président |
 
 ### Tutoriel MonClub — précisions du 24 septembre 2026
 
@@ -184,6 +185,18 @@ Sacha Turpin, président du club, a transmis par WhatsApp une liste de modificat
 ### Contact développeur et dépôt public — 15 octobre 2026
 
 Le propriétaire du dépôt, Ferdinand Goor, développeur du site, demande la publication de son contact pour les modifications ou la reprise du projet : adresse `ferdinand.goor@gmail.com`, dépôt public `github.com/ferdinandgoor/club-athletique-nantais`. Publié le même jour dans le pied de page de toutes les pages (« Proposer une modification du site », « Code source sur GitHub »), avec un lien vers son profil `ferd.fr/developpeur-freelance`. Les données se modifient dans `developer` dans `src/data/site.ts`. Attention : publier une adresse e-mail dans une page publique l’expose au spam ; ce choix est celui du propriétaire et peut être retiré à tout moment en supprimant les liens du pied de page.
+
+### Hébergement OVH et accès à demander au président — 15 octobre 2026
+
+Le propriétaire du dépôt indique que le site est déployé sur FTP chez OVH et que les accès OVH sont détenus par Sacha Turpin. À lui demander, puis à conserver dans un gestionnaire de mots de passe et dans les secrets GitHub — jamais dans ce dépôt :
+
+- l’URL publique du site et le domaine exact géré chez OVH (pour `SITE_URL` et les mentions légales) ;
+- le nom du serveur FTP OVH, le protocole, le port, l’identifiant et le mot de passe FTP (pour `FTP_SERVER`, `FTP_PROTOCOL`, `FTP_PORT`, `FTP_USERNAME`, `FTP_PASSWORD`) ;
+- le dossier distant du site, souvent `www/` chez OVH (pour `FTP_SERVER_DIR`) ;
+- l’accès au compte OVH du club (domaine, renouvellements, DNS) et qui le gérera ;
+- la date de renouvellement du domaine et de l’hébergement.
+
+Le site est publié automatiquement par le workflow GitHub après un push sur `main` ; la procédure et les emplacements des secrets sont décrits dans `docs/DEPLOIEMENT.md`.
 
 ### Référencement local — demande du propriétaire du 15 octobre 2026
 

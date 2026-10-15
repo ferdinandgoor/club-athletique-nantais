@@ -9,7 +9,7 @@ Le site a été développé par Ferdinand Goor, joignable à `ferdinand.goor@gma
 Transmettre ces éléments par les canaux adaptés ; les mots de passe restent dans un gestionnaire de mots de passe, jamais dans Git :
 
 - L’accès au dépôt GitHub et le nom d’une personne pouvant gérer les droits.
-- L’accès à l’hébergement, au FTP et au gestionnaire du nom de domaine.
+- L’accès à l’hébergement OVH (FTP, domaine) : les accès sont détenus par Sacha Turpin, président du club, voir `docs/CLUB.md`.
 - Le domaine public, le dossier FTP utilisé, le protocole et le port.
 - Les informations de renouvellement du domaine et de l’hébergement, ainsi que leur responsable au club.
 - L’emplacement des sauvegardes et la date de la dernière publication réussie.

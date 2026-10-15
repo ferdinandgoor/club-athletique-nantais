@@ -10,7 +10,9 @@ Chaque exécution conserve le site construit pendant 30 jours sous le nom `site-
 
 ## Première configuration
 
-Demander à l’hébergeur le nom du serveur FTP, le protocole, le port, l’identifiant, le mot de passe et le dossier correspondant au domaine. Le site doit être servi à la racine du domaine, avec HTTPS configuré par l’hébergeur.
+L’hébergement du club est chez **OVH**, en FTP ; le site y est déjà déployé par le workflow. Les accès (compte OVH, FTP, domaine) sont détenus par Sacha Turpin, président du club : les lui demander, comme détaillé dans `docs/CLUB.md`.
+
+Récupérer auprès du président le nom du serveur FTP, le protocole, le port, l’identifiant, le mot de passe et le dossier correspondant au domaine. Chez OVH, le dossier est souvent `www/` et le serveur de la forme `ftp.cluster…hosting.ovh.net` : confirmer ces valeurs avec les accès réels plutôt que de les deviner. Le site doit être servi à la racine du domaine, avec HTTPS configuré par l’hébergeur.
 
 Dans le dépôt GitHub, ouvrir **Settings → Secrets and variables → Actions**.
 
