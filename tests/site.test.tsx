@@ -54,6 +54,7 @@ describe('Pages publiques', () => {
     expect(coursCommuns).toContain('170 €');
     expect(wrestling).toContain('Lutte baby');
     expect(wrestling).toContain('href="/#inscription"');
+    expect(wrestling).toContain('discipline__hero--lutte');
     expect(wrestling).not.toContain(site.registration.trialPrice);
     expect(wrestling).not.toContain(site.hours[0].times);
     expect(powerlifting).toContain(site.registration.trialPrice);
