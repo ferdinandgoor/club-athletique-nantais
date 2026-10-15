@@ -7,10 +7,10 @@ export const bureau = {
   },
   members: [
     { role: 'Président', name: 'Sacha Turpin', photo: { src: '/images/bureau-sacha-turpin.jpg', width: 908, height: 1210, alt: 'Portrait de Sacha Turpin, président du Club Athlétique Nantais' } },
-    { role: 'Vice-président', name: 'Tengiz Dalakishvili', photo: { src: '/images/bureau-tengiz-dalakishvili.jpg', width: 908, height: 1210, alt: 'Portrait de Tengiz Dalakishvili, vice-président du Club Athlétique Nantais' } },
-    { role: 'Trésorier', name: 'Adrien Bolle', photo: { src: '/images/bureau-adrien-bolle.jpg', width: 908, height: 1210, alt: 'Portrait d’Adrien Bolle, trésorier du Club Athlétique Nantais' } },
     { role: 'Trésorière adjointe', name: 'Emma Houédé', photo: { src: '/images/bureau-emma-houede.jpg', width: 908, height: 1210, alt: 'Portrait d’Emma Houédé, trésorière adjointe du Club Athlétique Nantais' } },
+    { role: 'Vice-président', name: 'Tengiz Dalakishvili', photo: { src: '/images/bureau-tengiz-dalakishvili.jpg', width: 908, height: 1210, alt: 'Portrait de Tengiz Dalakishvili, vice-président du Club Athlétique Nantais' } },
     { role: 'Secrétaire générale', name: 'Maryne Melart', photo: { src: '/images/bureau-maryne-melart.jpg', width: 908, height: 1210, alt: 'Portrait de Maryne Melart, secrétaire générale du Club Athlétique Nantais' } },
+    { role: 'Trésorier', name: 'Adrien Bolle', photo: { src: '/images/bureau-adrien-bolle.jpg', width: 908, height: 1210, alt: 'Portrait d’Adrien Bolle, trésorier du Club Athlétique Nantais' } },
     { role: 'Secrétaire adjointe', name: 'Marie Boennec', photo: { src: '/images/bureau-marie-boennec.jpg', width: 908, height: 1210, alt: 'Portrait de Marie Boennec, secrétaire adjointe du Club Athlétique Nantais' } },
   ],
 } as const;
