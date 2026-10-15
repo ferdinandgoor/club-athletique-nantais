@@ -2,8 +2,9 @@
 export const disciplines = [
   {
     id: 'musculation', path: '/musculation/', title: 'Musculation', subtitle: 'La salle près de chez toi',
-    summary: 'Découvre la salle de musculation du CAN, à proximité de Saint-Herblain, et rejoins le club pour tes entraînements.',
-    introduction: 'Envie de pratiquer la musculation près de chez toi ? Découvre la salle du Club Athlétique Nantais et prépare ta première venue avec nous.',
+    metaTitle: 'Salle de musculation à Nantes',
+    summary: 'Salle de musculation à Nantes : découvre celle du Club Athlétique Nantais, à proximité de Saint-Herblain, et rejoins le club pour tes entraînements.',
+    introduction: 'Envie de pratiquer la musculation à Nantes ? Découvre la salle du Club Athlétique Nantais, à l’ouest de la ville, et prépare ta première venue avec nous.',
     heading: 'Découvre la salle',
     details: [
       { title: 'Ton entraînement', text: 'La musculation est une activité à part entière au CAN. Tu peux la choisir directement dans MonClub.' },
@@ -17,9 +18,10 @@ export const disciplines = [
   },
   {
     id: 'force-athletique', path: '/force-athletique/', title: 'Force athlétique', subtitle: 'Powerlifting',
-    summary: 'Squat, développé couché, soulevé de terre : découvre la force athlétique, des premiers entraînements à la compétition.',
-    introduction: 'Développe ta force dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débutants que les compétiteurs.',
-    heading: 'Trois mouvements, une discipline',
+    metaTitle: 'Force athlétique & Powerlifting à Nantes',
+    summary: 'Powerlifting à Nantes : squat, développé couché, soulevé de terre. Découvre la force athlétique au CAN, du premier entraînement à la compétition.',
+    introduction: 'Développe ta force en powerlifting à Nantes, dans une salle équipée, auprès d’un collectif qui accueille aussi bien les débutants que les compétiteurs.',
+    heading: 'Powerlifting : trois mouvements, une discipline',
     details: [
       { title: 'Squat', text: 'Le mouvement de flexion de jambes avec une barre sur les épaules.' },
       { title: 'Développé couché', text: 'Un mouvement de poussée avec une barre, allongé sur un banc.' },
@@ -34,8 +36,9 @@ export const disciplines = [
   },
   {
     id: 'lutte', path: '/lutte/', title: 'Lutte', subtitle: 'Libre & gréco-romaine',
-    summary: 'Découvre la lutte au CAN et les catégories proposées dans MonClub : lutte, lutte baby et lutte enfant.',
-    introduction: 'Le CAN propose la lutte libre et la lutte gréco-romaine. Retrouve la section lutte et prépare ta première venue avec le club.',
+    metaTitle: 'Lutte libre et gréco-romaine à Nantes',
+    summary: 'Club de lutte à Nantes : lutte libre et gréco-romaine au CAN, avec les catégories lutte, lutte baby et lutte enfant dans MonClub.',
+    introduction: 'Le CAN, club de lutte à Nantes, propose la lutte libre et la lutte gréco-romaine. Retrouve la section lutte et prépare ta première venue avec le club.',
     heading: 'Trouve ta catégorie',
     details: [
       { title: 'Lutte', text: 'La discipline figure parmi les activités du Club Athlétique Nantais dans MonClub.' },

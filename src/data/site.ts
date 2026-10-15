@@ -4,13 +4,23 @@ import { resolveSiteUrl } from '../utils/site-url';
 export const site = {
   name: 'Club Athlétique Nantais',
   url: resolveSiteUrl(import.meta.env.VITE_SITE_URL),
-  description: 'Musculation, force athlétique et lutte à Nantes : découvre les activités du Club Athlétique Nantais, les informations pratiques et les inscriptions.',
+  description: 'Club de powerlifting et force athlétique, musculation et lutte à Nantes : découvre les activités du Club Athlétique Nantais, les informations pratiques et les inscriptions.',
   contact: {
     email: 'cannantais@gmail.com',
     address: '68 rue de la Durantière, 44100 Nantes',
     mapUrl: 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x4805ed4273092a11:0x5761dfc27104bf6f?sa=X&ved=1t:8290&ictx=111',
     mapEmbedUrl: 'https://www.google.com/maps?q=68%20rue%20de%20la%20Duranti%C3%A8re%2C%2044100%20Nantes&output=embed',
     instagramUrl: 'https://www.instagram.com/club_athletique_nantais',
+  },
+  // Données structurées pour le référencement local, rendues sur chaque page.
+  schema: {
+    sports: ['Force athlétique', 'Powerlifting', 'Musculation', 'Lutte'],
+    postalAddress: { streetAddress: '68 rue de la Durantière', addressLocality: 'Nantes', postalCode: '44100', addressCountry: 'FR' },
+    sameAs: [
+      'https://www.instagram.com/club_athletique_nantais',
+      'https://www.instagram.com/can_powerlifting/',
+      'https://www.instagram.com/can_lutte_nantes/',
+    ],
   },
   activities: [
     { title: 'Haltérophilie', text: 'Apprendre et perfectionner les mouvements olympiques dans un espace équipé.' },

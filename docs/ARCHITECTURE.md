@@ -81,6 +81,14 @@ Le header et le carrousel utilisent uniquement React et les API du navigateur. A
 
 Le tutoriel d’inscription est isolé dans `RegistrationGuide` et ses instructions dans `src/data/registration.ts`. Les écrans illustratifs sont rendus en HTML/SCSS et le logo MonClub est servi localement : aucun appel aux stores avant le clic sur leurs liens. La copie du code utilise le presse-papiers après action explicite, sans transmettre de données.
 
+## Référencement local
+
+Chaque page a un titre et une description uniques, définis dans `src/data/pages.ts`. Les pages de disciplines utilisent leur `metaTitle` spécifique (`src/data/disciplines.ts`), les pages de coachs dérivent du rôle du coach. Le build refuse deux titres ou deux descriptions identiques.
+
+`renderHead` dans `src/seo.ts` émet pour chaque page le titre, la description, l’URL canonique, les balises Open Graph et une donnée structurée JSON-LD `SportsActivityLocation` construite depuis `schema` dans `src/data/site.ts` : nom du club, adresse, sports pratiqués et comptes Instagram (`sameAs`). Cette donnée aide les moteurs de recherche à associer le club à Nantes et à ses disciplines ; elle n’appelle aucun service externe.
+
+Ne pas ajouter de coordonnées géographiques ni d’horaires au JSON-LD sans information confirmée : ils ne sont pas validés (position exacte) ou saisonniers (horaires). Le vrai classement dépend aussi du domaine définitif (`SITE_URL`, voir `docs/DEPLOIEMENT.md`) : les URL canoniques et le sitemap l’utilisent à chaque build. Aucune mesure d’audience n’est installée pour en vérifier l’effet.
+
 ## Orientation par discipline
 
 L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/` et `/lutte/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la discipline active.

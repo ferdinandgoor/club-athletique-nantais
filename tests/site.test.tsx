@@ -82,6 +82,21 @@ describe('Pages publiques', () => {
     expect(about).toContain('href="/coach-sacha-turpin/"');
     expect(about).toContain('href="/coach-tengiz-dalakishvili/"');
   });
+  it('optimise le référencement local avec des métadonnées riches', () => {
+    const home = renderHead('/');
+    expect(home).toContain('<title>Powerlifting, musculation et lutte à Nantes');
+    const force = renderHead('/force-athletique/');
+    expect(force).toContain('Force athlétique &amp; Powerlifting à Nantes');
+    expect(force).toContain('Powerlifting à Nantes');
+    expect(renderHead('/musculation/')).toContain('Salle de musculation à Nantes');
+    expect(renderHead('/lutte/')).toContain('Lutte libre et gréco-romaine à Nantes');
+    for (const page of pages) {
+      const head = renderHead(page.path);
+      expect(head).toContain('application/ld+json');
+      expect(head).toContain('"@type":"SportsActivityLocation"');
+      expect(head).toContain('"addressLocality":"Nantes"');
+    }
+  });
   it('regroupe les liens validés et réserve son accès au pied de page', () => {
     const html = renderToStaticMarkup(<App path="/links/" />);
     const content = html.split('<main')[1].split('</main>')[0];

@@ -98,6 +98,17 @@ Les SCSS de Home, RegistrationGuide et PageShell gèrent l’arrivée du logo, l
 
 La page `/qui-sommes-nous/` présente le bureau directeur avec un portrait par membre. Modifier uniquement les valeurs dans `src/data/bureau.ts` : rôles, noms, chemins des photos, dimensions et textes alternatifs. Après une nouvelle AG, remplacer la liste des membres et les portraits ensemble, puis mettre à jour la date de l’assemblée et la source dans `docs/CLUB.md` dans le même changement. Les portraits se placent dans `public/images/` avec un nom simple, par exemple `bureau-prenom-nom.jpg`. Ne publier ni le nom ni l’image d’une personne sans accord confirmé, et ne pas ajouter d’autres données personnelles (coordonnées, âge, etc.) sur cette page. La photo de groupe de l’AG, demandée par le président, sera ajoutée à cette page une fois fournie et documentée dans `docs/CLUB.md`.
 
+### Référencement (SEO)
+
+Les requêtes visées sont les recherches locales : « powerlifting nantes », « powerlift nantes », « force athlétique nantes », « salle de musculation nantes », « club de lutte nantes ». Pour les faire évoluer :
+
+- Titres et descriptions des pages : `src/data/pages.ts`. Chaque discipline a aussi un `metaTitle` dans `src/data/disciplines.ts`, utilisé pour la balise `<title>` — le libellé affiché dans la navigation reste `title`.
+- Intégrer les mots-clés dans les textes visibles (`summary`, `introduction`, titres de section) de façon naturelle : Google valorise le contenu réel plus que les balises seules.
+- La donnée structurée (adresse, sports, comptes Instagram du club) se modifie dans `schema` dans `src/data/site.ts`.
+- Conserver des titres et descriptions uniques par page : le build échoue sinon. Ne pas bourrer de mots-clés ni dupliquer des listes de termes invisibles.
+
+Après modification, lancer `npm run check` et relire la balise `<title>` de chaque page modifiée dans `dist/`.
+
 ### Pages des coachs
 
 Les coachs du club ont chacun une page dédiée, par exemple `/coach-sacha-turpin/`. Modifier uniquement les valeurs dans `src/data/coaches.ts` : nom, rôle au bureau, rôle de coach, discipline reliée, portrait et introduction. Renseigner `instagram` avec l’identifiant seul (sans l’URL, par exemple `moncompte`) fait apparaître le lien Instagram sur la page ; le laisser vide masque le lien. La section « Trouver un coach » s’affiche automatiquement sur la page de la discipline reliée : ajouter un coach dans `src/data/coaches.ts` suffit, aucun modèle à modifier. Ne publier ni palmarès, ni expérience, ni coordonnées privées sans information confirmée dans `docs/CLUB.md`, et vérifier l’accord du coach avant de publier son profil. La page « Qui sommes-nous ? » relie automatiquement les membres du bureau dont le nom figure aussi dans `src/data/coaches.ts`.

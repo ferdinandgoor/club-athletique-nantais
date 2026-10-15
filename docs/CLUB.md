@@ -181,6 +181,12 @@ Sacha Turpin, président du club, a transmis par WhatsApp une liste de modificat
 3. **Haltérophilie — contenu à fournir.** Case cochée dans la liste du président. L’haltérophilie était volontairement en retrait ; les tarifs compétition (200 €) et loisir (170 €) sont connus. Descriptions, horaires, encadrant et public restent `À fournir` avant de créer une page ou une section. À clarifier avec le président : page dédiée ou simple mention ?
 4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.
 
+### Référencement local — demande du propriétaire du 15 octobre 2026
+
+Le propriétaire souhaite que le site ressorte sur des recherches comme « powerlift nantes », « force athlétique », « force nantes », « club powerlift ». Réalisé le même jour : mots-clés intégrés aux titres et descriptions de toutes les pages (accueil : Powerlifting, musculation, lutte à Nantes ; force : « Force athlétique & Powerlifting à Nantes » ; musculation : « Salle de musculation à Nantes » ; lutte : « Lutte libre et gréco-romaine à Nantes »), textes visibles enrichis, et donnée structurée JSON-LD `SportsActivityLocation` (nom, adresse, sports, comptes Instagram) sur chaque page. Les requêtes « haltérophilie nantes » et « streetlifting nantes » ne sont pas ciblées tant que ces activités n’ont pas de contenu validé.
+
+Limites documentées : le classement réel dépend du domaine définitif (variable `SITE_URL`, à configurer dans GitHub — toujours `À fournir` à ce jour), de l’ancienneté du site, de la Google Business Profile du club le cas échéant, et de liens depuis les comptes Instagram du club vers le site. Aucune mesure d’audience n’est installée pour suivre les positions : un suivi demanderait un outil externe à documenter au préalable.
+
 ### Pages des coachs — demande du propriétaire du 15 octobre 2026
 
 Le propriétaire du dépôt demande des pages dédiées à Sacha Turpin et Tengiz Dalakishvili parce qu’ils sont coachs, avec leurs Instagram, et une section « Trouver un coach » sur les pages force athlétique (Sacha) et lutte (Tengiz). Réalisé le 15 octobre 2026 : pages `/coach-sacha-turpin/` et `/coach-tengiz-dalakishvili/`, sections « Trouver un coach » sur les deux disciplines, liens depuis la page « Qui sommes-nous ? ».
