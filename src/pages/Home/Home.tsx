@@ -109,7 +109,7 @@ export function Home() {
                 <span className="home__eyebrow">{discipline.subtitle}</span>
                 <h3>{discipline.title}</h3>
                 <p>{discipline.summary}</p>
-                <span className="home__activity-link">Découvrir la {discipline.title.toLowerCase()} <span aria-hidden="true">↗</span></span>
+                <span className="home__activity-link">Découvrir {discipline.noun} <span aria-hidden="true">↗</span></span>
               </div>
             </a>
           ))}

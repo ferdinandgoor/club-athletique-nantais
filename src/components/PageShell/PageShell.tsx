@@ -52,7 +52,7 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
             <span>Menu</span>
           </button>
           <nav id="navigation-principale" aria-label="Navigation principale" data-open={isMenuOpen}>
-            {!isHome && disciplines.map((item) => <a key={item.path} href={item.path} aria-current={path === item.path ? 'page' : undefined}>{item.title}</a>)}
+            {!isHome && disciplines.filter((item) => item.main).map((item) => <a key={item.path} href={item.path} aria-current={path === item.path ? 'page' : undefined}>{item.title}</a>)}
             {(isHome ? navigation : navigation.filter((item) => item.id === 'activites' || item.id === 'inscription')).map((item) => (
               <a key={item.id} href={`${isHome ? "" : "/"}#${item.id}`} aria-current={isHome && activeSection === item.id ? 'location' : undefined} onClick={() => setIsMenuOpen(false)}>
                 {item.label}

@@ -109,7 +109,7 @@ Ne jamais versionner de listes d’adhérents, de données médicales, de docume
 
 ## État éditorial du site
 
-- La page d’accueil présente le club et oriente vers trois pages : musculation, force athlétique et lutte, complétées de trois cartes sans lien pour les activités sans page dédiée (haltérophilie, Pilates, cours communs). Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
+- La page d’accueil présente le club et oriente vers six pages : musculation, force athlétique et lutte (grandes cartes), haltérophilie, Pilates et cours communs (cartes plus basses). Elle conserve la localisation, le guide MonClub commun et une galerie explicitement consacrée à la force athlétique. Les horaires de salle et la séance à 10 € sont présentés sur la page force athlétique.
 - La page « Qui sommes-nous ? » présente le bureau directeur élu lors de l’AG du 1er octobre 2026, avec un portrait par membre. Elle est accessible depuis la navigation principale et depuis la section « Choisis la façon de nous rejoindre » de l’accueil. La photo de groupe de l’AG n’y figure pas tant qu’elle n’a pas été fournie.
 - Chaque coach du club dispose d’une page dédiée : `/coach-sacha-turpin/` (force athlétique) et `/coach-tengiz-dalakishvili/` (lutte). Les pages force athlétique et lutte proposent une section « Trouver un coach » vers ces profils ; la musculation n’en propose pas. Les profils relient vers les Instagram personnels des coachs : `@sacha_powerlift` (Sacha, contact pour du coaching) et `@tengiz_dalakishvili` (Tengiz).
 - Les textes publics se trouvent dans `src/data/site.ts`, `src/data/disciplines.ts` et `src/data/registration.ts`.
@@ -179,7 +179,7 @@ Sacha Turpin, président du club, a transmis par WhatsApp une liste de modificat
    - *Stretching (19 h 15–20 h 00)* : « Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur. »
    - « Deux activités différentes mais complémentaires pour garder un corps fort, souple et en bonne santé. »
    - Manquent avant publication : le ou les jours de ces créneaux, le tarif éventuel (ou renvoi vers MonClub), la photo, et l’accord de Véronique L’hotellier pour publier son nom et son image. Ne pas annoncer ces créneaux sans le jour.
-3. **Haltérophilie — contenu à fournir.** Case cochée dans la liste du président. L’haltérophilie était volontairement en retrait ; les tarifs compétition (200 €) et loisir (170 €) sont connus. Descriptions, horaires, encadrant et public restent `À fournir` avant de créer une page ou une section. À clarifier avec le président : page dédiée ou simple mention ?
+3. **Haltérophilie — page créée, contenu à enrichir.** Case cochée dans la liste du président. Une page `/halterophilie/` existe depuis le 15 octobre 2026 avec les mouvements olympiques et les tarifs connus (compétition 200 €, loisir 170 €). Horaires, encadrant et public restent `À fournir` pour l’enrichir. À clarifier avec le président si nécessaire.
 4. **Streetlifting — discipline inconnue du site.** Case cochée dans la liste du président ; cette discipline n’apparaît nulle part dans les informations fournies depuis le 24 septembre 2026. Description, horaires, tarifs, encadrant, public et photos restent `À fournir`. Ne rien inventer ni publier avant confirmation.
 
 ### Contact développeur et dépôt public — 15 octobre 2026
@@ -198,9 +198,11 @@ Le propriétaire du dépôt indique que le site est déployé sur FTP chez OVH e
 
 Le site est publié automatiquement par le workflow GitHub après un push sur `main` ; la procédure et les emplacements des secrets sont décrits dans `docs/DEPLOIEMENT.md`.
 
-### Activités sans page dédiée sur l’accueil — 15 octobre 2026
+### Sous-pages des activités — demande du propriétaire du 15 octobre 2026
 
-Le propriétaire demande d’ajouter les activités dans la section « Trouve ta discipline » de l’accueil, avec la même présentation que les disciplines. Réalisé : haltérophilie, Pilates et cours communs apparaissent comme cartes dans la même grille, avec le fond visuel partagé, un libellé court, leur titre et leur description — sans lien, car elles n’ont pas encore de page dédiée. Ces contenus sont validés (source : contenus MonClub du 24 septembre 2026) dans `activities` dans `src/data/site.ts`. Dès qu’une activité reçoit sa page dans `src/data/disciplines.ts`, elle quitte automatiquement ce groupe pour rejoindre les cartes cliquables.
+Le propriétaire demande des sous-pages pour les autres activités, accessibles depuis l’accueil, avec des cartes de hauteur réduite. Réalisé : `/halterophilie/`, `/pilates/` et `/cours-communs/` suivent le modèle commun des disciplines ; sur l’accueil, leurs cartes sont cliquables et plus basses que celles des trois disciplines principales. La navigation principale garde les trois disciplines marquées `main` dans `src/data/disciplines.ts`.
+
+Contenu respecté : l’haltérophilie publie les deux mouvements olympiques (description générale de la discipline) et les tarifs confirmés (compétition 200 €, loisir 170 €) ; le Pilates n’annonce ni créneau ni tarif, faute d’information validée, et invite à contacter le club ; les cours communs affichent la formule à 170 € sans annoncer de créneaux, conformément à la révision en cours de l’offre. Dès que les créneaux des cours collectifs de Véronique L’hotellier sont confirmés, la page « Cours communs » pourra les reprendre. Les pages Haltérophilie et Pilates pourront être enrichies quand le président fournira le contenu prévu dans sa liste.
 
 ### Référencement local — demande du propriétaire du 15 octobre 2026
 
