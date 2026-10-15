@@ -70,7 +70,7 @@
   &__activity-content > * { text-shadow: 0 1px 2px rgb(0 0 0 / 45%); }
   &__activity-card--force-athletique { background-image: url('/images/discipline-force-athletique.png'); background-position: center 68%; }
   &__activity-card--lutte { background-image: url('/images/discipline-lutte.png'); background-position: center 68%; }
-  &__activity-card--halterophilie, &__activity-card--pilates, &__activity-card--cours-communs { min-height: 15rem; padding-top: clamp(3rem, 6vw, 5rem); }
+  &__activity-card--halterophilie, &__activity-card--pilates, &__activity-card--cours-communs { min-height: 15rem; padding: .75rem; }
   &__activity-card:hover { border-color: var(--color-accent); }
   &__activity-number { margin-bottom: 3rem; color: var(--color-accent); font-size: 2rem; font-weight: 850; }
   &__activity-card h3 { font-size: clamp(1.75rem, 2.8vw, 2.75rem); overflow-wrap: anywhere; margin-block: .5rem 1.5rem; }
