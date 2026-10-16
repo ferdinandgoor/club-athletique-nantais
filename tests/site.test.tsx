@@ -63,7 +63,7 @@ describe('Pages publiques', () => {
     expect(coursCommuns).toContain(site.hours[0].times);
     expect(coursCommuns).toContain('Accès libre à la salle de musculation sur ces créneaux d’ouverture');
     expect(coursCommuns).toContain('Le prof du cours');
-    expect(coursCommuns.indexOf('Le prof du cours')).toBeLessThan(coursCommuns.indexOf('Préparer ta venue'));
+    expect(coursCommuns.indexOf('Le prof du cours')).toBeLessThan(coursCommuns.indexOf('Deux cours, le jeudi soir'));
     expect(coursCommuns).toContain('Véronique L’hotellier');
     expect(coursCommuns).toContain('href="/coach-veronique-lhotellier/"');
     expect(wrestling).toContain('Lutte baby');
@@ -132,7 +132,7 @@ describe('Pages publiques', () => {
     const wrestling = renderToStaticMarkup(<App path="/lutte/" />);
     expect(wrestling).toContain('Le prof du cours');
     expect(wrestling).not.toContain('Trouver un coach');
-    expect(wrestling.indexOf('Le prof du cours')).toBeLessThan(wrestling.indexOf('Préparer ta venue'));
+    expect(wrestling.indexOf('Le prof du cours')).toBeLessThan(wrestling.indexOf('Trouve ta catégorie'));
     expect(wrestling).toContain('Il encadre les entraînements de lutte du club.');
     expect(wrestling).toContain('href="/coach-tengiz-dalakishvili/"');
     const musculation = renderToStaticMarkup(<App path="/musculation/" />);

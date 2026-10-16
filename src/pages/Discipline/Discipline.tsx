@@ -44,6 +44,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
         <a className="discipline__button" href="/#inscription">S’inscrire avec MonClub</a>
         <a className="discipline__instagram" href={instagramUrl} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>Nous suivre sur Instagram ↗</a>
       </header>
+      {coach?.courseLead ? coachSection : null}
       <section className="discipline__section" aria-labelledby="practice-title">
         <h2 id="practice-title">{discipline.heading}</h2>
         <div className="discipline__details">
@@ -65,7 +66,6 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
           </div>
         </div>}
       </section>
-      {coach?.courseLead ? coachSection : null}
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>
         {hasGymHours ? <div className="discipline__details discipline__details--two">
