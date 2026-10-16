@@ -13,7 +13,7 @@
     height: 100dvh;
     min-height: 0;
     overflow: hidden;
-    padding: 9.5rem max(1.5rem, calc((100vw - 76rem) / 2)) 5.5rem;
+    padding: 9.5rem max(var(--space-md), calc((100vw - 76rem) / 2)) 5.5rem;
     background: var(--color-navy) url('/images/salle-can-poster.jpg') center / cover no-repeat;
     color: white;
   }
@@ -22,7 +22,7 @@
   &__hero-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
   &__hero-video { object-fit: cover; object-position: center 58%; filter: blur(4px); transform: scale(1.03); }
   &__hero-overlay { background: linear-gradient(90deg, rgb(5 8 20 / 48%) 0%, rgb(5 8 20 / 25%) 52%, rgb(5 8 20 / 10%) 100%), linear-gradient(0deg, rgb(5 8 20 / 38%), transparent 55%); }
-  &__video-controls { position: absolute; z-index: 2; left: max(1.5rem, calc((100vw - 76rem) / 2)); bottom: 1.5rem; max-width: calc(100% - 3rem); }
+  &__video-controls { position: absolute; z-index: 2; left: max(var(--space-md), calc((100vw - 76rem) / 2)); bottom: 1.5rem; max-width: calc(100% - 2 * var(--space-md)); }
   &__video-controls button { min-height: 44px; padding: .65rem 1rem; border: 1px solid rgb(255 255 255 / 65%); border-radius: .4rem; background: rgb(5 8 20 / 65%); color: white; font: inherit; font-size: .8rem; cursor: pointer; }
   &__video-controls button:hover { background: var(--color-primary); }
   &__video-controls span[role="status"] { display: block; padding: .4rem; background: var(--color-navy); font-size: .8rem; }
@@ -33,7 +33,7 @@
   &__hero-logo { display: block; width: clamp(17rem, 36vw, 31rem); height: 0; min-height: 4rem; flex: 1 1 auto; object-fit: contain; margin: 0 auto; filter: drop-shadow(0 1.5rem 2.5rem rgb(0 0 0 / 25%)); }
   &__eyebrow { color: var(--color-accent); font-size: .78rem; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
   &__introduction { max-width: 40rem; flex-shrink: 0; margin: 0 auto; color: rgb(255 255 255 / 82%); font-size: clamp(1.1rem, 2.2vw, 1.5rem); line-height: 1.55; }
-  &__scroll-hint { position: absolute; z-index: 1; right: max(1.5rem, calc((100vw - 76rem) / 2)); bottom: 2.5rem; color: white; font-size: .82rem; font-weight: 750; letter-spacing: .06em; text-decoration: none; }
+  &__scroll-hint { position: absolute; z-index: 1; right: max(var(--space-md), calc((100vw - 76rem) / 2)); bottom: 2.5rem; color: white; font-size: .82rem; font-weight: 750; letter-spacing: .06em; text-decoration: none; }
   &__scroll-hint span { margin-left: .5rem; color: var(--color-accent); font-size: 1.2rem; }
 
   &__button {
@@ -80,7 +80,7 @@
   &__section-heading { max-width: 48rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
   &__section-heading > p:last-child { color: var(--color-muted); font-size: 1.1rem; }
 
-  &__practical { padding: clamp(5rem, 10vw, 9rem) max(1.5rem, calc((100vw - 76rem) / 2)); background: var(--color-navy); color: white; }
+  &__practical { padding: clamp(5rem, 10vw, 9rem) max(var(--space-md), calc((100vw - 76rem) / 2)); background: var(--color-navy); color: white; }
   &__practical-inner { width: 100%; }
   &__practical .home__section-heading > p:last-child { color: var(--color-on-dark-muted); }
   &__info-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
@@ -114,20 +114,25 @@
 @media (max-width: 52rem) {
   .home {
     &__location, &__activity-grid { grid-template-columns: 1fr; }
+    &__activity-grid { gap: 1.25rem; }
     &__map { min-height: 28rem; }
     &__info-grid { grid-template-columns: 1fr; }
     &__info-card { min-height: auto; }
+    &__section { padding-block: 4rem; }
+    &__section-heading { margin-bottom: 1.75rem; }
+    &__practical { padding-block: 4rem; }
+    &__gallery { padding-bottom: 4rem; }
   }
 }
 
 @media (max-width: 36rem) {
   .home {
-    &__hero { padding-inline: 1.5rem; }
+    &__hero { padding-top: 8rem; padding-bottom: 4rem; }
     &__hero-video { object-position: center; }
     &__hero-logo { width: min(78vw, 23rem); }
     &__scroll-hint { display: none; }
     &__map { min-height: 22rem; }
-    &__location-copy { padding: 3rem 1.5rem; }
+    &__location-copy { padding: 2.25rem var(--space-md); }
     &__carousel-frame img { height: 65svh; }
     &__carousel-dots { position: static; margin-top: 1.25rem; }
     &__carousel-dots button { flex: 1; }

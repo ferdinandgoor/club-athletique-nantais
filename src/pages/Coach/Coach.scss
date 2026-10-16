@@ -1,5 +1,5 @@
 .coach {
-  &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(1.5rem, calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
+  &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(var(--space-md), calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
   &__hero nav { margin-bottom: 3rem; font-size: .85rem; }
   &__hero nav a { color: white; }
   &__hero h1 { max-width: 15ch; margin-block: 1rem 2rem; }
@@ -22,7 +22,9 @@
   &__roles span { color: var(--color-muted); }
 }
 @media (max-width: 48rem) {
-  .coach__section { grid-template-columns: 1fr; }
-  .coach__hero { padding-top: 8rem; }
+  .coach__section { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 2.25rem; }
+  .coach__hero { padding-block: 7.5rem 2.5rem; }
+  .coach__hero nav { margin-bottom: 1.5rem; }
+  .coach__hero h1 { margin-block: .75rem 1.5rem; }
   .coach__instagram { margin: .75rem 0 0; }
 }

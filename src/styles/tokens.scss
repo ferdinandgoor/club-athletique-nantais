@@ -15,3 +15,10 @@
   --space-md: 1.5rem;
   --space-lg: 3rem;
 }
+
+@media (max-width: 48rem) {
+  :root {
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+  }
+}

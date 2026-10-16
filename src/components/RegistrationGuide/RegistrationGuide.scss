@@ -45,9 +45,12 @@
     &__intro h3 { max-width: none; }
   }
 }
+@media (max-width: 48rem) {
+  .registration-guide { padding-block: 3rem; }
+}
 @media (max-width: 36rem) {
   .registration-guide {
-    &__list { grid-template-columns: 1fr; gap: 3rem; }
+    &__list { grid-template-columns: 1fr; gap: 2rem; }
     &__store-links { flex-direction: column; }
     &__caption { max-width: 25rem; margin-inline: auto; }
     &__screen { min-height: 20rem; }

@@ -47,7 +47,7 @@ L’entrée dans `pages.ts` alimente automatiquement le pré-rendu, les métadon
 ## Conventions simples
 
 - Un composant dans son dossier avec son fichier `.scss` associé.
-- Les couleurs et espacements partagés vont dans `src/styles/tokens.scss`.
+- Les couleurs et espacements partagés vont dans `src/styles/tokens.scss`. Sous 48rem (mobile), `--space-md` et `--space-lg` y sont réduits pour resserrer les marges de page et les écarts entre blocs ; les sections et héros ajoutent leurs propres ajustements dans les media queries de leur `.scss`. Utiliser `var(--space-md)` plutôt qu’une valeur fixe pour le padding latéral des blocs pleine largeur, afin de rester aligné avec `Container`.
 - Utiliser des classes BEM, par exemple `.home`, `.home__notice`, `.home--compact` ; limiter l’imbrication SCSS.
 - Garder des titres structurés, des liens compréhensibles et un focus clavier visible.
 - Éviter les animations inutiles et respecter `prefers-reduced-motion`.

@@ -123,7 +123,8 @@
     &__header nav[data-open='true'] { display: flex; }
     &__header nav a { padding-inline: .75rem; }
     &__instagram { width: auto; justify-content: flex-start; }
-    &__footer .container { grid-template-columns: 1fr; gap: 2rem; }
+    &__footer { padding-block: 2.5rem; }
+    &__footer .container { grid-template-columns: 1fr; gap: 1.5rem; }
   }
 }
 

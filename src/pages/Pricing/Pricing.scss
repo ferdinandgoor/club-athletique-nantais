@@ -1,5 +1,5 @@
 .pricing {
-  &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(1.5rem, calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
+  &__hero { margin-inline: calc(50% - 50vw); padding: 9rem max(var(--space-md), calc((100vw - 76rem) / 2)) 4rem; background: var(--color-navy); color: white; }
   &__hero nav { margin-bottom: 3rem; font-size: .85rem; }
   &__hero nav a { color: white; }
   &__hero h1 { max-width: 15ch; margin-block: 1rem 2rem; }
@@ -29,5 +29,9 @@
   &__sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 }
 @media (max-width: 48rem) {
-  .pricing__hero { padding-top: 8rem; }
+  .pricing__hero { padding-block: 7.5rem 2.5rem; }
+  .pricing__hero nav { margin-bottom: 1.5rem; }
+  .pricing__hero h1 { margin-block: .75rem 1.5rem; }
+  .pricing__section { padding-block: 2.25rem; }
+  .pricing__button { margin-top: 1rem; }
 }
