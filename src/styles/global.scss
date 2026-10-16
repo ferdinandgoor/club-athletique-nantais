@@ -1,7 +1,7 @@
 @use './tokens';
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.6; background: var(--color-background); color: var(--color-text); }
 h1, h2, h3 { line-height: 1.05; letter-spacing: -0.035em; }
 h1 { max-width: 12ch; font-size: clamp(3.2rem, 8vw, 7rem); line-height: 0.9; letter-spacing: -0.055em; overflow-wrap: break-word; }

@@ -73,6 +73,12 @@ L’hébergement prévu sert le site **à la racine d’un domaine**, pas dans u
 
 Toute variable préfixée `VITE_` peut se retrouver dans les fichiers publics. Ne jamais y placer de mot de passe ou de clé privée. Le domaine est fixé pendant le build : le changer exige de reconstruire et republier.
 
+## Sections pleine largeur et scroll horizontal
+
+Les sections qui doivent occuper tout l’écran (héros des pages, carte de l’accueil) sont rendues pleines largeur avec `margin-inline: calc(50% - 50vw)`. Or `100vw` inclut la barre de défilement verticale : quand celle-ci est visible, chaque section pleine largeur dépasse de quelques pixels à droite et le navigateur propose un défilement horizontal sur toute la page. `styles/global.scss` corrige ce défaut avec `overflow-x: clip` sur `html` : le débordement est rogné et aucune molette latérale n’apparaît.
+
+Les tableaux trop larges (tarifs, planning des disciplines) gardent leur propre défilement interne grâce à `overflow-x: auto` sur leur contenant : la garde sur `html` ne les affecte pas. Si une nouvelle section doit être pleine largeur, réutiliser le motif `margin-inline: calc(50% - 50vw)` dans le SCSS de sa page ; la garde globale la rend sûre sans règle supplémentaire.
+
 ## Services externes présents sur l’accueil
 
 La page d’accueil charge une carte intégrée depuis `google.com` et propose des liens vers l’App Store, Google Play, Instagram et Google Maps. Les liens simples ne contactent ces services qu’après un clic. La carte intégrée, elle, contacte Google au chargement de la section, même si elle utilise `loading="lazy"` pour différer la requête.
