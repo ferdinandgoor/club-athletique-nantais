@@ -20,6 +20,20 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isWrestling = discipline.id === 'lutte';
   const coach = coaches.find((item) => item.discipline.id === discipline.id);
   const instagramUrl = isForce ? 'https://www.instagram.com/can_powerlifting/' : isWrestling ? 'https://www.instagram.com/can_lutte_nantes/' : site.contact.instagramUrl;
+  const coachSection = coach && (
+    <section className={`discipline__section discipline__coach${coach.courseLead ? ' discipline__coach--lead' : ''}`} data-reveal aria-labelledby="coach-title">
+      <p className="discipline__eyebrow">Encadrement</p>
+      <h2 id="coach-title">{coach.courseLead ? 'Le prof du cours' : 'Trouver un coach'}</h2>
+      <a className="discipline__coach-card" href={coach.path}>
+        <img src={coach.photo.src} width={coach.photo.width} height={coach.photo.height} alt={coach.photo.alt} />
+        <span className="discipline__coach-copy">
+          <strong>{coach.name}</strong>
+          <span>{coach.courseLead ? coach.roleDescription : `${coach.coachRole} du club.`}</span>
+          <span className="discipline__coach-link">Découvrir son profil <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+    </section>
+  );
   return (
     <article className="discipline">
       <header className={`discipline__hero${isForce || isWrestling ? ` discipline__hero--${discipline.id}` : ''}`}>
@@ -51,6 +65,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
           </div>
         </div>}
       </section>
+      {coach?.courseLead ? coachSection : null}
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>
         {hasGymHours ? <div className="discipline__details discipline__details--two">
@@ -58,18 +73,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
           {isForce && <div><h3>Teste la salle</h3><p className="discipline__price">{site.registration.trialPrice}<small> la séance</small></p><p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p><a className="discipline__button" href={`mailto:${site.contact.email}`}>Organiser ma séance</a></div>}
         </div> : <div className="discipline__contact"><h3>Comment découvrir {discipline.noun} ?</h3>{isWrestling ? <p>L’entraîneur est présent sur tous les créneaux. Viens voir un cours et pose-lui directement tes questions.</p> : <p>Contacte le club pour organiser ta venue : un bénévole pourra t’accueillir et répondre à tes questions.</p>}<p>Tu peux aussi t’inscrire directement avec MonClub grâce au guide ci-dessous.</p><a className="discipline__button" href="/#inscription">Voir le guide d’inscription</a><a className="discipline__other" href={`mailto:${site.contact.email}?subject=${encodeURIComponent('Renseignements ' + discipline.title)}`}>Écrire au club si besoin</a></div>}
       </section>
-      {coach && <section className="discipline__section discipline__coach" data-reveal aria-labelledby="coach-title">
-        <p className="discipline__eyebrow">Encadrement</p>
-        <h2 id="coach-title">Trouver un coach</h2>
-        <a className="discipline__coach-card" href={coach.path}>
-          <img src={coach.photo.src} width={coach.photo.width} height={coach.photo.height} alt={coach.photo.alt} />
-          <span className="discipline__coach-copy">
-            <strong>{coach.name}</strong>
-            <span>{coach.coachRole} du club.</span>
-            <span className="discipline__coach-link">Découvrir son profil <span aria-hidden="true">→</span></span>
-          </span>
-        </a>
-      </section>}
+      {coach && !coach.courseLead ? coachSection : null}
       <section className="discipline__section discipline__join" data-reveal aria-labelledby="join-title">
         <h2 id="join-title">Rejoins la section</h2>
         <p>Dans MonClub, utilise le code <strong>{site.registration.clubCode}</strong>, ouvre « Nos formules », puis sélectionne {discipline.joinSelection}.</p>

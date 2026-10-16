@@ -42,6 +42,9 @@
   &__price small { font-size: 1rem; }
   &__contact { max-width: 46rem; padding: 2rem; background: var(--color-accent-soft); }
   &__coach { border-top: 1px solid var(--color-border); }
+  &__coach--lead &__coach-card { padding: 2rem; }
+  &__coach--lead &__coach-card img { width: 11rem; }
+  &__coach--lead &__coach-copy strong { font-size: 1.5rem; }
   &__coach-card { display: flex; align-items: center; gap: 2rem; max-width: 46rem; min-height: 96px; padding: 1.5rem; background: var(--color-surface); border-top: 3px solid var(--color-primary); text-decoration: none; color: inherit; }
   &__coach-card img { width: 5.5rem; aspect-ratio: 908 / 1210; object-fit: cover; }
   &__coach-copy { display: grid; gap: .35rem; }
@@ -61,4 +64,5 @@
   .discipline__hero--force-athletique { --discipline-hero-banner: url('/images/force-athletique-banniere.jpg'); }
   .discipline__hero--lutte { --discipline-hero-banner: url('/images/lutte-banniere.jpg'); }
   .discipline__schedule { margin-inline: -1rem; padding: 1rem; }
+  .discipline__coach--lead .discipline__coach-card img { width: 6.5rem; }
 }
