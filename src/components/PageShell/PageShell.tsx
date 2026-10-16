@@ -20,6 +20,12 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
   const [isCompact, setIsCompact] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('accueil');
+  // Navigation sans rechargement : la page change sous le menu resté ouvert, on le referme.
+  const [menuPath, setMenuPath] = useState(path);
+  if (menuPath !== path) {
+    setMenuPath(path);
+    setIsMenuOpen(false);
+  }
 
   useEffect(() => {
     const updateNavigation = () => {
@@ -37,11 +43,6 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
     window.addEventListener('scroll', updateNavigation, { passive: true });
     return () => window.removeEventListener('scroll', updateNavigation);
   }, []);
-
-  // Navigation sans rechargement : la page change sous le menu resté ouvert, on le referme.
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [path]);
 
   return (
     <div className="page-shell">
