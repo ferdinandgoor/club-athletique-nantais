@@ -41,8 +41,10 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
         <p className="discipline__eyebrow">{discipline.subtitle}</p>
         <h1>{discipline.title}</h1>
         <p className="discipline__introduction">{discipline.introduction}</p>
-        <a className="discipline__button" href="/#inscription">S’inscrire avec MonClub</a>
-        <a className="discipline__instagram" href={instagramUrl} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>Nous suivre sur Instagram ↗</a>
+        <div className="discipline__hero-actions">
+          <a className="discipline__button" href="/#inscription">S’inscrire avec MonClub</a>
+          <a className="discipline__instagram" href={instagramUrl} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>Nous suivre sur Instagram ↗</a>
+        </div>
       </header>
       {coach?.courseLead ? coachSection : null}
       <section className="discipline__section" aria-labelledby="practice-title">
