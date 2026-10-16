@@ -6,6 +6,7 @@ import { coaches } from './data/coaches';
 import { Home } from './pages/Home/Home';
 import { Links } from './pages/Links/Links';
 import { About } from './pages/About/About';
+import { Pricing } from './pages/Pricing/Pricing';
 import { normalizePath } from './data/pages';
 
 export function App({ path }: { path: string }) {
@@ -14,7 +15,7 @@ export function App({ path }: { path: string }) {
   const coach = coaches.find((item) => item.path === normalized);
   return (
     <PageShell path={normalized}>
-      {normalized === '/' ? <Home /> : normalized === '/links/' ? <Links /> : normalized === '/qui-sommes-nous/' ? <About /> : coach ? <Coach coach={coach} /> : discipline ? <Discipline discipline={discipline} /> : <section><h1>Page introuvable</h1><p>Cette page n’existe pas ou a été déplacée.</p><a href="/">Revenir à l’accueil</a></section>}
+      {normalized === '/' ? <Home /> : normalized === '/links/' ? <Links /> : normalized === '/qui-sommes-nous/' ? <About /> : normalized === '/tarifs/' ? <Pricing /> : coach ? <Coach coach={coach} /> : discipline ? <Discipline discipline={discipline} /> : <section><h1>Page introuvable</h1><p>Cette page n’existe pas ou a été déplacée.</p><a href="/">Revenir à l’accueil</a></section>}
     </PageShell>
   );
 }

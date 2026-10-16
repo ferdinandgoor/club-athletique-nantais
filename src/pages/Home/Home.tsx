@@ -133,6 +133,7 @@ export function Home() {
         <p>Tu peux obtenir les informations utiles et avancer sans attendre une réponse par e-mail.</p>
         <ul>
           <li><a href="#inscription">Inscris-toi dès maintenant en autonomie avec MonClub.</a></li>
+          <li><a href="/tarifs/">Compare les formules, leurs tarifs et leurs accès.</a></li>
           <li>Tu veux voir la salle avant ? Viens directement pendant les horaires indiqués sur la page de ta discipline.</li>
           <li>Pour la lutte, l’entraîneur est présent sur tous les créneaux : viens voir un cours ou lui poser tes questions.</li>
           <li>Pour la musculation, demande à un adhérent de t’orienter vers un bénévole. Il pourra t’accueillir et répondre à tes questions.</li>

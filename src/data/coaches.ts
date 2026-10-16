@@ -1,13 +1,13 @@
 // Coachs et animatrices du club disposant d'une page personnelle.
 // Sacha Turpin et Tengiz Dalakishvili confirmés par le propriétaire du dépôt le 15 octobre 2026
 // (Instagram personnels fournis le même jour : @sacha_powerlift, @tengiz_dalakishvili).
-// Véronique L’hotellier, animatrice des cours communs : photo et demande de publication
+// Véronique L’hotellier, animatrice des cours collectifs : photo et demande de publication
 // transmises par Sacha Turpin, président, le 16 octobre 2026 (uniquement sa page personnelle,
 // pas la page « Qui sommes-nous ? » qui liste les membres du bureau).
 // `clubRole` ne concerne que les membres du bureau : `clubRoleSince` donne alors
 // leur ancienneté dans le bureau, affichée sur la page personnelle ; une animatrice
 // sans fonction au bureau ne renseigne ni l'un ni l'autre.
-// `courseLead` distingue le prof attitré d’un cours (lutte, cours communs : la page
+// `courseLead` distingue le prof attitré d’un cours (lutte, cours collectifs : la page
 // de la discipline le met en avant) du coach individuel sollicité sur demande
 // (force athlétique : la page propose simplement de le trouver).
 export type CoachData = {
@@ -60,11 +60,11 @@ export const coaches: CoachData[] = [
     id: 'veronique-lhotellier',
     path: '/coach-veronique-lhotellier/',
     name: 'Véronique L’hotellier',
-    coachRole: 'Coach des cours communs',
+    coachRole: 'Coach des cours collectifs',
     courseLead: true,
-    discipline: { id: 'cours-communs', title: 'Cours communs', noun: 'les cours communs', path: '/cours-communs/' },
-    photo: { src: '/images/coach-veronique-lhotellier.jpg', width: 908, height: 1210, alt: 'Portrait de Véronique L’hotellier, animatrice des cours communs du Club Athlétique Nantais' },
-    introduction: 'Véronique L’hotellier anime les cours communs du Club Athlétique Nantais : gym renforcement musculaire puis stretching, chaque jeudi soir.',
+    discipline: { id: 'cours-collectifs', title: 'Cours collectifs', noun: 'les cours collectifs', path: '/cours-collectifs/' },
+    photo: { src: '/images/coach-veronique-lhotellier.jpg', width: 908, height: 1210, alt: 'Portrait de Véronique L’hotellier, animatrice des cours collectifs du Club Athlétique Nantais' },
+    introduction: 'Véronique L’hotellier anime les cours collectifs du Club Athlétique Nantais : gym renforcement musculaire puis stretching, chaque jeudi soir.',
     roleDescription: 'Elle encadre chaque jeudi soir la gym renforcement musculaire puis le stretching, deux temps collectifs complémentaires.',
   },
 ];

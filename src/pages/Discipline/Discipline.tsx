@@ -15,7 +15,7 @@ const wrestlingSchedule = [
 
 export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const isForce = discipline.id === 'force-athletique';
-  const hasGymHours = isForce || discipline.id === 'musculation' || discipline.id === 'halterophilie' || discipline.id === 'cours-communs';
+  const hasGymHours = isForce || discipline.id === 'musculation' || discipline.id === 'halterophilie' || discipline.id === 'cours-collectifs';
   const others = disciplines.filter((item) => item.id !== discipline.id);
   const isWrestling = discipline.id === 'lutte';
   const coach = coaches.find((item) => item.discipline.id === discipline.id);
@@ -54,6 +54,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
           <p className="discipline__eyebrow">Saison 2026–2027</p>
           <h3>Tarifs</h3>
           <ul>{discipline.prices.map((price) => <li key={price.label}><span>{price.label}{price.note && <small>{price.note}</small>}</span><strong>{price.amount}</strong></li>)}</ul>
+          <a className="discipline__other" href="/tarifs/">Voir toutes les formules et leurs accès →</a>
         </div>}
         {isWrestling && <div className="discipline__schedule" data-reveal>
           <p className="discipline__eyebrow">Saison 2026–2027</p>
@@ -69,7 +70,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
       <section className="discipline__section discipline__practical" data-reveal id="infos" aria-labelledby="practice-info-title">
         <h2 id="practice-info-title">Préparer ta venue</h2>
         {hasGymHours ? <div className="discipline__details discipline__details--two">
-          <div><h3>Horaires de la salle</h3><dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl><p>Toute l’année, hors vacances scolaires.</p>{discipline.id === 'cours-communs' && <p>Accès libre à la salle de musculation sur ces créneaux d’ouverture.</p>}<address>{site.contact.address}</address><a href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire ↗</a></div>
+          <div><h3>Horaires de la salle</h3><dl>{site.hours.map((item) => <div key={item.days}><dt>{item.days}</dt><dd>{item.times}</dd></div>)}</dl><p>Toute l’année, hors vacances scolaires.</p>{discipline.id === 'cours-collectifs' && <p>Accès libre à la salle de musculation sur ces créneaux d’ouverture.</p>}<address>{site.contact.address}</address><a href={site.contact.mapUrl} target="_blank" rel="noreferrer">Préparer mon itinéraire ↗</a></div>
           {isForce && <div><h3>Teste la salle</h3><p className="discipline__price">{site.registration.trialPrice}<small> la séance</small></p><p>Préviens-nous à l’avance pour organiser ta venue et découvrir la salle.</p><a className="discipline__button" href={`mailto:${site.contact.email}`}>Organiser ma séance</a></div>}
         </div> : <div className="discipline__contact"><h3>Comment découvrir {discipline.noun} ?</h3>{isWrestling ? <p>L’entraîneur est présent sur tous les créneaux. Viens voir un cours et pose-lui directement tes questions.</p> : <p>Contacte le club pour organiser ta venue : un bénévole pourra t’accueillir et répondre à tes questions.</p>}<p>Tu peux aussi t’inscrire directement avec MonClub grâce au guide ci-dessous.</p><a className="discipline__button" href="/#inscription">Voir le guide d’inscription</a><a className="discipline__other" href={`mailto:${site.contact.email}?subject=${encodeURIComponent('Renseignements ' + discipline.title)}`}>Écrire au club si besoin</a></div>}
       </section>

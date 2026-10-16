@@ -1,3 +1,6 @@
 # Hébergement Apache à la racine du domaine : une vraie réponse HTTP 404.
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
+# Page « Cours communs » renommée « Cours collectifs » le 16 octobre 2026 :
+# l'ancienne adresse redirige vers la nouvelle, quel que soit le fichier resté sur le serveur.
+Redirect 301 /cours-communs/ /cours-collectifs/

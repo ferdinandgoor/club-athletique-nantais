@@ -21,10 +21,12 @@ src/
     Container/           Largeur et marges du contenu
     PageShell/           En-tête, navigation, contenu principal et pied de page
   pages/Home/            Page d’accueil et son SCSS
-  pages/Discipline/      Modèle commun des pages musculation, force athlétique, lutte, haltérophilie et cours communs
+  pages/Discipline/      Modèle commun des pages musculation, force athlétique, lutte, haltérophilie et cours collectifs
   pages/About/           Page « Qui sommes-nous ? » et son SCSS
+  pages/Pricing/         Page « Tarifs » (tableau des formules) et son SCSS
   pages/Coach/           Modèle commun des pages de coachs et son SCSS
   data/disciplines.ts    Résumés, chemins et contenus des disciplines
+  data/pricing.ts        Tarifs et accès inclus par formule, page « Tarifs »
   styles/tokens.scss     Couleurs et espacements partagés
   styles/global.scss     Règles communes et accessibilité
   utils/site-url.ts      Validation de l’URL du site
@@ -34,7 +36,7 @@ src/
   entry-server.tsx       Rendu HTML pendant la construction du site
 public/
   images/                Images à ajouter par le club
-  .htaccess              Page 404 pour un hébergement Apache
+  .htaccess              Page 404 et redirections pour un hébergement Apache
 scripts/
   prerender.mjs          Génération du HTML, sitemap et robots.txt
   check-build.mjs        Vérification des fichiers générés
@@ -91,9 +93,15 @@ Ne pas ajouter de coordonnées géographiques ni d’horaires au JSON-LD sans in
 
 ## Orientation par discipline
 
-L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/`, `/lutte/`, `/halterophilie/` et `/cours-communs/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. La navigation principale est identique sur toutes les pages : les ancres vers les sections de l’accueil, « Qui sommes-nous ? » et le compte Instagram du club ; les disciplines sont accessibles par les cartes de l’accueil et les liens « Découvrir aussi » entre pages. Le champ `noun` porte l’article grammatical utilisé dans les phrases publiques. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la page active. Le bloc tarifs ne s’affiche que si la discipline a des tarifs confirmés.
+L’accueil propose des liens HTML vers `/musculation/`, `/force-athletique/`, `/lutte/`, `/halterophilie/` et `/cours-collectifs/`. Les contenus sont centralisés dans `src/data/disciplines.ts`, les métadonnées dérivées dans `src/data/pages.ts`, et `App.tsx` associe ces chemins au modèle `Discipline`. La navigation principale est identique sur toutes les pages : les ancres vers les sections de l’accueil, la page « Tarifs », « Qui sommes-nous ? » et le compte Instagram du club ; les disciplines sont accessibles par les cartes de l’accueil et les liens « Découvrir aussi » entre pages. Le champ `noun` porte l’article grammatical utilisé dans les phrases publiques. Chaque page est pré-rendue, avec son titre, sa description, son URL canonique et son entrée de sitemap. Aucun routeur supplémentaire n’est nécessaire. `PageShell` reçoit le chemin pour garder les liens vers les sections de l’accueil fonctionnels depuis une page de discipline et identifier la page active. Le bloc tarifs ne s’affiche que si la discipline a des tarifs confirmés et relie vers la page « Tarifs » pour comparer toutes les formules.
+
+La page « Cours collectifs » était appelée « Cours communs » avant le 16 octobre 2026 ; `public/.htaccess` redirige l’ancienne adresse `/cours-communs/` vers `/cours-collectifs/` (301). Vérifier cette règle sur l’hébergement réel après publication.
 
 Les animations au défilement sont une amélioration progressive : `useScrollReveal` observe les blocs `data-reveal` du contenu principal puis joue une animation native ponctuelle, sans masquer les blocs en attente. Il libère l’observateur au démontage, annule les effets au focus clavier et respecte les changements de préférence de réduction des animations. Les survols et animations d’entrée restent dans les SCSS des composants.
+
+## Page « Tarifs »
+
+`/tarifs/` utilise le composant `src/pages/Pricing/Pricing.tsx` et les données éditoriales `src/data/pricing.ts` : saison, liste des accès (licence fédérale, entraînements de lutte, salle de musculation, cours collectifs) et formules avec leur tarif et leurs accès inclus. La route est déclarée dans `src/data/pages.ts`, associée dans `App.tsx` et accessible depuis la navigation principale de `PageShell` sur toutes les pages, le bloc tarifs de chaque discipline et la section « Choisis la façon de nous rejoindre » de l’accueil. Le tableau est un vrai élément `<table>` (caption, `scope`, en-têtes de colonnes avec leurs précisions) dont les coches sont de simples « Oui/Non » pour les lecteurs d’écran ; le conteneur défilable est un `region` atteignable au clavier pour la vue mobile. Les horaires affichés proviennent de `hours` dans `src/data/site.ts` : la page ne duplique pas cette source. Le pré-rendu génère `dist/tarifs/index.html`, son URL canonique et son entrée de sitemap, contrôlés par `npm run check`. Les tarifs et accès proviennent du tableau du président du 16 octobre 2026, documenté dans `docs/CLUB.md` ; les modifier ensemble au changement de saison.
 
 ## Page de liens du club
 
@@ -105,4 +113,4 @@ Les animations au défilement sont une amélioration progressive : `useScrollRev
 
 ## Pages des coachs
 
-`/coach-sacha-turpin/`, `/coach-tengiz-dalakishvili/` et `/coach-veronique-lhotellier/` utilisent le modèle commun `src/pages/Coach/Coach.tsx`. Les coachs, leurs disciplines et leurs portraits sont des données éditoriales dans `src/data/coaches.ts`. Les routes sont dérivées dans `src/data/pages.ts` et associées dans `App.tsx` ; le pré-rendu génère leurs `index.html`, URLs canoniques et entrées de sitemap. Les pages des disciplines affichent le coach de deux façons selon `courseLead` dans `src/data/coaches.ts` : le prof attitré d’un cours (lutte, cours communs) a une section « Le prof du cours » en tête de page, juste après le héros ; le coach individuel sollicité sur demande (force athlétique) garde la section « Trouver un coach » après ces informations (la musculation n’a pas de coach déclaré). La page « Qui sommes-nous ? » relie aussi les membres du bureau qui sont coachs — un coach sans `clubRole` (Véronique L’hotellier) n’y figure pas, conformément à la demande du président du 16 octobre 2026. Le lien Instagram personnel d’un coach n’est rendu que si son identifiant est renseigné, et son ancienneté dans le bureau (`clubRoleSince`, par exemple « Depuis l’AG du 31 octobre 2025 ») que si `clubRole` et `clubRoleSince` sont renseignés : la page reste valide sans eux.
+`/coach-sacha-turpin/`, `/coach-tengiz-dalakishvili/` et `/coach-veronique-lhotellier/` utilisent le modèle commun `src/pages/Coach/Coach.tsx`. Les coachs, leurs disciplines et leurs portraits sont des données éditoriales dans `src/data/coaches.ts`. Les routes sont dérivées dans `src/data/pages.ts` et associées dans `App.tsx` ; le pré-rendu génère leurs `index.html`, URLs canoniques et entrées de sitemap. Les pages des disciplines affichent le coach de deux façons selon `courseLead` dans `src/data/coaches.ts` : le prof attitré d’un cours (lutte, cours collectifs) a une section « Le prof du cours » en tête de page, juste après le héros ; le coach individuel sollicité sur demande (force athlétique) garde la section « Trouver un coach » après ces informations (la musculation n’a pas de coach déclaré). La page « Qui sommes-nous ? » relie aussi les membres du bureau qui sont coachs — un coach sans `clubRole` (Véronique L’hotellier) n’y figure pas, conformément à la demande du président du 16 octobre 2026. Le lien Instagram personnel d’un coach n’est rendu que si son identifiant est renseigné, et son ancienneté dans le bureau (`clubRoleSince`, par exemple « Depuis l’AG du 31 octobre 2025 ») que si `clubRole` et `clubRoleSince` sont renseignés : la page reste valide sans eux.

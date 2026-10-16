@@ -27,7 +27,7 @@ export const site = {
     { title: 'Force athlétique', eyebrow: 'Powerlifting', text: 'Développer sa force sur le squat, le développé couché et le soulevé de terre.' },
     { title: 'Lutte', eyebrow: 'Libre & gréco-romaine', text: 'Lutte libre et gréco-romaine, avec des pratiques adaptées aux différents âges.' },
     { title: 'Musculation', eyebrow: 'La salle près de chez toi', text: 'Un espace complet pour une pratique encadrée ou autonome.' },
-    { title: 'Cours communs', eyebrow: 'Temps collectifs', text: 'Des temps collectifs pour progresser ensemble au sein du club.' },
+    { title: 'Cours collectifs', eyebrow: 'Temps collectifs', text: 'Des temps collectifs pour progresser ensemble au sein du club.' },
   ],
   hours: [
     { days: 'Lundi et vendredi', times: '17 h – 21 h' },

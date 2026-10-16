@@ -55,9 +55,9 @@ Le workflow refuse les domaines locaux ou d’exemple, les paramètres manquants
 
 ## Pages et erreurs 404
 
-Sur Apache, `public/.htaccess` est copié dans `dist/` et envoyé avec le reste. Il sélectionne `index.html` et la page d’erreur `/404.html`. L’hébergeur doit autoriser ces directives.
+Sur Apache, `public/.htaccess` est copié dans `dist/` et envoyé avec le reste. Il sélectionne `index.html`, la page d’erreur `/404.html` et une redirection permanente : `/cours-communs/` renvoie en 301 vers `/cours-collectifs/` depuis le renommage du 16 octobre 2026. L’hébergeur doit autoriser ces directives ; vérifier la redirection sur le domaine réel après publication, car le serveur Vite de prévisualisation n’est pas une vérification des règles Apache. Le transfert FTP n’efface pas les anciens fichiers : l’ancien `cours-communs/index.html` (comme l’ancien `pilates/index.html`) reste présent sur l’hébergement tant qu’il n’est pas supprimé à la main via FTP ; la redirection l’empêche d’être servi, mais le supprimer évite toute confusion.
 
-Sur un autre serveur, faire configurer l’équivalent par l’hébergeur : servir les `index.html` dans les dossiers et renvoyer `/404.html` avec le statut HTTP **404** pour une page inexistante. Ne pas rediriger toutes les erreurs vers l’accueil. Le serveur Vite de prévisualisation n’est pas une vérification des règles Apache.
+Sur un autre serveur, faire configurer l’équivalent par l’hébergeur : servir les `index.html` dans les dossiers, renvoyer `/404.html` avec le statut HTTP **404** pour une page inexistante et rediriger l’ancienne adresse « Cours communs » vers `/cours-collectifs/`. Ne pas rediriger toutes les erreurs vers l’accueil.
 
 ## Publication manuelle de secours
 

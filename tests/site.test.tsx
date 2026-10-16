@@ -5,6 +5,7 @@ import { pages, normalizePath } from '../src/data/pages';
 import { site } from '../src/data/site';
 import { bureau } from '../src/data/bureau';
 import { coaches } from '../src/data/coaches';
+import { pricing } from '../src/data/pricing';
 import { getSeo, renderHead } from '../src/seo';
 import { resolveSiteUrl } from '../src/utils/site-url';
 
@@ -40,11 +41,11 @@ describe('Pages publiques', () => {
     expect(home).toContain('Powerlifting · Lutte · Musculation');
     expect(home).toContain('<h3>Haltérophilie</h3>');
     expect(home).not.toContain('Pilates');
-    expect(home).toContain('<h3>Cours communs</h3>');
+    expect(home).toContain('<h3>Cours collectifs</h3>');
     expect(home).toContain('Mouvements olympiques');
     expect(home).toContain('href="/halterophilie/"');
     expect(home).not.toContain('href="/pilates/"');
-    expect(home).toContain('href="/cours-communs/"');
+    expect(home).toContain('href="/cours-collectifs/"');
     const halterophilie = renderToStaticMarkup(<App path="/halterophilie/" />);
     expect(halterophilie).toContain('Arraché');
     expect(halterophilie).toContain('Haltérophilie compétition');
@@ -52,8 +53,8 @@ describe('Pages publiques', () => {
     expect(halterophilie).toContain('Horaires de la salle');
     const pilates = renderToStaticMarkup(<App path="/pilates/" />);
     expect(pilates).toContain('Page introuvable');
-    const coursCommuns = renderToStaticMarkup(<App path="/cours-communs/" />);
-    expect(coursCommuns).toContain('Cours communs');
+    const coursCommuns = renderToStaticMarkup(<App path="/cours-collectifs/" />);
+    expect(coursCommuns).toContain('Cours collectifs');
     expect(coursCommuns).toContain('170 €');
     expect(coursCommuns).toContain('Jeudi');
     expect(coursCommuns).toContain('18 h 30–19 h 15');
@@ -142,18 +143,42 @@ describe('Pages publiques', () => {
     expect(about).toContain('href="/coach-sacha-turpin/"');
     expect(about).toContain('href="/coach-tengiz-dalakishvili/"');
   });
-  it('publie la page personnelle de l’animatrice des cours communs sans l’ajouter au bureau', () => {
+  it('publie la page personnelle de l’animatrice des cours collectifs sans l’ajouter au bureau', () => {
     const veronique = renderToStaticMarkup(<App path="/coach-veronique-lhotellier/" />);
     expect(veronique).toContain('<h1>Véronique L’hotellier</h1>');
-    expect(veronique).toContain('Coach des cours communs');
+    expect(veronique).toContain('Coach des cours collectifs');
     expect(veronique).toContain('src="/images/coach-veronique-lhotellier.jpg"');
-    expect(veronique).toContain('href="/cours-communs/"');
-    expect(veronique).toContain('Découvrir les cours communs');
+    expect(veronique).toContain('href="/cours-collectifs/"');
+    expect(veronique).toContain('Découvrir les cours collectifs');
     expect(veronique).not.toContain('Depuis l’AG');
     expect(veronique).not.toContain('coach__instagram');
     const about = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
     expect(about).not.toContain('L’hotellier');
     expect(about).not.toContain('href="/coach-veronique-lhotellier/"');
+  });
+  it('publie la page des tarifs avec les formules et leurs accès', () => {
+    const html = renderToStaticMarkup(<App path="/tarifs/" />);
+    expect(html).toContain('<h1>Tarifs et formules</h1>');
+    expect(html).toContain(pricing.season);
+    for (const offer of pricing.offers) {
+      expect(html).toContain(`>${offer.name}`);
+      expect(html).toContain(offer.price);
+    }
+    const totalChecks = pricing.offers.reduce((total, offer) => total + offer.includes.length, 0);
+    expect(html.match(/✓/g)).toHaveLength(totalChecks);
+    expect(html).toContain('role="region"');
+    expect(html).toContain('Oui');
+    expect(html).toContain('Non');
+    expect(html).toContain(pricing.footnote);
+    expect(html).toContain(site.hours[0].days);
+    expect(html).toContain('18 h 30–20 h');
+    expect(html.split('</header>')[0]).toContain('aria-current="page">Tarifs</a>');
+    expect(html).toContain('href="/lutte/"');
+    const force = renderToStaticMarkup(<App path="/force-athletique/" />);
+    expect(force).toContain('href="/tarifs/"');
+    expect(force).toContain('Voir toutes les formules et leurs accès');
+    const home = renderToStaticMarkup(<App path="/" />);
+    expect(home).toContain('<li><a href="/tarifs/">Compare les formules, leurs tarifs et leurs accès.</a></li>');
   });
   it('optimise le référencement local avec des métadonnées riches', () => {
     const home = renderHead('/');

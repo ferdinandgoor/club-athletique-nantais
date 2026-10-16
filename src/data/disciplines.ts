@@ -17,7 +17,7 @@ export const disciplines = [
       { label: 'Force athlétique compétition', amount: '200 €', note: '' },
       { label: 'Haltérophilie compétition', amount: '200 €', note: '' },
       { label: 'Musculation / force athlétique loisir / haltérophilie loisir', amount: '170 €', note: '' },
-      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
+      { label: 'Cours collectifs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
   {
@@ -53,7 +53,7 @@ export const disciplines = [
     ],
     prices: [
       { label: 'Musculation / force athlétique loisir / haltérophilie loisir', amount: '170 €', note: '' },
-      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
+      { label: 'Cours collectifs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
   {
@@ -74,19 +74,19 @@ export const disciplines = [
     ],
   },
   {
-    id: 'cours-communs', path: '/cours-communs/', title: 'Cours communs', subtitle: 'Temps collectifs', noun: 'les cours communs',
-    metaTitle: 'Cours communs à Nantes',
-    summary: 'Chaque jeudi soir, gym renforcement musculaire puis stretching : les cours communs du Club Athlétique Nantais pour progresser ensemble.',
-    introduction: 'Les cours communs réunissent les adhérents du Club Athlétique Nantais chaque jeudi soir autour de deux temps collectifs.',
+    id: 'cours-collectifs', path: '/cours-collectifs/', title: 'Cours collectifs', subtitle: 'Temps collectifs', noun: 'les cours collectifs',
+    metaTitle: 'Cours collectifs à Nantes',
+    summary: 'Chaque jeudi soir, gym renforcement musculaire puis stretching : les cours collectifs du Club Athlétique Nantais pour progresser ensemble.',
+    introduction: 'Les cours collectifs réunissent les adhérents du Club Athlétique Nantais chaque jeudi soir autour de deux temps collectifs.',
     heading: 'Deux cours, le jeudi soir',
-    joinSelection: '« Cours communs »',
+    joinSelection: '« Cours collectifs »',
     details: [
       { title: 'Gym renforcement musculaire', text: 'Jeudi, 18 h 30–19 h 15. Le renforcement musculaire est une activité physique qui permet de travailler les muscles du corps en améliorant l’équilibre, la posture et la force. Il peut se pratiquer avec le poids du corps ou du petit matériel.' },
       { title: 'Stretching', text: 'Jeudi, 19 h 15–20 h 00. Exercices d’étirements permettant d’améliorer la souplesse tout en travaillant en douceur.' },
       { title: 'Deux activités complémentaires', text: 'Deux activités différentes mais complémentaires pour garder un corps fort, souple et en bonne santé.' },
     ],
     prices: [
-      { label: 'Cours communs', amount: '170 €', note: 'accès salle de muscu inclus' },
+      { label: 'Cours collectifs', amount: '170 €', note: 'accès salle de muscu inclus' },
     ],
   },
 ] as const;
