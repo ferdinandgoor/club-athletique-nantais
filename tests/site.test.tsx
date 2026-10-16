@@ -98,7 +98,7 @@ describe('Pages publiques', () => {
     for (let index = 1; index < positions.length; index += 1) {
       expect(positions[index]).toBeGreaterThan(positions[index - 1]);
     }
-    expect(html).toContain('Depuis l’AG du 31 octobre 2025');
+    expect(html).not.toContain('Depuis l’AG');
     expect(html).toContain('href="/#inscription"');
     expect(html).toContain('aria-current="page">Qui sommes-nous ?</a>');
     const home = renderToStaticMarkup(<App path="/" />);
@@ -113,6 +113,11 @@ describe('Pages publiques', () => {
       expect(html).toContain(`href="${coach.discipline.path}"`);
       expect(html).toContain(`src="${coach.photo.src}"`);
       expect(html).toContain('href="/#inscription"');
+      if (coach.clubRoleSince) {
+        expect(html).toContain(coach.clubRoleSince);
+      } else {
+        expect(html).not.toContain('Depuis l’AG');
+      }
       if (coach.instagram) {
         expect(html).toContain(`https://www.instagram.com/${coach.instagram}/`);
         expect(html).toContain(coach.instagramLabel);
@@ -137,7 +142,7 @@ describe('Pages publiques', () => {
     expect(veronique).toContain('src="/images/coach-veronique-lhotellier.jpg"');
     expect(veronique).toContain('href="/cours-communs/"');
     expect(veronique).toContain('Découvrir les cours communs');
-    expect(veronique).not.toContain('Élu lors de l’Assemblée Générale');
+    expect(veronique).not.toContain('Depuis l’AG');
     expect(veronique).not.toContain('coach__instagram');
     const about = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
     expect(about).not.toContain('L’hotellier');

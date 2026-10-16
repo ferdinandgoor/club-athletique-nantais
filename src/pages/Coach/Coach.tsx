@@ -22,7 +22,7 @@ export function Coach({ coach }: { coach: CoachData }) {
           <p className="coach__eyebrow coach__eyebrow--dark">Au sein du club</p>
           <h2 id="role-title">Son rôle au Club Athlétique Nantais</h2>
           <ul className="coach__roles">
-            {coach.clubRole && <li><strong>{coach.clubRole}</strong><span>Élu lors de l’Assemblée Générale du 1er octobre 2026.</span></li>}
+            {coach.clubRole && <li><strong>{coach.clubRole}</strong>{coach.clubRoleSince && <span>{coach.clubRoleSince}</span>}</li>}
             <li><strong>{coach.coachRole}</strong><span>{coach.roleDescription}</span></li>
           </ul>
           <a className="coach__button" href={coach.discipline.path}>Découvrir {coach.discipline.noun}</a>

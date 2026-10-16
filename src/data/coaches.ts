@@ -4,14 +4,16 @@
 // Véronique L’hotellier, animatrice des cours communs : photo et demande de publication
 // transmises par Sacha Turpin, président, le 16 octobre 2026 (uniquement sa page personnelle,
 // pas la page « Qui sommes-nous ? » qui liste les membres du bureau).
-// `clubRole` ne concerne que les membres du bureau : la page personnelle l'affiche alors
-// avec l'AG de rattachement ; une animatrice sans fonction au bureau ne le renseigne pas.
+// `clubRole` ne concerne que les membres du bureau : `clubRoleSince` donne alors
+// leur ancienneté dans le bureau, affichée sur la page personnelle ; une animatrice
+// sans fonction au bureau ne renseigne ni l'un ni l'autre.
 export type CoachData = {
   id: string;
   path: string;
   name: string;
   coachRole: string;
   clubRole?: string;
+  clubRoleSince?: string;
   discipline: { id: string; title: string; noun: string; path: string };
   instagram?: string;
   instagramLabel?: string;
@@ -26,6 +28,7 @@ export const coaches: CoachData[] = [
     path: '/coach-sacha-turpin/',
     name: 'Sacha Turpin',
     clubRole: 'Président du club',
+    clubRoleSince: 'Depuis l’AG du 31 octobre 2025.',
     coachRole: 'Coach de force athlétique',
     discipline: { id: 'force-athletique', title: 'Force athlétique', noun: 'la force athlétique', path: '/force-athletique/' },
     instagram: 'sacha_powerlift',
@@ -39,6 +42,7 @@ export const coaches: CoachData[] = [
     path: '/coach-tengiz-dalakishvili/',
     name: 'Tengiz Dalakishvili',
     clubRole: 'Vice-président du club',
+    clubRoleSince: 'Depuis l’AG du 31 octobre 2025.',
     coachRole: 'Coach de lutte',
     discipline: { id: 'lutte', title: 'Lutte', noun: 'la lutte', path: '/lutte/' },
     instagram: 'tengiz_dalakishvili',
