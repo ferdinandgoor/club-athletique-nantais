@@ -62,7 +62,9 @@ describe('Pages publiques', () => {
     expect(coursCommuns).toContain('Horaires de la salle');
     expect(coursCommuns).toContain(site.hours[0].times);
     expect(coursCommuns).toContain('Accès libre à la salle de musculation sur ces créneaux d’ouverture');
-    expect(coursCommuns).not.toContain('L’hotellier');
+    expect(coursCommuns).toContain('Trouver un coach');
+    expect(coursCommuns).toContain('Véronique L’hotellier');
+    expect(coursCommuns).toContain('href="/coach-veronique-lhotellier/"');
     expect(wrestling).toContain('Lutte baby');
     expect(wrestling).toContain('href="/#inscription"');
     expect(wrestling).toContain('discipline__hero--lutte');
@@ -127,6 +129,19 @@ describe('Pages publiques', () => {
     const about = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
     expect(about).toContain('href="/coach-sacha-turpin/"');
     expect(about).toContain('href="/coach-tengiz-dalakishvili/"');
+  });
+  it('publie la page personnelle de l’animatrice des cours communs sans l’ajouter au bureau', () => {
+    const veronique = renderToStaticMarkup(<App path="/coach-veronique-lhotellier/" />);
+    expect(veronique).toContain('<h1>Véronique L’hotellier</h1>');
+    expect(veronique).toContain('Coach des cours communs');
+    expect(veronique).toContain('src="/images/coach-veronique-lhotellier.jpg"');
+    expect(veronique).toContain('href="/cours-communs/"');
+    expect(veronique).toContain('Découvrir les cours communs');
+    expect(veronique).not.toContain('Élu lors de l’Assemblée Générale');
+    expect(veronique).not.toContain('coach__instagram');
+    const about = renderToStaticMarkup(<App path="/qui-sommes-nous/" />);
+    expect(about).not.toContain('L’hotellier');
+    expect(about).not.toContain('href="/coach-veronique-lhotellier/"');
   });
   it('optimise le référencement local avec des métadonnées riches', () => {
     const home = renderHead('/');
