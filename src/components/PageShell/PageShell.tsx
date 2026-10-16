@@ -38,12 +38,17 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
     return () => window.removeEventListener('scroll', updateNavigation);
   }, []);
 
+  // Navigation sans rechargement : la page change sous le menu resté ouvert, on le referme.
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [path]);
+
   return (
     <div className="page-shell">
       <a className="page-shell__skip" href="#contenu">Aller au contenu</a>
       {!isLinks && <header className={`page-shell__header${isCompact || !isHome ? ' page-shell__header--compact' : ''}`}>
         <Container>
-          <a className="page-shell__brand" href={isHome ? "#accueil" : "/"} aria-label={`${site.name} — Accueil`} aria-current={isHome && activeSection === 'accueil' ? 'page' : undefined}>
+          <a className="page-shell__brand" href={isHome ? "#accueil" : "/"} aria-label={`${site.name} — Accueil`} aria-current={isHome && activeSection === 'accueil' ? 'page' : undefined} onClick={() => setIsMenuOpen(false)}>
             <img src="/images/logo-can-horizontal-white.png" width="1400" height="521" alt="" />
           </a>
           <button className="page-shell__menu-button" type="button" aria-expanded={isMenuOpen} aria-controls="navigation-principale" onClick={() => setIsMenuOpen((open) => !open)}>
@@ -56,8 +61,8 @@ export function PageShell({ children, path = '/' }: PropsWithChildren<{ path?: s
                 {item.label}
               </a>
             ))}
-            <a href="/qui-sommes-nous/" aria-current={path === '/qui-sommes-nous/' ? 'page' : undefined}>Qui sommes-nous ?</a>
-            <a className="page-shell__instagram" href={site.contact.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram du Club Athlétique Nantais">
+            <a href="/qui-sommes-nous/" aria-current={path === '/qui-sommes-nous/' ? 'page' : undefined} onClick={() => setIsMenuOpen(false)}>Qui sommes-nous ?</a>
+            <a className="page-shell__instagram" href={site.contact.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram du Club Athlétique Nantais" onClick={() => setIsMenuOpen(false)}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4.25" />
