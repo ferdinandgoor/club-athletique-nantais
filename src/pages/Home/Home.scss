@@ -117,7 +117,11 @@
     &__activity-grid { gap: 1.25rem; }
     &__map { min-height: 28rem; }
     &__info-grid { grid-template-columns: 1fr; }
-    &__info-card { min-height: auto; }
+    &__info-card { min-height: auto; padding: 1.25rem; }
+    &__activity-content { padding: 1rem; }
+    &__activity-number { margin-bottom: 1.5rem; }
+    &__activity-link { padding-top: 1rem; }
+    &__info-card h3 { margin-top: 2rem; }
     &__section { padding-block: 4rem; }
     &__section-heading { margin-bottom: 1.75rem; }
     &__practical { padding-block: 4rem; }
@@ -132,7 +136,7 @@
     &__hero-logo { width: min(78vw, 23rem); }
     &__scroll-hint { display: none; }
     &__map { min-height: 22rem; }
-    &__location-copy { padding: 2.25rem var(--space-md); }
+    &__location-copy { padding: 1.75rem var(--space-md); }
     &__carousel-frame img { height: 65svh; }
     &__carousel-dots { position: static; margin-top: 1.25rem; }
     &__carousel-dots button { flex: 1; }
