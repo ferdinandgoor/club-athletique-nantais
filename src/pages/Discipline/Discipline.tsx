@@ -21,7 +21,7 @@ export function Discipline({ discipline }: { discipline: DisciplineData }) {
   const coach = coaches.find((item) => item.discipline.id === discipline.id);
   const instagramUrl = isForce ? 'https://www.instagram.com/can_powerlifting/' : isWrestling ? 'https://www.instagram.com/can_lutte_nantes/' : site.contact.instagramUrl;
   const coachSection = coach && (
-    <section className={`discipline__section discipline__coach${coach.courseLead ? ' discipline__coach--lead' : ''}`} data-reveal aria-labelledby="coach-title">
+    <section className="discipline__section discipline__coach" data-reveal aria-labelledby="coach-title">
       <p className="discipline__eyebrow">Encadrement</p>
       <h2 id="coach-title">{coach.courseLead ? 'Le prof du cours' : 'Trouver un coach'}</h2>
       <a className="discipline__coach-card" href={coach.path}>
