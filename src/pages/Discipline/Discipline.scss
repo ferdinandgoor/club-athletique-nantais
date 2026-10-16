@@ -54,7 +54,7 @@
   &__other { display: flex; align-items: center; min-height: 44px; width: fit-content; margin-top: 2rem; }
 }
 @media (max-width: 48rem) {
-  .discipline__instagram { margin: .75rem 0 0; }
+  .discipline__instagram { margin: var(--space-md) 0 0; }
   .discipline__details { grid-template-columns: 1fr; }
   .discipline__hero { padding-top: 8rem; }
   .discipline__hero--force-athletique, .discipline__hero--lutte { background-image: linear-gradient(rgb(11 16 37 / 90%), rgb(11 16 37 / 78%)), var(--discipline-hero-banner); }
